@@ -29,3 +29,26 @@
     </a>
 </div>
 
+<div class="container">
+    <div class="row" id="global-btns">
+        <div class="col-2">
+            <a class="btn btn-warning">Email</a>
+        </div>
+        <div class="col-2">
+            <a class="btn btn-warning">Grade</a>
+        </div>
+        <div class="col-2">
+            <a class="btn btn-warning">Jobs</a>
+        </div>
+        <div class="col-2">
+            <a class="btn btn-warning">Menus</a>
+        </div>
+        <div class="col-2">
+            <a class="btn btn-warning">One Drive</a>
+        </div>
+        <div class="col-2">
+            <a class="btn btn-warning">E-News</a>
+        </div>
+    </div>
+</div>
+
