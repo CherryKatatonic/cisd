@@ -4,19 +4,19 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="${request.contextPath}/res/images/photo1.JPG" alt="First slide">
+            <img class="d-block w-100" src="${request.contextPath}../res/images/photo1.JPG" alt="First slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="${request.contextPath}/res/images/photo2.jpg" alt="Second slide">
+            <img class="d-block w-100" src="${request.contextPath}../res/images/photo2.jpg" alt="Second slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="${request.contextPath}/res/images/photo3.JPG" alt="Third slide">
+            <img class="d-block w-100" src="${request.contextPath}../res/images/photo3.JPG" alt="Third slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="${request.contextPath}/res/images/photo4.JPG" alt="Fourth slide">
+            <img class="d-block w-100" src="${request.contextPath}../res/images/photo4.JPG" alt="Fourth slide">
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="${request.contextPath}/res/images/photo5.JPG" alt="Fifth slide">
+            <img class="d-block w-100" src="${request.contextPath}../res/images/photo5.JPG" alt="Fifth slide">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
