@@ -106,7 +106,7 @@
 </nav>
 
 <!-- PAGE CONTENT -->
-<c:import url="${school}/${page}.jsp" />
+<c:import url="${campus}/${page}.jsp" />
 
 <!-- SCRIPTS -->
     <!-- Required script tags for Bootstrap -->
