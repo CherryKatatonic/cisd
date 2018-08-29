@@ -29,26 +29,38 @@
     </a>
 </div>
 
-<div class="container">
+<div class="container-fluid" style="position: absolute; top: 540px">
     <div class="row" id="global-btns">
-        <div class="col-2">
+        <div class="col-2 text-center">
             <a class="btn btn-warning">Email</a>
         </div>
-        <div class="col-2">
+        <div class="col-2 text-center">
             <a class="btn btn-warning">Grade</a>
         </div>
-        <div class="col-2">
+        <div class="col-2 text-center">
             <a class="btn btn-warning">Jobs</a>
         </div>
-        <div class="col-2">
+        <div class="col-2 text-center">
             <a class="btn btn-warning">Menus</a>
         </div>
-        <div class="col-2">
+        <div class="col-2 text-center">
             <a class="btn btn-warning">One Drive</a>
         </div>
-        <div class="col-2">
+        <div class="col-2 text-center">
             <a class="btn btn-warning">E-News</a>
         </div>
     </div>
 </div>
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <img class="img-fluid" src="${request.contextPath}../res/images/halle.png">
+        </div>
+        <div class="col-md-4" style="background-color: blue;">
+            <img class="rounded mx-auto d-block" src="${request.contextPath}../res/images/quick-tip.png">
+            <h2>Click here for the CISD Calendar</h2>
+            <img class="img-fluid mx-auto d-block" src="${request.contextPath}../res/images/athletic-schedules.png">
+        </div>
+    </div>
+</div>
