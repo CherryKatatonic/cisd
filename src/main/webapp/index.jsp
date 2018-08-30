@@ -72,7 +72,7 @@
 </div>
 
 <!-- TRANSPARENT NAV -->
-<nav class="navbar navbar-expand-md navbar-dark justify-content-start pb-1 pt-1" id="nav2">
+<nav class="navbar navbar-expand-md navbar-dark justify-content-start pb-0 pt-0" id="nav2">
     <div class="navbar" id="navbar2">
         <ul id="nav2-links" class="nav">
             <li class="nav-item active">
@@ -137,7 +137,8 @@
             $('#search-bar').prependTo($('#side-nav'));
             $('#nav1-links').appendTo($('#side-nav'));
             $('.nav-item').addClass('w-100');
-            $('#nav2').removeClass('pt-1 pb-1').addClass('p-0');
+            //$('#nav2').removeClass('pt-1 pb-1').addClass('p-0');
+            $('#navbar2').hide();
         }
 
         function showNavs() {
@@ -146,7 +147,8 @@
             $('#nav1-links').appendTo($('#nav1'));
             $('#search-bar').appendTo($('#nav1'));
             $('.nav-item').removeClass('w-100');
-            $('#nav2').addClass('pt-1 pb-1').removeClass('p-0');
+            //$('#nav2').addClass('pt-1 pb-1').removeClass('p-0');
+            $('#navbar2').show();
         }
 
         $('#navbar-toggle').click(function() {
