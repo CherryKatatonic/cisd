@@ -1,5 +1,6 @@
 body {
     background-color: #f7f7f7;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 #main-logo {
@@ -123,7 +124,7 @@ body {
     margin: 0;
     position: relative;
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 400;
     letter-spacing: 1.5px;
     text-transform: uppercase;
 }
@@ -226,12 +227,14 @@ body {
 #home-col-left .card {
     border: 2px solid rgba(128, 128, 128, 0.31);
     box-shadow: 0px 0px 14px 2px #00000050;
+    margin: 32px;
 }
 
 #home-col-right {
     background-color: #0b03aa;
     padding: 20px;
     color: white;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 #home-col-right hr {
@@ -239,9 +242,9 @@ body {
 }
 
 #home-col-right .card {
-    border: 2px solid rgba(255, 255, 255, 0.31);
-    box-shadow: 0px 0px 14px 2px #ffffff50;
+    box-shadow: 0px 0px 14px 2px #ffffff66;
     background-color: #0b03aa;
+    padding: 12px;
 }
 #home-col-right .card-header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.31);
@@ -251,6 +254,7 @@ body {
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.31);
     margin-bottom: 0;
+    padding: 0;
     background-color: #0b03aa;
 }
 
@@ -258,6 +262,26 @@ body {
     background-color: #00000050;
 }
 .card-img-overlay:hover {
-    background-color: #00000010;
+    background-color: #ffffff25;
     cursor: pointer;
+}
+
+.overlay-center {
+    text-align: center;
+}
+.overlay-center:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.upcoming-events-date {
+    margin: 0;
+    border: 2px solid #ffffffd9;
+    padding: 4px;
+}
+
+.img-link:hover {
+    box-shadow: 0px 0px 92px 1px gold;
 }
