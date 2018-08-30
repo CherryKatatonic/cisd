@@ -69,9 +69,31 @@
         </div>
 
         <div class="col-md-4 text-center" id="home-col-right">
-            <img class="rounded mx-auto d-block" src="${request.contextPath}../res/images/quick-tip.png">
-            <h2>Click here for the CISD Calendar</h2>
-            <img class="img-fluid mx-auto d-block" src="${request.contextPath}../res/images/athletic-schedules.png">
+            <a href="#"><img class="rounded mx-auto d-block" src="${request.contextPath}../res/images/quick-tip.png"></a>
+            <hr/>
+            <a href="#" class="text-white"><h2>Click here for the CISD Calendar</h2></a>
+            <hr/>
+            <a href="#"><img class="img-fluid mx-auto d-block" src="${request.contextPath}../res/images/athletic-schedules.png"></a>
+            <hr/>
+            <div class="card" style="width: 18rem;">
+                <div class="card-header">
+                    <h2>Upcoming Events</h2>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+
+                    </li>
+                    <li class="list-group-item">
+
+                    </li>
+                    <li class="list-group-item">
+
+                    </li>
+                    <div class="card-footer">
+                        <a href="#" class="text-white">View Full Calendar</a>
+                    </div>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
