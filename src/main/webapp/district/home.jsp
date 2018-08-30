@@ -27,37 +27,48 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-</div>
-
-<div class="container-fluid" style="position: absolute; top: 540px">
-    <div class="row" id="global-btns">
-        <div class="col-2 text-center">
-            <a class="btn btn-warning">Email</a>
-        </div>
-        <div class="col-2 text-center">
-            <a class="btn btn-warning">Grade</a>
-        </div>
-        <div class="col-2 text-center">
-            <a class="btn btn-warning">Jobs</a>
-        </div>
-        <div class="col-2 text-center">
-            <a class="btn btn-warning">Menus</a>
-        </div>
-        <div class="col-2 text-center">
-            <a class="btn btn-warning">One Drive</a>
-        </div>
-        <div class="col-2 text-center">
-            <a class="btn btn-warning">E-News</a>
+    <div class="container-fluid" id="global-btns">
+        <div class="row">
+            <div class="col-2 text-center">
+                <a class="btn btn-warning">Email</a>
+            </div>
+            <div class="col-2 text-center">
+                <a class="btn btn-warning">Grade</a>
+            </div>
+            <div class="col-2 text-center">
+                <a class="btn btn-warning">Jobs</a>
+            </div>
+            <div class="col-2 text-center">
+                <a class="btn btn-warning">Menus</a>
+            </div>
+            <div class="col-2 text-center">
+                <a class="btn btn-warning">One Drive</a>
+            </div>
+            <div class="col-2 text-center">
+                <a class="btn btn-warning">E-News</a>
+            </div>
         </div>
     </div>
 </div>
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
-            <img class="img-fluid" src="${request.contextPath}../res/images/halle.png">
+        <div class="col-md-8 text-center" style="" id="home-col-left">
+            <div class="card">
+                <img class="card-img" src="${request.contextPath}../res/images/halle.png">
+            </div>
+            <hr/>
+            <a href="#">
+                <div class="card bg-dark text-white">
+                    <img class="card-img" src="${request.contextPath}../res/images/meet-the-tigers.jpg" alt="Card image">
+                    <div class="card-img-overlay">
+                        <h5 class="card-title"><u>Click here to see highlights from Meet the Tigers Night!</u></h5>
+                    </div>
+                </div>
+            </a>
         </div>
-        <div class="col-md-4" style="background-color: blue;">
+
+        <div class="col-md-4 text-center" id="home-col-right">
             <img class="rounded mx-auto d-block" src="${request.contextPath}../res/images/quick-tip.png">
             <h2>Click here for the CISD Calendar</h2>
             <img class="img-fluid mx-auto d-block" src="${request.contextPath}../res/images/athletic-schedules.png">
