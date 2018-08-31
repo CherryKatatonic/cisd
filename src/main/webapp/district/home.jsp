@@ -19,33 +19,33 @@
             <img class="d-block w-100" src="${request.contextPath}../res/images/photo5.JPG" alt="Fifth slide">
         </div>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <a class="carousel-control-prev glow-link-white" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon p-3" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <a class="carousel-control-next glow-link-white" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon p-3" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
     <div class="container-fluid" id="global-btns">
         <div class="row">
             <div class="col-2 text-center">
-                <a class="btn btn-warning">Email</a>
+                <a class="btn btn-warning glow-link-gold">Email</a>
             </div>
             <div class="col-2 text-center">
-                <a class="btn btn-warning">Grade</a>
+                <a class="btn btn-warning glow-link-gold">Grade</a>
             </div>
             <div class="col-2 text-center">
-                <a class="btn btn-warning">Jobs</a>
+                <a class="btn btn-warning glow-link-gold">Jobs</a>
             </div>
             <div class="col-2 text-center">
-                <a class="btn btn-warning">Menus</a>
+                <a class="btn btn-warning glow-link-gold">Menus</a>
             </div>
             <div class="col-2 text-center">
-                <a class="btn btn-warning">One Drive</a>
+                <a class="btn btn-warning glow-link-gold">One Drive</a>
             </div>
             <div class="col-2 text-center">
-                <a class="btn btn-warning">E-News</a>
+                <a class="btn btn-warning glow-link-gold">E-News</a>
             </div>
         </div>
     </div>
@@ -59,13 +59,13 @@
             </div>
             <hr/>
             <a href="#">
-                <div class="card bg-dark text-white">
-                    <img class="card-img" src="${request.contextPath}../res/images/meet-the-tigers.jpg" alt="Card image">
-                    <div class="card-img-overlay overlay-center">
-                        <h4 class="card-title align-middle d-inline-block">
-                            <u>Click here to see highlights from Meet the Tigers Night!</u>
+                <div class="card glow-link-gold">
+                    <div class="card-header">
+                        <h4>
+                            Click here to see highlights from Meet the Tigers Night!
                         </h4>
                     </div>
+                    <img class="card-img" src="${request.contextPath}../res/images/meet-the-tigers.jpg" alt="Card image">
                 </div>
             </a>
             <hr/>
@@ -78,23 +78,57 @@
             <hr/>
             <div class="card">
                 <a href="#">
-                    <img class="card-img img-link" src="${request.contextPath}../res/images/child-nutrition.png">
+                    <img class="card-img glow-link-gold" src="${request.contextPath}../res/images/child-nutrition.png">
                 </a>
             </div>
             <hr/>
-            <div class="card">
+            <div class="card glow-link-gold">
                 <div class="card-header">
                     <a href="#"><h4>Click here for the 2018 - 2019 Pre-K through 6th grade school supply list.</h4></a>
+                </div>
+            </div>
+            <hr/>
+            <a href="#">
+                <div class="card glow-link-gold">
+                    <div class="card-header">
+                        <h4 class="card-title m-auto my-auto">
+                            Click here to download the 2018-2019 Corsicana ISD District calendar.
+                        </h4>
+                    </div>
+                    <img class="card-img" src="${request.contextPath}../res/images/cisd-calendar.jpg" alt="Card image">
+                </div>
+            </a>
+            <hr/>
+            <div class="card">
+                <div class="media p-3">
+                    <img class="mr-3" src="${request.contextPath}../res/images/quick-tip.png" alt="Generic placeholder image">
+                    <div class="media-body overflow-auto">
+                        <h5 class="mt-0"><u>Quick Tip</u></h5>
+                        Provide information quickly and anonymously through the online Corsicana ISD Quick Tip link.
+                        Tips may be related to school safety, personal safety, bullying, vandalism, fighting, etc.
+                        Tip providers may leave contact information if desired, or they may be submitted anonymously.
+                        <a href="#">https://asp.schoolmessenger.com/corsicana/quicktip/</a>
+                    </div>
+                </div>
+            </div>
+            <hr/>
+            <div class="card glow-link-gold">
+                <div class="card-header">
+                    <a href="#">
+                        <h4>CISD NONDISCRIMINATION POLICY</h4>
+                        <hr/>
+                        <h4>AVISO DE NO DISCRIMINACIÓN</h4>
+                    </a>
                 </div>
             </div>
         </div>
 
         <div class="col-md-4 text-center" id="home-col-right">
-            <a href="#"><img class="rounded mx-auto d-block img-link" src="${request.contextPath}../res/images/quick-tip.png"></a>
+            <a href="#"><img class="rounded mx-auto d-block glow-link-white" src="${request.contextPath}../res/images/quick-tip.png"></a>
             <hr/>
             <a href="#" class="text-white"><h2>Click here for the CISD Calendar</h2></a>
             <hr/>
-            <a href="#"><img class="img-fluid mx-auto d-block img-link" src="${request.contextPath}../res/images/athletic-schedules.png"></a>
+            <a href="#"><img class="img-fluid mx-auto d-block glow-link-white" src="${request.contextPath}../res/images/athletic-schedules.png"></a>
             <hr/>
             <div class="card">
                 <div class="card-header">
