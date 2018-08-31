@@ -1,6 +1,15 @@
-body {
-    background-color: #f7f7f7;
+html, body {
+    background-color: #fcfcfc;
     font-family: 'Titillium Web', sans-serif;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 244px;
 }
 
 #main-logo {
@@ -31,27 +40,32 @@ body {
     padding: 0;
 }
 
-#brand-name {
+#brand-name-top {
+    margin-left: 11rem;
+}
+
+.brand-name {
     color: white;
     font-size: 35px;
     line-height: 1;
     letter-spacing: .1rem;
     font-weight: 200;
     font-family: 'Titillium Web', sans-serif;
-    margin-left: 11rem;
 }
 
 @media (max-width: 601px) {
-    #brand-name {
+    .brand-name {
         font-size: 25px;
+    }
+    #brand-name-top {
         margin-left: 1rem;
     }
-    #brand-hashtag {
+    .brand-hashtag {
         font-size: 15px;
     }
 }
 
-#brand-hashtag {
+.brand-hashtag {
     color: #f0ca00;
     font-size: 18px;
     font-weight: 200;
@@ -216,8 +230,9 @@ body {
 }
 
 #home-col-left {
-    background-color: #e6e6e6;
+    background-color: #fcfcfc;
     padding: 20px;
+    color: #0b03aa;
 }
 
 #home-col-left hr {
@@ -268,12 +283,7 @@ body {
 
 .overlay-center {
     text-align: center;
-}
-.overlay-center:before {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
+    display: flex;
 }
 
 .upcoming-events-date {
@@ -282,6 +292,38 @@ body {
     padding: 4px;
 }
 
-.img-link:hover {
-    box-shadow: 0px 0px 92px 1px gold;
+.glow-link-gold:hover {
+    box-shadow: 0px 0px 92px 1px gold !important;
+    transition: box-shadow .15s ease-in-out;
+    transition-property: box-shadow;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
+.glow-link-white:hover {
+    box-shadow: 0px 0px 92px 1px white !important;
+    transition: box-shadow .15s ease-in-out;
+    transition-property: box-shadow;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+}
+
+a {
+    color: unset;
+}
+
+.overflow-auto {
+    overflow: auto !important;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 244px;
+    line-height: 60px;
+    color: white;
+    background-color: #3B3B3C;
 }
