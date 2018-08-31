@@ -65,9 +65,9 @@
 
 <!-- BRAND NAME -->
 <div id="brand-bar" class="navbar navbar-dark bg-dark justify-content-start pt-0">
-    <div id="brand-bar-inner" class="navbar navbar-dark bg-dark justify-content-start pt-0">
-        <h2 id="brand-name">CORSICANA ISD</h2>
-        <p class="d-inline-block" id="brand-hashtag">#TCC</p>
+    <div id="brand-bar-inner" class="navbar navbar-dark bg-dark justify-content-start pt-0 brand-bar-inner">
+        <h2 id="brand-name-top" class="brand-name">CORSICANA ISD</h2>
+        <p id="brand-hashtag-top" class="d-inline-block brand-hashtag">#TCC</p>
     </div>
 </div>
 
@@ -107,6 +107,24 @@
 
 <!-- PAGE CONTENT -->
 <c:import url="${campus}/${page}.jsp" />
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <div class="navbar navbar-dark bg-dark justify-content-start pt-0 brand-bar-inner">
+                    <h2 class="brand-name">CORSICANA ISD</h2>
+                    <p class="d-inline-block brand-hashtag">#TCC</p>
+                </div>
+            </div>
+            <div class="col-6">
+
+            </div>
+            <div class="col-12" style="height: 74px; background-color: #0b03aa;"></div>
+        </div>
+    </div>
+</footer>
 
 <!-- SCRIPTS -->
     <!-- Required script tags for Bootstrap -->
