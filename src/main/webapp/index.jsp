@@ -110,19 +110,43 @@
 
 <!-- FOOTER -->
 <footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-6">
-                <div class="navbar navbar-dark bg-dark justify-content-start pt-0 brand-bar-inner">
-                    <h2 class="brand-name">CORSICANA ISD</h2>
-                    <p class="d-inline-block brand-hashtag">#TCC</p>
-                </div>
+    <div class="container-fluid">
+        <div class="row w-75 m-auto p-4">
+            <div class="col-md-6">
+                    <h2 class="brand-name mb-0">CORSICANA ISD</h2>
+                    <h6 class="brand-hashtag ml-0 mb-1">#TCC</h6>
+                    <h6>Address:2200 W. 4th Ave. Corsicana, TX 75110</h6>
+                    <h6>Phone: (903) 874-7441</h6>
+                    <h6>Fax: (903) 874-2454</h6>
             </div>
-            <div class="col-6">
-
+            <div class="col-md-6 text-center">
+                <a href="#" style="text-decoration: none;">
+                    <div class="social-link d-inline-flex ml-1 mr-1">
+                        <img class="my-auto" src="${request.contextPath}/res/images/twitter.png">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="social-link d-inline-flex ml-1 mr-1">
+                        <img class="my-auto" src="${request.contextPath}/res/images/flickr.png">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="social-link d-inline-flex ml-1 mr-1">
+                        <img class="my-auto" src="${request.contextPath}/res/images/facebook.png">
+                    </div>
+                </a>
+                <a href="#" style="text-decoration: none;">
+                    <div class="social-link d-inline-flex ml-1 mr-1">
+                        <img class="my-auto" src="${request.contextPath}/res/images/youtube.png">
+                    </div>
+                </a>
+                <br>
+                <a href="#">Site Map</a>
             </div>
-            <div class="col-12" style="height: 74px; background-color: #0b03aa;"></div>
         </div>
+    </div>
+    <div id="scroll-top-btn" class="col-12 d-flex">
+        <img class="m-auto my-auto" src="${request.contextPath}/res/images/up.png">
     </div>
 </footer>
 
@@ -131,6 +155,8 @@
     <script src="${request.contextPath}/res/js/jquery-3.3.1.min.js"></script>
     <script src="${request.contextPath}/res/js/popper-1.12.9.min.js"></script>
     <script src="${request.contextPath}/res/js/bootstrap-4.0.0.min.js"></script>
+
+    <script src="${request.contextPath}/res/js/${page}.js"></script>
 
     <script>
         $(document).ready(function() {
@@ -147,6 +173,11 @@
             } else {
                 showNavs();
             }
+        });
+
+        $('#scroll-top-btn').click(function(){
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
+            return false;
         });
 
         function hideNavs() {
