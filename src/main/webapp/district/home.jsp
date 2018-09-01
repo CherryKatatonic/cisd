@@ -1,6 +1,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
+<!-- PHOTO CAROUSEL -->
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
@@ -27,13 +28,15 @@
         <span class="carousel-control-next-icon p-3" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
+
+    <!-- GLOBAL LINKS -->
     <div class="container-fluid" id="global-btns">
         <div class="row">
             <div class="col-2 text-center">
                 <a class="btn btn-warning glow-link-gold">Email</a>
             </div>
             <div class="col-2 text-center">
-                <a class="btn btn-warning glow-link-gold">Grade</a>
+                <a class="btn btn-warning glow-link-gold">Grades</a>
             </div>
             <div class="col-2 text-center">
                 <a class="btn btn-warning glow-link-gold">Jobs</a>
@@ -51,8 +54,11 @@
     </div>
 </div>
 
+<!-- MAIN CONTENT -->
 <div class="container-fluid">
     <div class="row">
+
+        <!-- LEFT COLUMN -->
         <div class="col-md-8 text-center" style="" id="home-col-left">
             <div class="card">
                 <img class="card-img" src="${request.contextPath}../res/images/halle.png">
@@ -123,15 +129,22 @@
             </div>
         </div>
 
+        <!-- RIGHT COLUMN -->
         <div class="col-md-4 text-center" id="home-col-right">
-            <a href="#"><img class="rounded mx-auto d-block glow-link-white" src="${request.contextPath}../res/images/quick-tip.png"></a>
+            <a href="#"><img class="rounded mx-auto d-block glow-link-white"
+                             src="${request.contextPath}../res/images/quick-tip.png"></a>
             <hr/>
             <a href="#" class="text-white"><h2>Click here for the CISD Calendar</h2></a>
             <hr/>
-            <a href="#"><img class="img-fluid mx-auto d-block glow-link-white" src="${request.contextPath}../res/images/athletic-schedules.png"></a>
+            <a href="#"><img class="img-fluid mx-auto d-block glow-link-white"
+                             src="${request.contextPath}../res/images/athletic-schedules.png"></a>
             <hr/>
-            <div class="card">
-                <div class="card-header">
+            <button id="upcomingEventsButton" class="btn btn-primary d-none btn-collapse"
+                    type="button" data-toggle="collapse" data-target="#upcomingEventsCollapse"
+                    aria-expanded="false" aria-controls="upcomingEventsCollapse"></button>
+            <div id="upcomingEventsCollapse" class="collapse"></div>
+            <div id="upcomingEventsCard" class="card">
+                <div id="upcomingEventsHeader" class="card-header">
                     <h2>Upcoming Events</h2>
                 </div>
                 <ul class="list-group list-group-flush list-unstyled">
