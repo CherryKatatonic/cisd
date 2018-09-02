@@ -30,6 +30,11 @@ body {
     background-color: #f0ca006b;
     border-radius: 47%;
     box-shadow: 0 0 0 1.2rem #0603aa6b;
+    transition: background-color, box-shadow .15s ease-in-out;
+    transition-property: background-color, box-shadow;
+    transition-duration: 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
 }
 
 #brand-bar {
@@ -87,6 +92,7 @@ body {
     padding: 0.75rem;
     font-weight: 400;
     letter-spacing: .1rem;
+    border-radius: 21px;
     font-family: 'Titillium Web', sans-serif;
 }
 #nav1 a:hover,
@@ -94,7 +100,11 @@ body {
 #nav1 a:focus {
     background-color: #f0ca00;
     color: black;
-    border-radius: 21px;
+    transition: background-color, color .15s ease-in-out;
+    transition-property: background-color, color;
+    transition-duration: 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
 }
 
 
@@ -109,6 +119,11 @@ body {
 }
 #search-input:hover {
     border-color: #f0ca00;
+    transition: background-color .15s ease-in-out;
+    transition-property: background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
 }
 #search-input:focus {
     color: #f0ca00;
@@ -121,6 +136,15 @@ body {
     position: absolute;
     right: 1rem;
     z-index: 703;
+}
+
+.navbar-toggler:hover {
+    border-color: #ffffff50;
+    transition: border-color .15s ease-in-out;
+    transition-property: border-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
 }
 
 #nav2 {
@@ -151,6 +175,11 @@ body {
 #nav2 .nav-link:hover {
     background-color: white;
     color: blue;
+    transition: background-color, color .15s ease-in-out;
+    transition-property: background-color, color;
+    transition-duration: 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
 }
 
 #side-nav {
@@ -172,6 +201,11 @@ body {
 #side-nav .nav-link:hover {
     background-color: #a7a7a766;
     color: #f0ca00;
+    transition: background-color, color .15s ease-in-out;
+    transition-property: background-color, color;
+    transition-duration: 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
 }
 
 #side-nav .dropdown-menu {
@@ -185,6 +219,11 @@ body {
 #side-nav .dropdown-item:hover {
     color: #f0ca00;
     background-color: #a7a7a766;
+    transition: background-color, color .15s ease-in-out;
+    transition-property: background-color, color;
+    transition-duration: 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
 }
 
 #side-nav hr {
@@ -278,6 +317,11 @@ body {
 }
 #upcomingEventsButton:hover {
     background-color: #1769ff;
+    transition: background-color .15s ease-in-out;
+    transition-property: background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
 }
 
 .card-img-overlay {
@@ -286,6 +330,11 @@ body {
 .card-img-overlay:hover {
     background-color: #ffffff25;
     cursor: pointer;
+    transition: background-color .15s ease-in-out;
+    transition-property: background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
 }
 
 .overlay-center {
@@ -350,6 +399,11 @@ a {
 }
 .social-link:hover {
     border: 1px solid #f0ca00;
+    transition: border .15s ease-in-out;
+    transition-property: border;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
 }
 
 .social-link img {
@@ -364,4 +418,9 @@ a {
 }
 #scroll-top-btn:hover {
     background-color: #3d37d2;
+    transition: background-color .15s ease-in-out;
+    transition-property: background-color;
+    transition-duration: 0.15s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
 }
