@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="res/css/animate.css-3.7.0/animate.css">
-    <link href="https://fonts.googleapis.com/css?family=Khula|Titillium+Web:200,400" rel="stylesheet">
+    <link rel="stylesheet" href="res/css/fonts.css">
     <link rel="stylesheet" href="res/css/bootstrap-4.0.0.min.css">
     <link rel="stylesheet" href="res/css/styles.css">
     <link rel="icon" type="image/png" href="res/images/cisd-logo.png">
