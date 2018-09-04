@@ -1,5 +1,5 @@
 html, body {
-    background-color: #fcfcfc;
+    background-color: #EDEDED;
     font-family: 'Titillium Web', sans-serif;
 }
 
@@ -263,9 +263,14 @@ body {
     object-fit: cover;
 }
 
-#global-btns {
+.global-links-abs {
     position: absolute;
     bottom: 25px;
+}
+
+.global-links-rel{
+    background-color: #484848;
+    padding: 20px;
 }
 
 #home-col-left {
