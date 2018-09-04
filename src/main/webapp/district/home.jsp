@@ -2,7 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!-- PHOTO CAROUSEL -->
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<div id="carouselHeader" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img class="d-block w-100" src="${request.contextPath}../res/images/photo1.JPG" alt="First slide">
@@ -20,42 +20,18 @@
             <img class="d-block w-100" src="${request.contextPath}../res/images/photo5.JPG" alt="Fifth slide">
         </div>
     </div>
-    <a class="carousel-control-prev glow-link-white" href="#carouselExampleControls" role="button" data-slide="prev">
+    <a class="carousel-control-prev glow-link-white" href="#carouselHeader" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon p-3" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
     </a>
-    <a class="carousel-control-next glow-link-white" href="#carouselExampleControls" role="button" data-slide="next">
+    <a class="carousel-control-next glow-link-white" href="#carouselHeader" role="button" data-slide="next">
         <span class="carousel-control-next-icon p-3" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
     </a>
-
-    <!-- GLOBAL LINKS -->
-    <div class="container-fluid" id="global-btns">
-        <div class="row">
-            <div class="col-2 text-center">
-                <a class="btn btn-warning glow-link-gold">Email</a>
-            </div>
-            <div class="col-2 text-center">
-                <a class="btn btn-warning glow-link-gold">Grades</a>
-            </div>
-            <div class="col-2 text-center">
-                <a class="btn btn-warning glow-link-gold">Jobs</a>
-            </div>
-            <div class="col-2 text-center">
-                <a class="btn btn-warning glow-link-gold">Menus</a>
-            </div>
-            <div class="col-2 text-center">
-                <a class="btn btn-warning glow-link-gold">One Drive</a>
-            </div>
-            <div class="col-2 text-center">
-                <a class="btn btn-warning glow-link-gold">E-News</a>
-            </div>
-        </div>
-    </div>
 </div>
 
 <!-- MAIN CONTENT -->
-<div class="container-fluid">
+<main class="container-fluid">
     <div class="row">
 
         <!-- LEFT COLUMN -->
@@ -640,4 +616,4 @@
             </div>
         </div>
     </div>
-</div>
+</main>
