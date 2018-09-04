@@ -71,35 +71,6 @@
     </div>
 </div>
 
-<!-- TRANSPARENT NAV -->
-<nav class="navbar navbar-expand-md navbar-dark justify-content-start pb-0 pt-0" id="nav2">
-    <div class="navbar" id="navbar2">
-        <ul id="nav2-links" class="nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">HOME</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">ABOUT US</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">ATHLETICS</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">DEPARTMENTS</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">PARENTS & COMMUNITY</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">STAFF</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">CALENDAR</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
 <!-- MOBILE/RESPONSIVE NAV -->
 <nav id="side-nav" class="nav flex-column bg-dark d-none">
     <hr/>
@@ -163,9 +134,9 @@
             </div>
         </div>
     </div>
-    <div id="scroll-top-btn" class="col-12 d-flex">
+    <button type="button" id="scroll-top-btn" class="btn-block d-flex">
         <img class="m-auto my-auto" src="${request.contextPath}/res/images/up.png">
-    </div>
+    </button>
 </footer>
 
 <!-- SCRIPTS -->
