@@ -420,12 +420,14 @@ a {
     cursor: pointer;
     height: 74px;
     background-color: #0b03aa;
+    border-color: #0b03aa;
 }
 #scroll-top-btn:hover {
     background-color: #3d37d2;
-    transition: background-color .15s ease-in-out;
-    transition-property: background-color;
-    transition-duration: 0.15s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0s;
+    border-color: #433ce8;
+    transition: background-color, border-color .15s ease-in-out;
+    transition-property: background-color, border-color;
+    transition-duration: 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
 }
