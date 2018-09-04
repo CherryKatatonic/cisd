@@ -103,10 +103,28 @@
 <!-- MOBILE/RESPONSIVE NAV -->
 <nav id="side-nav" class="nav flex-column bg-dark d-none">
     <hr/>
+    <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="global-btn-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Global Links
+        </a>
+        <div id="global-link-dropdown" class="dropdown-menu" aria-labelledby="global-btn-dropdown"></div>
+    </div>
 </nav>
 
 <!-- PAGE CONTENT -->
 <c:import url="${campus}/${page}.jsp" />
+
+<!-- GLOBAL LINKS -->
+<div class="container-fluid text-center" id="global-link-container">
+    <div class="btn-group col-md-9 justify-content-center" id="global-link-group">
+        <a class="btn btn-warning glow-link-gold col-md-2">Email</a>
+        <a class="btn btn-warning glow-link-gold col-md-2">Grades</a>
+        <a class="btn btn-warning glow-link-gold col-md-2">Jobs</a>
+        <a class="btn btn-warning glow-link-gold col-md-2">Menus</a>
+        <a class="btn btn-warning glow-link-gold col-md-2">One Drive</a>
+        <a class="btn btn-warning glow-link-gold col-md-2">E-News</a>
+    </div>
+</div>
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -157,54 +175,7 @@
     <script src="${request.contextPath}/res/js/bootstrap-4.0.0.min.js"></script>
 
     <script src="${request.contextPath}/res/js/${page}.js"></script>
-
-    <script>
-        $(document).ready(function() {
-            if (window.innerWidth < 768) {
-                hideNavs();
-            } else {
-                showNavs();
-            }
-        });
-
-        $(window).resize(function() {
-            if (window.innerWidth < 768) {
-                hideNavs();
-            } else {
-                showNavs();
-            }
-        });
-
-        $('#scroll-top-btn').click(function(){
-            $('html, body').animate({ scrollTop: 0 }, 'slow');
-            return false;
-        });
-
-        function hideNavs() {
-            $('#brand-bar-inner').prependTo($('#nav1'));
-            $('#nav2-links').prependTo($('#side-nav'));
-            $('#search-bar').prependTo($('#side-nav'));
-            $('#nav1-links').appendTo($('#side-nav'));
-            $('.nav-item').addClass('w-100');
-            //$('#nav2').removeClass('pt-1 pb-1').addClass('p-0');
-            $('#navbar2').hide();
-        }
-
-        function showNavs() {
-            $('#brand-bar-inner').appendTo($('#brand-bar'));
-            $('#nav2-links').appendTo($('#nav2'));
-            $('#nav1-links').appendTo($('#nav1'));
-            $('#search-bar').appendTo($('#nav1'));
-            $('.nav-item').removeClass('w-100');
-            //$('#nav2').addClass('pt-1 pb-1').removeClass('p-0');
-            $('#navbar2').show();
-        }
-
-        $('#navbar-toggle').click(function() {
-           $('#side-nav').toggleClass('d-none');
-        });
-    </script>
-
+    <script src="${request.contextPath}/res/js/index.js"></script>
 </body>
 
 </html>
