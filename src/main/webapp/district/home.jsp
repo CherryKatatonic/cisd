@@ -1,6 +1,35 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
+<!-- TRANSPARENT NAV -->
+<nav class="navbar navbar-expand-md navbar-dark justify-content-start pb-0 pt-0" id="nav2">
+    <div class="navbar" id="navbar2">
+        <ul id="nav2-links" class="nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="${request.contextPath}/district/home">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="${request.contextPath}/district/about">ABOUT US</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">ATHLETICS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">DEPARTMENTS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">PARENTS & COMMUNITY</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">STAFF</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">CALENDAR</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <!-- PHOTO CAROUSEL -->
 <div id="carouselHeader" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
