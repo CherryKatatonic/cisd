@@ -1,28 +1,31 @@
+var upcomingEventsCard = $('#upcomingEventsCard');
+var upcomingEventsButton = $('#upcomingEventsButton');
+var upcomingEventsHeader = $('#upcomingEventsHeader');
+
 $(window).ready(function() {
     if (window.innerWidth < 768) {
-        hideEvents();
+        collapse();
     } else {
-        showEvents();
+        restore();
     }
 });
 
 $(window).resize(function() {
     if (window.innerWidth < 768) {
-        hideEvents();
+        collapse();
     } else {
-        showEvents();
+        restore();
     }
 });
 
-function hideEvents() {
-    $('#upcomingEventsCard').appendTo($('#upcomingEventsCollapse'));
-    $('#upcomingEventsButton').removeClass('d-none');
-    $('#upcomingEventsHeader').prependTo($('#upcomingEventsButton'));
+function collapse() {
+    upcomingEventsCard.appendTo($('#upcomingEventsCollapse'));
+    upcomingEventsButton.removeClass('d-none');
+    upcomingEventsHeader.prependTo(upcomingEventsButton);
 }
 
-function showEvents() {
-    $('#upcomingEventsCard').appendTo($('#home-col-right'));
-    $('#upcomingEventsButton').addClass('d-none');
-    $('#upcomingEventsHeader').prependTo($('#upcomingEventsCard'));
-
+function restore() {
+    upcomingEventsCard.appendTo($('#home-col-right'));
+    upcomingEventsButton.addClass('d-none');
+    upcomingEventsHeader.prependTo(upcomingEventsCard);
 }
