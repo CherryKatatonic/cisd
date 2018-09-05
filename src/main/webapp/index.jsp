@@ -145,7 +145,7 @@
     <script src="${request.contextPath}/res/js/popper-1.12.9.min.js"></script>
     <script src="${request.contextPath}/res/js/bootstrap-4.0.0.min.js"></script>
 
-    <script src="${request.contextPath}/res/js/${page}.js"></script>
+    <script src="${request.contextPath}/res/js/${campus}/${page}.js"></script>
     <script src="${request.contextPath}/res/js/index.js"></script>
 </body>
 
