@@ -9,3 +9,30 @@ for (var i in sections) {
     document.getElementById('directory-btn-group').appendChild(link);
 }
 
+$(document).ready(function() {
+    if (window.innerWidth < 768) {
+        collapse();
+    } else {
+        restore();
+    }
+});
+
+$(window).resize(function() {
+    if (window.innerWidth < 768) {
+        collapse();
+    } else {
+        restore();
+    }
+});
+
+function collapse() {
+    $('#directory-btn-group').addClass('m-auto pb-4');
+    $('#directory-header').addClass('text-center pt-4');
+    $('#directory-columns').css('column-count', 1);
+}
+
+function restore() {
+    $('#directory-btn-group').removeClass('m-auto pb-4');
+    $('#directory-header').removeClass('text-center pt-4');
+    $('#directory-columns').css('column-count', 3);
+}
