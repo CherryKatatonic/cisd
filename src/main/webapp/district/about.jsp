@@ -30,8 +30,8 @@
     </div>
 </nav>
 
-<main class="container directory-container">
-    <div class="btn-group" id="directory-btn-group"></div>
+<main id="directory-container" class="container directory-container">
+    <div id="directory-btn-group" class="btn-group"></div>
     <h3 id="directory-header">About Us Directory</h3>
     <div id="directory-columns" class="container">
         <ul>
