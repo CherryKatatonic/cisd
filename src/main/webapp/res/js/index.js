@@ -12,7 +12,7 @@ var searchBar = $('#search-bar');
 var brandBarInner = $('#brand-bar-inner');
 
 $(document).ready(function() {
-    if (carousel) {
+    if (carousel.length) {
         globalLinkContainer.appendTo(carousel);
         globalLinkContainer.addClass('global-links-abs');
     } else {
