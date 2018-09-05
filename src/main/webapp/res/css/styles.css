@@ -458,6 +458,7 @@ a {
     float: right;
     flex-wrap: wrap;
     justify-content: center;
+    display: flex;
 }
 #directory-header {
     border-bottom: 2px solid lightgray;
