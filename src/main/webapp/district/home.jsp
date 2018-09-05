@@ -12,19 +12,19 @@
                 <a class="nav-link" href="${request.contextPath}/about">ABOUT US</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">ATHLETICS</a>
+                <a class="nav-link" href="${request.contextPath}/athletics">ATHLETICS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">DEPARTMENTS</a>
+                <a class="nav-link" href="${request.contextPath}/departments">DEPARTMENTS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">PARENTS & COMMUNITY</a>
+                <a class="nav-link" href="${request.contextPath}/community">PARENTS & COMMUNITY</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">STAFF</a>
+                <a class="nav-link" href="${request.contextPath}/staff">STAFF</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">CALENDAR</a>
+                <a class="nav-link" href="${request.contextPath}/calendar">CALENDAR</a>
             </li>
         </ul>
     </div>
