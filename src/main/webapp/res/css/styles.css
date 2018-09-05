@@ -148,12 +148,20 @@ body {
 }
 
 #nav2 {
-    background-color: #00000070;
     padding-left: 11rem;
+    width: 100%;
+}
+
+.nav2-transparent {
+    background-color: #00000070;
     position: absolute;
     top: 100px;
     z-index: 700;
-    width: 100%;
+}
+
+.nav2-dark {
+    background-color: #1d1d1d;
+    position: relative;
 }
 
 #nav2 .nav-item {
@@ -172,8 +180,8 @@ body {
     padding: 16px 20px 12px 20px;
     color: white;
 }
-#nav2 .nav-link:hover {
-    background-color: white;
+#nav2 .nav-link:hover, #nav2 .nav-link.active {
+    background-color: #f8f9fa;
     color: blue;
     transition: background-color, color .15s ease-in-out;
     transition-property: background-color, color;
@@ -430,4 +438,37 @@ a {
     transition-duration: 0.15s, 0.15s;
     transition-timing-function: ease-in-out, ease-in-out;
     transition-delay: 0s, 0s;
+}
+
+.directory-container {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: #f8f9fa
+}
+
+.directory-container .btn-group {
+    margin-right: 1rem;
+    float: right;
+}
+
+.directory-container h3 {
+    border-bottom: 2px solid lightgray;
+    padding-bottom: 6px;
+    padding-left: 2rem;
+    margin-left: 2rem;
+    margin-right: 1rem;
+    text-align: left;
+}
+
+.directory-container .container {
+    column-count: 3;
+    margin-top: 2rem;
+}
+
+.directory-container h5 {
+    border-bottom: 1px solid lightgray;
+}
+
+.directory-container ul ul {
+    list-style: disc;
 }
