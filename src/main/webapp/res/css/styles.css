@@ -12,6 +12,11 @@ body {
     /*margin-bottom: 244px;*/
 }
 
+.btn-primary {
+    background-color: #0b03aa;
+    border: 1px solid #0b03aa;
+}
+
 #main-logo {
     position: absolute;
     top: 20px;
@@ -273,7 +278,10 @@ body {
 
 .global-links-abs {
     position: absolute;
-    bottom: 25px;
+    bottom: 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: #00000070;
 }
 
 .global-links-rel{
@@ -469,6 +477,10 @@ a {
     border-bottom: 1px solid lightgray;
 }
 
-.directory-container ul ul {
+.directory-container ul {
+    list-style: none;
+}
+
+.directory-container ul li ul {
     list-style: disc;
 }
