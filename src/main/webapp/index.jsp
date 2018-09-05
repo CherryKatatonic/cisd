@@ -71,7 +71,7 @@
     </div>
 </div>
 
-<!-- MOBILE/RESPONSIVE NAV -->
+<!-- SIDE NAV -->
 <nav id="side-nav" class="nav flex-column bg-dark d-none">
     <hr/>
     <div class="nav-item dropdown">
@@ -107,7 +107,7 @@
             <div class="col-md-6">
                     <h2 class="brand-name mb-0">CORSICANA ISD</h2>
                     <h6 class="brand-hashtag ml-0 mb-1">#TCC</h6>
-                    <h6>Address:2200 W. 4th Ave. Corsicana, TX 75110</h6>
+                    <h6>Address: 2200 W. 4th Ave. Corsicana, TX 75110</h6>
                     <h6>Phone: (903) 874-7441</h6>
                     <h6>Fax: (903) 874-2454</h6>
             </div>
