@@ -32,9 +32,8 @@
                 <a class="nav-link" href="#">District Home</a>
             </li>
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="schoolsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Schools
-                </a>
+                <a class="nav-link dropdown-toggle" href="#" id="schoolsDropdown"
+                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Schools</a>
                 <div class="dropdown-menu" aria-labelledby="schoolsDropdown">
                     <a class="dropdown-item" href="#">BOWIE ELEMENTARY</a>
                     <a class="dropdown-item" href="#">CARROLL ELEMENTARY</a>
@@ -56,7 +55,8 @@
         </ul>
 
         <form id="search-bar" class="form-inline my-2 my-lg-0 align-content-center">
-            <input id="search-input" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <input id="search-input" class="form-control mr-sm-2"
+                   type="search" placeholder="Search" aria-label="Search">
             <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
         </form>
 
@@ -75,9 +75,8 @@
 <nav id="side-nav" class="nav flex-column bg-dark d-none">
     <hr/>
     <div class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="global-btn-dropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Global Links
-        </a>
+        <a class="nav-link dropdown-toggle" href="#" id="global-btn-dropdown"
+           role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Global Links</a>
         <div id="global-link-dropdown" class="dropdown-menu" aria-labelledby="global-btn-dropdown"></div>
     </div>
 </nav>
@@ -88,11 +87,15 @@
 <!-- GLOBAL LINKS -->
 <div class="container-fluid text-center" id="global-link-container">
     <div class="btn-group col-md-9 justify-content-center" id="global-link-group">
-        <a class="btn btn-warning glow-link-gold col-md-2">Email</a>
-        <a class="btn btn-warning glow-link-gold col-md-2">Grades</a>
-        <a class="btn btn-warning glow-link-gold col-md-2">Jobs</a>
+        <a class="btn btn-warning glow-link-gold col-md-2"
+           target="_blank" href="https://login.microsoftonline.com/">Email</a>
+        <a class="btn btn-warning glow-link-gold col-md-2"
+           target="_blank" href="https://txsuite12.txeis.net/tc175903/Login.aspx">Grades</a>
+        <a class="btn btn-warning glow-link-gold col-md-2"
+           target="_blank" href="https://corsicanaisd.tedk12.com/hire/index.aspx">Jobs</a>
         <a class="btn btn-warning glow-link-gold col-md-2">Menus</a>
-        <a class="btn btn-warning glow-link-gold col-md-2">One Drive</a>
+        <a class="btn btn-warning glow-link-gold col-md-2"
+           target="_blank" href="https://corsicana-my.sharepoint.com/">One Drive</a>
         <a class="btn btn-warning glow-link-gold col-md-2">E-News</a>
     </div>
 </div>
