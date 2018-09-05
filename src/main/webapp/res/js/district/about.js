@@ -26,13 +26,13 @@ $(window).resize(function() {
 });
 
 function collapse() {
-    $('#directory-btn-group').addClass('m-auto pb-4');
-    $('#directory-header').addClass('text-center pt-4');
+    $('#directory-btn-group').addClass('m-auto pb-2 float-none');
+    $('#directory-header').addClass('text-center pt-2 pl-0');
     $('#directory-columns').css('column-count', 1);
 }
 
 function restore() {
-    $('#directory-btn-group').removeClass('m-auto pb-4');
-    $('#directory-header').removeClass('text-center pt-4');
+    $('#directory-btn-group').removeClass('m-auto pb-2 float-none');
+    $('#directory-header').removeClass('text-center pt-2 pl-0');
     $('#directory-columns').css('column-count', 3);
 }
