@@ -448,18 +448,18 @@ a {
     transition-delay: 0s, 0s;
 }
 
-.directory-container {
+#directory-container {
     padding-top: 5rem;
     padding-bottom: 5rem;
     background-color: #f8f9fa
 }
-
-.directory-container .btn-group {
+#directory-btn-group {
     margin-right: 1rem;
     float: right;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-
-.directory-container h3 {
+#directory-header {
     border-bottom: 2px solid lightgray;
     padding-bottom: 6px;
     padding-left: 2rem;
@@ -467,20 +467,16 @@ a {
     margin-right: 1rem;
     text-align: left;
 }
-
-.directory-container .container {
+#directory-columns {
     column-count: 3;
     margin-top: 2rem;
 }
-
-.directory-container h5 {
+#directory-container h5 {
     border-bottom: 1px solid lightgray;
 }
-
-.directory-container ul {
+#directory-container ul {
     list-style: none;
 }
-
-.directory-container ul li ul {
+#directory-columns ul li ul {
     list-style: disc;
 }
