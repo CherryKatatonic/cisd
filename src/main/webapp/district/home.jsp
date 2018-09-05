@@ -2,14 +2,14 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 <!-- TRANSPARENT NAV -->
-<nav class="navbar navbar-expand-md navbar-dark justify-content-start pb-0 pt-0" id="nav2">
+<nav class="navbar navbar-expand-md nav2-transparent justify-content-start pb-0 pt-0" id="nav2">
     <div class="navbar" id="navbar2">
         <ul id="nav2-links" class="nav">
             <li class="nav-item active">
-                <a class="nav-link" href="${request.contextPath}/district/home">HOME</a>
+                <a class="nav-link" href="${request.contextPath}/">HOME</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="${request.contextPath}/district/about">ABOUT US</a>
+                <a class="nav-link" href="${request.contextPath}/about">ABOUT US</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">ATHLETICS</a>
