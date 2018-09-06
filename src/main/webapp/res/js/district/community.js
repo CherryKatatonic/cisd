@@ -39,11 +39,13 @@ if (window.innerWidth < 768) {
     restore();
 }
 
-if (window.innerWidth < 768) {
-    collapse();
-} else {
-    restore();
-}
+$(window).resize(function() {
+    if (window.innerWidth < 768) {
+        collapse();
+    } else {
+        restore();
+    }
+});
 
 function collapse() {
     $('#directory-btn-group').addClass('m-auto pb-2 float-none');
