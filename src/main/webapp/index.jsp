@@ -72,7 +72,7 @@
 </div>
 
 <!-- DYNAMIC NAV -->
-<nav class="navbar navbar-expand-md nav2-transparent justify-content-start pb-0 pt-0" id="nav2">
+<nav class="navbar navbar-expand-md justify-content-start pb-0 pt-0" id="nav2">
     <div class="navbar pt-0 pb-0 pl-3" id="navbar2">
         <ul id="nav2-links" class="nav"></ul>
     </div>
