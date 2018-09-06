@@ -1,35 +1,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
-<!-- TRANSPARENT NAV -->
-<nav class="navbar navbar-expand-md nav2-dark justify-content-start pb-0 pt-0" id="nav2">
-    <div class="navbar" id="navbar2">
-        <ul id="nav2-links" class="nav">
-            <li class="nav-item">
-                <a class="nav-link" href="${request.contextPath}/">HOME</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="${request.contextPath}/about">ABOUT US</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="${request.contextPath}/athletics">ATHLETICS</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="${request.contextPath}/departments">DEPARTMENTS</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="${request.contextPath}/community">PARENTS & COMMUNITY</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="${request.contextPath}/staff">STAFF</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="${request.contextPath}/calendar">CALENDAR</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
 <!-- DIRECTORY LISTING -->
 <main id="directory-container" class="container directory-container">
     <div id="directory-btn-group" class="btn-group"></div>
