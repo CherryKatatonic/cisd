@@ -11,20 +11,18 @@ var navItems = $('.nav-item');
 var searchBar = $('#search-bar');
 var brandBarInner = $('#brand-bar-inner');
 
-$(document).ready(function() {
-    if (carousel.length) {
-        globalLinkContainer.appendTo(carousel);
-        globalLinkContainer.addClass('global-links-abs');
-    } else {
-        globalLinkContainer.addClass('global-links-rel');
-    }
-});
+if (carousel.length) {
+    nav2.addClass('nav2-transparent');
+    globalLinkContainer.appendTo(carousel);
+    globalLinkContainer.addClass('global-links-abs');
+} else {
+    nav2.addClass('nav2-dark');
+    globalLinkContainer.addClass('global-links-rel');
+}
 
-$(document).ready(function() {
-    if (window.innerWidth < 768) {
-        hideNavs();
-    }
-});
+if (window.innerWidth < 768) {
+    hideNavs();
+}
 
 $(window).resize(function() {
     if (window.innerWidth < 768) {
