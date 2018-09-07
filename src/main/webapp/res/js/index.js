@@ -48,7 +48,6 @@ function hideNavs() {
     globalLinkContainer.hide();
     nav1Links.appendTo(sidenav);
     nav2Links.prependTo(sidenav);
-    $('#nav2-links > .dropdown').removeClass('hoverdrop');
     $('#nav2-links > .dropdown > a').addClass('dropdown-toggle').attr('data-toggle', 'dropdown');
     searchBar.prependTo(sidenav);
     navItems.addClass('w-100');
@@ -61,7 +60,6 @@ function showNavs() {
     globalLinkGroup.prependTo(globalLinkContainer);
     globalLinkGroup.removeClass('btn-group-vertical');
     nav2Links.prependTo(nav2);
-    $('#nav2-links > .dropdown').addClass('hoverdrop');
     $('#nav2-links > .dropdown > a').removeClass('dropdown-toggle').attr('data-toggle', '');
     nav1Links.appendTo(nav1);
     searchBar.appendTo(nav1);
