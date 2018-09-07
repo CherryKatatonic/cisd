@@ -35,15 +35,15 @@
                 <a class="nav-link dropdown-toggle" href="#" id="schoolsDropdown"
                    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Schools</a>
                 <div class="dropdown-menu" aria-labelledby="schoolsDropdown">
-                    <a class="dropdown-item" href="#">BOWIE ELEMENTARY</a>
-                    <a class="dropdown-item" href="#">CARROLL ELEMENTARY</a>
-                    <a class="dropdown-item" href="#">FANNIN ELEMENTARY</a>
-                    <a class="dropdown-item" href="#">NAVARRA ELEMENTARY</a>
-                    <a class="dropdown-item" href="#">SAM HOUSTON ELEMENTARY</a>
-                    <a class="dropdown-item" href="#">COLLINS INTERMEDIATE</a>
-                    <a class="dropdown-item" href="#">CORSICANA MIDDLE</a>
-                    <a class="dropdown-item" href="#">CORSICANA HIGH</a>
-                    <a class="dropdown-item" href="#">ATHLETICS</a>
+                    <a class="dropdown-item" href="#">Bowie Elementary</a>
+                    <a class="dropdown-item" href="#">Carroll Elementary</a>
+                    <a class="dropdown-item" href="#">Fannin Elementary</a>
+                    <a class="dropdown-item" href="#">Navarro Elementary</a>
+                    <a class="dropdown-item" href="#">Sam Houston Elementary</a>
+                    <a class="dropdown-item" href="#">Collins Intermediate</a>
+                    <a class="dropdown-item" href="#">Corsicana Middle</a>
+                    <a class="dropdown-item" href="#">Corsicana High</a>
+                    <a class="dropdown-item" href="#">Athletics</a>
                 </div>
             </li>
             <li class="nav-item">
