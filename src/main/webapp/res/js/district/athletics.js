@@ -5,7 +5,7 @@ var dynamicLinks =
     $('<li class="nav-item active">\n' +
         '    <a class="nav-link" href="/athletics">HOME</a>\n' +
         '</li>\n' +
-        '<li class="nav-item dropdown hoverdrop">\n' +
+        '<li class="nav-item dropdown">\n' +
         '    <a class="nav-link" href="#" id="aboutDropdown"' +
         '        role="button" aria-haspopup="true" aria-expanded="false">' +
         '        ABOUT US' +
