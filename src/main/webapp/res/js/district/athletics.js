@@ -7,19 +7,21 @@ var dynamicLinks =
         '</li>\n' +
         '<li class="nav-item dropdown">\n' +
         '    <a class="nav-link" href="#" id="aboutDropdown"' +
-        '        role="button" aria-haspopup="true" aria-expanded="false">' +
-        '        ABOUT US' +
-        '    </a>\n' +
+        '        role="button" aria-haspopup="true" aria-expanded="false">ABOUT US</a>\n' +
         '    <div class="dropdown-menu" aria-labelledby="aboutDropdown">' +
         '        <a class="dropdown-item" href="/athletics/about">Athletic Administration</a>' +
-        '        <a class="dropdown-item" href="#">Sports Medicine - Athletic Training Info</a>' +
+        '        <a class="dropdown-item" href="#">Sports Medicine - Athletic Training Information</a>' +
         '        <a class="dropdown-item" href="#">Advertising at Tiger Stadium</a>' +
         '        <a class="dropdown-item" href="#">Meet the CHS Coaches</a>' +
         '        <a class="dropdown-item" href="#">Meet the CMS Coaches</a>' +
         '    </div>' +
         '</li>\n' +
-        '<li class="nav-item">\n' +
-        '    <a class="nav-link" href="/athletics/booster-club">BOOSTER CLUB</a>\n' +
+        '<li class="nav-item dropdown">\n' +
+        '    <a class="nav-link" href="#" id="boosterClubDropdown"' +
+        '        role="button" aria-haspopup="true" aria-expanded="false">BOOSTER CLUB</a>\n' +
+        '    <div class="dropdown-menu" aria-labelledby="boosterClubDropdown">' +
+        '        <a class="dropdown-item" href="#">Booster Club</a>' +
+        '        <a class="dropdown-item" href="#">UIL Booster Club Guidelines</a>' +
         '</li>\n' +
         '<li class="nav-item">\n' +
         '    <a class="nav-link" href="/athletics/facilities">FACILITIES</a>\n' +
