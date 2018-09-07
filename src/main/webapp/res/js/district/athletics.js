@@ -6,8 +6,8 @@ var dynamicLinks =
         '    <a class="nav-link" href="/athletics">HOME</a>\n' +
         '</li>\n' +
         '<li class="nav-item dropdown hoverdrop">\n' +
-        '    <a class="nav-link" href="#" data-toggle="dropdown"' +
-        '        id="aboutDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' +
+        '    <a class="nav-link" href="#" id="aboutDropdown"' +
+        '        role="button" aria-haspopup="true" aria-expanded="false">' +
         '        ABOUT US' +
         '    </a>\n' +
         '    <div class="dropdown-menu" aria-labelledby="aboutDropdown">' +
