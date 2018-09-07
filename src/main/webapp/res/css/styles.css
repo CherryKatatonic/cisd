@@ -452,6 +452,9 @@ a {
     .footer {
         text-align: center;
     }
+    .dropdown-item {
+        white-space: normal;
+    }
 }
 
 .social-link {
