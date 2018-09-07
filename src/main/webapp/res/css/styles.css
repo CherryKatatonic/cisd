@@ -63,7 +63,7 @@ body {
     font-family: 'Titillium Web', sans-serif;
 }
 
-@media (max-width: 601px) {
+@media (max-width: 720px) {
     .brand-name {
         font-size: 25px;
     }
@@ -221,6 +221,19 @@ body {
     transition-delay: 0s, 0s;
 }
 
+.dropdown-menu {
+    padding: 8px;
+}
+
+li.hoverdrop:hover > .dropdown-menu {
+    display: block;
+}
+
+#nav1 .dropdown-menu {
+    background-color: #3b3b3c;
+    border: 2px groove #4f4f4f;
+}
+
 #side-nav .dropdown-menu {
     background-color: #2a2a2a;
     border: 2px groove #ffc10780;
@@ -229,6 +242,7 @@ body {
 #side-nav .dropdown-item {
     color: #ffffffa8;
 }
+
 #side-nav .dropdown-item:hover {
     color: #f0ca00;
     background-color: #a7a7a766;
@@ -257,12 +271,6 @@ body {
     background-color: #f0ca00;
 }
 
-.dropdown-menu {
-    background-color: #3b3b3c;
-    border: 2px groove #4f4f4f;
-    padding: 8px;
-}
-
 .carousel-inner {
     height: 512px;
 }
@@ -274,6 +282,14 @@ body {
 .carousel-item img {
     height: 100%;
     object-fit: cover;
+}
+
+#global-link-group {
+    color: #212529;
+}
+
+#side-nav #global-link-group {
+    padding: 0;
 }
 
 .global-links-abs {
