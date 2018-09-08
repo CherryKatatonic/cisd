@@ -35,7 +35,7 @@
     <div class="row">
 
         <!-- LEFT COLUMN -->
-        <div class="col-md-8 text-center" style="" id="home-col-left">
+        <div class="col-md-8 text-center" style="" id="col-left">
             <div class="card">
                 <img class="card-img" src="${request.contextPath}../res/images/halle.png">
             </div>
@@ -106,7 +106,7 @@
         </div>
 
         <!-- RIGHT COLUMN -->
-        <div class="col-md-4 text-center" id="home-col-right">
+        <div class="col-md-4 text-center" id="col-right">
             <a href="#"><img class="rounded mx-auto d-block glow-link-white"
                              src="${request.contextPath}../res/images/quick-tip.png"></a>
             <hr/>
