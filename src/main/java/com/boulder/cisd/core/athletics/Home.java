@@ -1,4 +1,4 @@
-package com.boulder.cisd.core.district;
+package com.boulder.cisd.core.athletics;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,12 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @WebServlet("/athletics")
-public class Athletics extends HttpServlet {
+public class Home extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.setAttribute("campus", "district");
-        req.setAttribute("page", "athletics");
+        req.setAttribute("campus", "athletics");
+        req.setAttribute("page", "home");
         req.getRequestDispatcher("index.jsp").forward(req, resp);
     }
 }
