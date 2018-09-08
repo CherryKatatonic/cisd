@@ -119,22 +119,22 @@
                     <h6>Fax: (903) 874-2454</h6>
             </div>
             <div class="col-md-6 text-center">
-                <a href="#" style="text-decoration: none;">
+                <a href="https://twitter.com/CorsicanaISD" style="text-decoration: none;">
                     <div class="social-link d-inline-flex ml-1 mr-1">
                         <img class="my-auto" src="${request.contextPath}/res/images/twitter.png">
                     </div>
                 </a>
-                <a href="#" style="text-decoration: none;">
+                <a href="https://www.flickr.com/photos/cisd/albums" style="text-decoration: none;">
                     <div class="social-link d-inline-flex ml-1 mr-1">
                         <img class="my-auto" src="${request.contextPath}/res/images/flickr.png">
                     </div>
                 </a>
-                <a href="#" style="text-decoration: none;">
+                <a href="https://www.facebook.com/CISDTigers/" style="text-decoration: none;">
                     <div class="social-link d-inline-flex ml-1 mr-1">
                         <img class="my-auto" src="${request.contextPath}/res/images/facebook.png">
                     </div>
                 </a>
-                <a href="#" style="text-decoration: none;">
+                <a href="https://www.youtube.com/channel/UCuCKS5YE0yEaXXZFl7_H4iA" style="text-decoration: none;">
                     <div class="social-link d-inline-flex ml-1 mr-1">
                         <img class="my-auto" src="${request.contextPath}/res/images/youtube.png">
                     </div>
