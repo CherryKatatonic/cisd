@@ -47,7 +47,7 @@ function collapse() {
 }
 
 function restore() {
-    upcomingEventsCard.appendTo($('#home-col-right'));
+    upcomingEventsCard.appendTo($('#col-right'));
     upcomingEventsButton.addClass('d-none');
     upcomingEventsHeader.prependTo(upcomingEventsCard);
 }
