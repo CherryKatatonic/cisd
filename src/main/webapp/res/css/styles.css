@@ -189,7 +189,7 @@ body {
     color: white;
 }
 #nav2 .nav-link:hover, #nav2 .nav-link.active {
-    background-color: #f8f9fa;
+    background-color: #fff;
     color: blue;
     transition: background-color, color .15s ease-in-out;
     transition-property: background-color, color;
@@ -332,43 +332,43 @@ body {
     padding: 20px;
 }
 
-#home-col-left {
+#col-left {
     background-color: #fcfcfc;
     padding: 20px;
     color: #0b03aa;
 }
 
-#home-col-left hr {
+#col-left hr {
     border-top: 2px solid rgba(156, 156, 156, 0.19);
 }
 
-#home-col-left .card {
+#col-left .card {
     border: 2px solid rgba(128, 128, 128, 0.31);
     box-shadow: 0px 0px 14px 2px #00000050;
     margin: 32px;
 }
 
-#home-col-right {
+#col-right {
     background-color: #0b03aa;
     padding: 20px;
     color: white;
     font-family: 'Titillium Web', sans-serif;
 }
 
-#home-col-right hr {
+#col-right hr {
     border-top: 1px solid rgba(255, 255, 255, 0.42);
 }
 
-#home-col-right .card {
+#col-right .card {
     box-shadow: 0px 0px 14px 2px #ffffff66;
     background-color: #0b03aa;
     padding: 12px;
 }
-#home-col-right .card-header {
+#col-right .card-header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.31);
 }
 
-#home-col-right .list-group-item {
+#col-right .list-group-item {
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.31);
     margin-bottom: 0;
