@@ -35,7 +35,7 @@
     <div class="row">
 
         <!-- LEFT COLUMN -->
-        <div class="col-md-8 text-center" style="" id="col-left">
+        <div class="col-md-8 text-center" style="" id="col-lg">
             <div class="card">
                 <div class="card-header">
                     <h4>Cross Country Parent Meeting</h4>
@@ -48,7 +48,7 @@
         </div>
 
         <!-- RIGHT COLUMN -->
-        <div class="col-md-4 text-center" id="col-right">
+        <div class="col-md-4 text-center" id="col-sm">
             <a href="#"><img class="img-fluid mx-auto d-block glow-link-white"
                              src="${request.contextPath}../res/images/athletic-schedules.png"></a>
             <hr/>
