@@ -332,43 +332,43 @@ body {
     padding: 20px;
 }
 
-#col-left {
+#col-lg {
     background-color: #fcfcfc;
     padding: 20px;
     color: #0b03aa;
 }
 
-#col-left hr {
+#col-lg hr {
     border-top: 2px solid rgba(156, 156, 156, 0.19);
 }
 
-#col-left .card {
+#col-lg .card {
     border: 2px solid rgba(128, 128, 128, 0.31);
     box-shadow: 0px 0px 14px 2px #00000050;
     margin: 32px;
 }
 
-#col-right {
+#col-sm {
     background-color: #0b03aa;
     padding: 20px;
     color: white;
     font-family: 'Titillium Web', sans-serif;
 }
 
-#col-right hr {
+#col-sm hr {
     border-top: 1px solid rgba(255, 255, 255, 0.42);
 }
 
-#col-right .card {
+#col-sm .card {
     box-shadow: 0px 0px 14px 2px #ffffff66;
     background-color: #0b03aa;
     padding: 12px;
 }
-#col-right .card-header {
+#col-sm .card-header {
     border-bottom: 1px solid rgba(255, 255, 255, 0.31);
 }
 
-#col-right .list-group-item {
+#col-sm .list-group-item {
     border: none;
     border-bottom: 1px solid rgba(255, 255, 255, 0.31);
     margin-bottom: 0;
