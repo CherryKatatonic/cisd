@@ -8,11 +8,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="res/css/animate.css-3.7.0/animate.css">
-    <link rel="stylesheet" href="res/css/fonts.css">
-    <link rel="stylesheet" href="res/css/bootstrap-4.0.0.min.css">
-    <link rel="stylesheet" href="res/css/styles.css">
-    <link rel="icon" type="image/png" href="res/images/cisd-logo.png">
+    <link rel="stylesheet" href="${request.contextPath}/res/css/animate.css-3.7.0/animate.css">
+    <link rel="stylesheet" href="${request.contextPath}/res/css/fonts.css">
+    <link rel="stylesheet" href="${request.contextPath}/res/css/bootstrap-4.0.0.min.css">
+    <link rel="stylesheet" href="${request.contextPath}/res/css/styles.css">
+    <link rel="icon" type="image/png" href="${request.contextPath}/res/images/cisd-logo.png">
     <title>Corsicana ISD</title>
 </head>
 
@@ -20,7 +20,7 @@
 <!-- TOP NAV -->
 <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-between pb-0" id="nav1">
     <a class="navbar-brand" href="#" id="main-logo">
-        <img src="res/images/cisd-logo.png">
+        <img src="${request.contextPath}/res/images/cisd-logo.png">
     </a>
     <button id="navbar-toggle" class="navbar-toggler" type="button">
         <span class="navbar-toggler-icon"></span>
@@ -71,13 +71,6 @@
     </div>
 </div>
 
-<!-- DYNAMIC NAV -->
-<nav class="navbar navbar-expand-md justify-content-start pb-0 pt-0" id="nav2">
-    <div class="navbar pt-0 pb-0 pl-3" id="navbar2">
-        <ul id="nav2-links" class="nav"></ul>
-    </div>
-</nav>
-
 <!-- SIDE NAV -->
 <nav id="side-nav" class="nav flex-column bg-dark d-none">
     <hr/>
@@ -89,7 +82,7 @@
 </nav>
 
 <!-- PAGE CONTENT -->
-<c:import url="${campus}/${page}.jsp" />
+<c:import url="${request.contextPath}/${campus}/${page}.jsp" />
 
 <!-- GLOBAL LINKS -->
 <div class="container-fluid text-center" id="global-link-container">
