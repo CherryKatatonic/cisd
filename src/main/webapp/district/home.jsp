@@ -1,6 +1,35 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
+<!-- DYNAMIC NAV -->
+<nav class="navbar navbar-expand-md justify-content-start pb-0 pt-0" id="nav2">
+    <div class="navbar pt-0 pb-0 pl-3" id="navbar2">
+        <ul id="nav2-links" class="nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="${request.contextPath}/">HOME</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="${request.contextPath}/about">ABOUT US</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="${request.contextPath}/athletics">ATHLETICS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="${request.contextPath}/departments">DEPARTMENTS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="${request.contextPath}/community">PARENTS & COMMUNITY</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="${request.contextPath}/staff">STAFF</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="${request.contextPath}/calendar">CALENDAR</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
 <!-- PHOTO CAROUSEL -->
 <div id="carouselHeader" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -35,7 +64,7 @@
     <div class="row">
 
         <!-- LEFT COLUMN -->
-        <div class="col-md-8 text-center" style="" id="col-left">
+        <div class="col-md-8 text-center" style="" id="col-lg">
             <div class="card">
                 <img class="card-img" src="${request.contextPath}../res/images/halle.png">
             </div>
@@ -106,7 +135,7 @@
         </div>
 
         <!-- RIGHT COLUMN -->
-        <div class="col-md-4 text-center" id="col-right">
+        <div class="col-md-4 text-center" id="col-sm">
             <a href="#"><img class="rounded mx-auto d-block glow-link-white"
                              src="${request.contextPath}../res/images/quick-tip.png"></a>
             <hr/>
