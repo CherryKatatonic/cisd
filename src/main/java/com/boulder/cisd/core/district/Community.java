@@ -14,6 +14,6 @@ public class Community extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("campus", "district");
         req.setAttribute("page", "community");
-        req.getRequestDispatcher("index.jsp").forward(req, resp);
+        req.getRequestDispatcher("/index.jsp").forward(req, resp);
     }
 }
