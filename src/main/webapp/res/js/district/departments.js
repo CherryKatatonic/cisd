@@ -1,4 +1,4 @@
-var sections = $('h5').get();
+var sections = $('#directory-columns h5').get();
 
 for (var i in sections) {
     var header = sections[i];
