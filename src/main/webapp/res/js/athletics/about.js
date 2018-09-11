@@ -1,0 +1,1 @@
+$('#brand-name-top').text('CORSICANA ATHLETICS');
