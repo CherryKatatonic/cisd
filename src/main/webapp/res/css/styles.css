@@ -16,6 +16,22 @@ body {
     background-color: #0b03aa;
     border: 1px solid #0b03aa;
 }
+.btn-warning {
+    background-color: #f3c029;
+    border: 1px solid goldenrod;
+}
+.btn-outline-warning {
+    color: #f3c029;
+    border-color: #f3c029;
+}
+.btn-outline-warning:hover,
+.btn-outline-warning:focus,
+.btn-outline-warning:active {
+    color: black;
+    background-color: #f3c029;
+    border-color: #f3c029;
+}
+
 
 #main-logo {
     position: absolute;
@@ -32,7 +48,7 @@ body {
 }
 
 #main-logo img:hover {
-    background-color: #f0ca006b;
+    background-color: #f3c0296b;
     border-radius: 47%;
     box-shadow: 0 0 0 1.2rem #0603aa6b;
     transition: background-color, box-shadow .15s ease-in-out;
@@ -76,7 +92,7 @@ body {
 }
 
 .brand-hashtag {
-    color: #f0ca00;
+    color: #f3c029;
     font-size: 18px;
     font-weight: 200;
     font-family: 'Titillium Web', sans-serif;
@@ -95,7 +111,7 @@ body {
     margin-right: 1px;
 }
 #nav1 a {
-    color: #f0ca00;
+    color: #f3c029;
     font-size: 12px;
     padding: 0.75rem;
     font-weight: 400;
@@ -106,7 +122,7 @@ body {
 #nav1 a:hover,
 #nav1 a:active,
 #nav1 a:focus {
-    background-color: #f0ca00;
+    background-color: #f3c029;
     color: black;
     transition: background-color, color .15s ease-in-out;
     transition-property: background-color, color;
@@ -115,29 +131,28 @@ body {
     transition-delay: 0s, 0s;
 }
 
-
 #nav1 ul {
     padding-right: 1rem;
 }
 
-#search-input {
+#nav1 input {
     color: #ffc10780;
     background-color: transparent;
     border-color: #ffc10780;
 }
-#search-input:hover {
-    border-color: #f0ca00;
+#nav1 input:hover {
+    border-color: #f3c029;
     transition: background-color .15s ease-in-out;
     transition-property: background-color;
     transition-duration: 0.15s;
     transition-timing-function: ease-in-out;
     transition-delay: 0s;
 }
-#search-input:focus {
-    color: #f0ca00;
+#nav1 input:focus {
+    color: #f3c029;
     background-color: transparent;
-    border-color: #f0ca00;
-    box-shadow: 0 0 0 0.2rem #f0ca004d;
+    border-color: #f3c029;
+    box-shadow: 0 0 0 0.2rem #f3c0294d;
 }
 
 #navbar-toggle {
@@ -216,7 +231,7 @@ body {
 }
 #side-nav .nav-link:hover {
     background-color: #a7a7a766;
-    color: #f0ca00;
+    color: #f3c029;
     transition: background-color, color .15s ease-in-out;
     transition-property: background-color, color;
     transition-duration: 0.15s, 0.15s;
@@ -231,9 +246,36 @@ body {
 #nav1 .dropdown-menu {
     background-color: #3b3b3c;
     border: 2px groove #4f4f4f;
+    color: #f3c029;
 }
-#nav1 .dropdown-item {
-    text-transform: uppercase;
+#loginDropdownMenu {
+    width: 320px;
+    color: gold;
+}
+#loginDropdownMenu .dropdown-divider {
+    border-top: 1px solid #f3c029c7;
+}
+#loginDropdownMenu h5 {
+    border-bottom: 1px solid #f3c029c7;
+    padding-bottom: 1rem;
+}
+#loginDropdownMenu a {
+    border-radius: 0;
+    text-align: center;
+    margin: 1px;
+    font-size: 14px;
+    font-weight: 400;
+}
+#loginDropdownMenu a:hover,
+#loginDropdownMenu a:focus,
+#loginDropdownMenu a.active {
+    background-color: #a7a7a766;
+    color: #f3c029;
+    transition: background-color, color .15s ease-in-out;
+    transition-property: background-color, color;
+    transition-duration: 0.15s, 0.15s;
+    transition-timing-function: ease-in-out, ease-in-out;
+    transition-delay: 0s, 0s;
 }
 
 #nav2 .dropdown-menu {
@@ -271,7 +313,7 @@ body {
 }
 
 #side-nav .dropdown-item:hover {
-    color: #f0ca00;
+    color: #f3c029;
     background-color: #a7a7a766;
     transition: background-color, color .15s ease-in-out;
     transition-property: background-color, color;
@@ -287,15 +329,6 @@ body {
 
 .bg-dark {
     background-color: #3B3B3C!important;
-}
-
-.btn-outline-warning {
-    color: #f0ca00;
-    border-color: #f0ca00;
-}
-
-.btn-outline-warning:hover {
-    background-color: #f0ca00;
 }
 
 .carousel-inner {
@@ -460,12 +493,12 @@ a {
 .social-link {
     max-height: 50px;
     max-width: 50px;
-    border: 1px solid #f0ca0047;
+    border: 1px solid #f3c02947;
     border-radius: 50%;
     overflow: hidden;
 }
 .social-link:hover {
-    border: 1px solid #f0ca00;
+    border: 1px solid #f3c029;
     transition: border .15s ease-in-out;
     transition-property: border;
     transition-duration: 0.15s;
