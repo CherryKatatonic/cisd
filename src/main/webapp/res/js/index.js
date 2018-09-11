@@ -41,6 +41,17 @@ $('#navbar-toggle').click(function() {
     sidenav.toggleClass('d-none');
 });
 
+$('#loginTablist > a').click(function() {
+    $(this).closest('.dropdown').addClass('active');
+})
+
+$('.dropdown').on('hide.bs.dropdown', function(e) {
+    if ($(this).hasClass('active')){
+        e.preventDefault();
+    }
+    $(this).removeClass('active');
+});
+
 function hideNavs() {
     brandBarInner.prependTo(nav1);
     globalLinkGroup.prependTo($('#global-link-dropdown'));
