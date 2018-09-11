@@ -31,9 +31,11 @@
             <li class="nav-item">
                 <a class="nav-link" href="${request.contextPath}/">District Home</a>
             </li>
+
+            <!-- SCHOOLS DROPDOWN -->
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="schoolsDropdown"
-                   role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Schools</a>
+                <a class="nav-link dropdown-toggle" href="#" id="schoolsDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Schools</a>
                 <div class="dropdown-menu" aria-labelledby="schoolsDropdown">
                     <a class="dropdown-item" href="#">Bowie Elementary</a>
                     <a class="dropdown-item" href="#">Carroll Elementary</a>
@@ -46,11 +48,87 @@
                     <a class="dropdown-item" href="#">Athletics</a>
                 </div>
             </li>
+
             <li class="nav-item">
                 <a class="nav-link" href="#">Translate</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Admin Login</a>
+
+            <!-- LOGIN DROPDOWN -->
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="loginDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin Login</a>
+                <div id="loginDropdownMenu" class="dropdown-menu" aria-labelledby="loginDropdown">
+
+                    <div class="tab-content" id="loginTabContent">
+
+                        <!-- LOGIN FORM -->
+                        <div class="tab-pane fade show active" id="loginForm"
+                             role="tabpanel" aria-labelledby="loginTab">
+                            <form class="px-4 py-3">
+                                <h5 class="text-center">Admin Login</h5>
+                                <div class="form-group">
+                                    <label for="loginEmail">Email</label>
+                                    <input type="email" class="form-control" id="loginEmail" placeholder="example@cisd.org">
+                                </div>
+                                <div class="form-group">
+                                    <label for="loginPassword">Password</label>
+                                    <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                                </div>
+                                <div class="col-12 text-center mt-3">
+                                    <button type="submit" class="btn btn-outline-warning px-4">Sign in</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- SIGNUP FORM -->
+                        <div class="tab-pane fade" id="signupForm"
+                             role="tabpanel" aria-labelledby="signupTab">
+                            <form class="px-4 py-3">
+                                <h5 class="text-center">New Admin</h5>
+                                <div class="form-group">
+                                    <label for="signupEmail">Email</label>
+                                    <input type="email" class="form-control" id="signupEmail" placeholder="example@cisd.org">
+                                </div>
+                                <div class="form-group">
+                                    <label for="signupPassword">Admin Password</label>
+                                    <input type="password" class="form-control" id="signupPassword" placeholder="Admin Password">
+                                </div>
+                                <div class="col-12 text-center mt-3">
+                                    <button type="submit" class="btn btn-outline-warning px-4">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <!-- PASSWORD FORM -->
+                        <div class="tab-pane fade" id="passwordForm"
+                             role="tabpanel" aria-labelledby="passwordTab">
+                            <form class="px-4 py-3">
+                                <h5 class="text-center">Reset Password</h5>
+                                <div class="form-group">
+                                    <label for="passwordEmail">Email</label>
+                                    <input type="email" class="form-control" id="passwordEmail" placeholder="example@cisd.org">
+                                </div>
+                                <div class="form-group">
+                                    <label for="passwordPassword">Admin Password</label>
+                                    <input type="password" class="form-control" id="passwordPassword" placeholder="Admin Password">
+                                </div>
+                                <div class="col-12 text-center mt-3">
+                                    <button type="submit" class="btn btn-outline-warning px-4">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="dropdown-divider"></div>
+                    <div class="nav flex-column nav-pills" id="loginTablist" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="loginTab" data-toggle="pill" href="#loginForm"
+                           role="tab" aria-controls="loginForm" aria-selected="true">Admin Login</a>
+                        <a class="nav-link" id="signupTab" data-toggle="pill" href="#signupForm"
+                           role="tab" aria-controls="signupForm" aria-selected="false">New Admin</a>
+                        <a class="nav-link" id="passwordTab" data-toggle="pill" href="#passwordForm"
+                           role="tab" aria-controls="passwordForm" aria-selected="false">Reset Password</a>
+                    </div>
+                </div>
             </li>
         </ul>
 
