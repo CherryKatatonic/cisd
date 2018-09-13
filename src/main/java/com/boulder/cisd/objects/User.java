@@ -12,7 +12,6 @@ public class User {
     @Id private Long id;
     @Index private String email;
     private String password;
-    private String token;
     private boolean emailVerified;
 
     private User() {}
@@ -21,7 +20,6 @@ public class User {
         this.id = builder.id;
         this.email = builder.email;
         this.password = builder.password;
-        this.token = builder.token;
         this.emailVerified = builder.emailVerified;
     }
 
