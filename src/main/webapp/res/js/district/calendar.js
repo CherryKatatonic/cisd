@@ -15,7 +15,7 @@ $(document).ready(function() {
         },
 
         buttonText: { today: 'Today' },
-        defaultView: 'listWeek',
+        defaultView: 'month',
         defaultDate: '2018-03-12',
         navLinks: true, // can click day/week names to navigate views
         editable: true,
