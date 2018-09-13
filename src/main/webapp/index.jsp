@@ -8,9 +8,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="${request.contextPath}/res/css/animate.css-3.7.0/animate.css">
     <link rel="stylesheet" href="${request.contextPath}/res/css/fonts.css">
-    <link rel="stylesheet" href="${request.contextPath}/res/css/bootstrap-4.0.0.min.css">
+    <link rel="stylesheet" href="${request.contextPath}/res/css/lib/bootstrap-4.0.0.min.css">
     <link rel="stylesheet" href="${request.contextPath}/res/css/styles.css">
     <link rel="icon" type="image/png" href="${request.contextPath}/res/images/cisd-logo.png">
     <title>Corsicana ISD</title>
@@ -64,18 +63,25 @@
                         <!-- LOGIN FORM -->
                         <div class="tab-pane fade show active" id="loginForm"
                              role="tabpanel" aria-labelledby="loginTab">
-                            <form class="px-4 py-3">
+                            <form action="${request.contextPath}/login" method="post" class="px-4 py-3">
                                 <h5 class="text-center">Admin Login</h5>
+                                <label for="loginForm">${loginMessage}</label>
+                                <label for="loginForm">${loginError}</label>
+                                <c:remove var="loginMessage" scope="session"/>
+                                <c:remove var="loginError" scope="session"/>
                                 <div class="form-group">
                                     <label for="loginEmail">Email</label>
-                                    <input type="email" class="form-control" id="loginEmail" placeholder="example@cisd.org">
+                                    <input type="email" class="form-control" id="loginEmail"
+                                           name="email" placeholder="example@cisd.org" value="${loginEmail}">
+                                    <c:remove var="loginEmail" scope="session"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="loginPassword">Password</label>
-                                    <input type="password" class="form-control" id="loginPassword" placeholder="Password">
+                                    <input type="password" class="form-control" id="loginPassword"
+                                           name="password" placeholder="Password">
                                 </div>
                                 <div class="col-12 text-center mt-3">
-                                    <button type="submit" class="btn btn-outline-warning px-4">Sign in</button>
+                                    <button id="loginSubmit" type="submit" class="btn btn-outline-warning px-4">Sign in</button>
                                 </div>
                             </form>
                         </div>
@@ -83,18 +89,26 @@
                         <!-- SIGNUP FORM -->
                         <div class="tab-pane fade" id="signupForm"
                              role="tabpanel" aria-labelledby="signupTab">
-                            <form class="px-4 py-3">
+                            <form action="${request.contextPath}/signup" method="post" class="px-4 py-3">
                                 <h5 class="text-center">New Admin</h5>
+                                <label for="signupForm">${signupMessage}</label>
+                                <label for="signupForm">${signupError}</label>
+                                <c:remove var="signupMessage" scope="session"/>
+                                <c:remove var="signupError" scope="session"/>
                                 <div class="form-group">
                                     <label for="signupEmail">Email</label>
-                                    <input type="email" class="form-control" id="signupEmail" placeholder="example@cisd.org">
+                                    <input type="email" class="form-control" id="signupEmail"
+                                           name="email" placeholder="example@cisd.org" value="${signupEmail}">
+                                    <label
+                                    <c:remove var="signupEmail" scope="session"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="signupPassword">Admin Password</label>
-                                    <input type="password" class="form-control" id="signupPassword" placeholder="Admin Password">
+                                    <input type="password" class="form-control" id="signupPassword"
+                                           name="password" placeholder="Admin Password">
                                 </div>
                                 <div class="col-12 text-center mt-3">
-                                    <button type="submit" class="btn btn-outline-warning px-4">Submit</button>
+                                    <button id="signupSubmit" type="submit" class="btn btn-outline-warning px-4">Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -102,18 +116,25 @@
                         <!-- PASSWORD FORM -->
                         <div class="tab-pane fade" id="passwordForm"
                              role="tabpanel" aria-labelledby="passwordTab">
-                            <form class="px-4 py-3">
+                            <form action="${request.contextPath}/reset-password" method="post" class="px-4 py-3">
                                 <h5 class="text-center">Reset Password</h5>
+                                <label for="passwordForm">${passwordMessage}</label>
+                                <label for="passwordForm">${passwordError}</label>
+                                <c:remove var="passwordMessage" scope="session"/>
+                                <c:remove var="passwordError" scope="session"/>
                                 <div class="form-group">
                                     <label for="passwordEmail">Email</label>
-                                    <input type="email" class="form-control" id="passwordEmail" placeholder="example@cisd.org">
+                                    <input type="email" class="form-control" id="passwordEmail"
+                                           name="email" placeholder="example@cisd.org" value="${passwordEmail}">
+                                    <c:remove var="passwordEmail" scope="session"/>
                                 </div>
                                 <div class="form-group">
                                     <label for="passwordPassword">Admin Password</label>
-                                    <input type="password" class="form-control" id="passwordPassword" placeholder="Admin Password">
+                                    <input type="password" class="form-control" id="passwordPassword"
+                                           name="password" placeholder="Admin Password">
                                 </div>
                                 <div class="col-12 text-center mt-3">
-                                    <button type="submit" class="btn btn-outline-warning px-4">Submit</button>
+                                    <button id="passwordSubmit" type="submit" class="btn btn-outline-warning px-4">Submit</button>
                                 </div>
                             </form>
                         </div>
@@ -222,12 +243,20 @@
 
 <!-- SCRIPTS -->
     <!-- Required script tags for Bootstrap -->
-    <script src="${request.contextPath}/res/js/jquery-3.3.1.min.js"></script>
-    <script src="${request.contextPath}/res/js/popper-1.12.9.min.js"></script>
-    <script src="${request.contextPath}/res/js/bootstrap-4.0.0.min.js"></script>
+    <script src="${request.contextPath}/res/js/lib/jquery-3.3.1.min.js"></script>
+    <script src="${request.contextPath}/res/js/lib/popper-1.12.9.min.js"></script>
+    <script src="${request.contextPath}/res/js/lib/bootstrap-4.0.0.min.js"></script>
+
+    <c:if test="${page == 'calendar'}">
+        <script src='${request.contextPath}/res/js/lib/moment.min.js'></script>
+        <script src='${request.contextPath}/res/js/lib/jquery-ui.min.js'></script>
+        <script src='${request.contextPath}/res/js/lib/fullcalendar.min.js'></script>
+    </c:if>
 
     <script src="${request.contextPath}/res/js/${campus}/${page}.js"></script>
     <script src="${request.contextPath}/res/js/index.js"></script>
+    <script>${script}</script>
+    <c:remove var="script" scope="session"/>
 </body>
 
 </html>
