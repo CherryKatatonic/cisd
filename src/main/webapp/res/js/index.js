@@ -78,3 +78,21 @@ function showNavs() {
     navbar2.show();
 }
 
+$('#loginEmail, #loginPassword').keyup(function() {
+    if($('#loginEmail').val().length > 0 && $('#loginPassword').val().length >= 8) {
+        $('#loginSubmit').prop('disabled', false);
+    } else {
+        $('#loginSubmit').prop('disabled', true);
+    }
+});
+
+var emailRex = new RegExp("[a-zA-Z0-9._%+-]+@cisd.org$");
+
+$('#signupEmail, #signupPassword').keyup(function() {
+    if(!emailRex.test($('#signupEmail').val())) {
+        $('#signupError')
+        $('#signupSubmit').prop('disabled', true);
+    } else {
+        $('#signupSubmit').prop('disabled', false);
+    }
+});
