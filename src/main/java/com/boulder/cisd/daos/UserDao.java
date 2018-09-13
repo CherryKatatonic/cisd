@@ -1,5 +1,6 @@
 package com.boulder.cisd.daos;
 
+import com.boulder.cisd.objects.Hash;
 import com.boulder.cisd.objects.User;
 import com.googlecode.objectify.Key;
 import com.googlecode.objectify.cmd.Query;
@@ -32,5 +33,9 @@ public class UserDao {
 
     public void deleteUser(Long id) {
         ofy().delete().key(Key.create(User.class, id)).now();
+    }
+
+    public String getAdminPass() {
+        return ofy().load().key(Key.create(Hash.class, "adminPass")).now().getContent();
     }
 }
