@@ -36,5 +36,8 @@
 </nav>
 
 <div class="container pt-3 pb-3 px-0 mx-auto bg-white">
+    <div class="btn-group">
+        <button class="btn btn-primary">New Event</button>
+    </div>
     <div id='calendar' class="p-5 w-100 bg-white"></div>
 </div>
