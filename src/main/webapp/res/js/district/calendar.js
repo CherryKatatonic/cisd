@@ -1,22 +1,48 @@
 $(document).ready(function() {
-    $('#calendar').fullCalendar({
+    var calendar = $('#calendar');
+    calendar.fullCalendar({
+        customButtons: {
+            refresh: {
+                text: 'Refresh',
+                click: function () {
+                    calendar.fullCalendar('refetchEvents');
+                }
+            }
+        },
         header: {
-            left: 'today',
+            left: 'today refresh',
             center: 'prev title next',
             right: 'listDay,listWeek,month'
         },
 
         views: {
-            listDay: { buttonText: 'Day', titleFormat: 'MMM D' },
-            listWeek: { buttonText: 'Week', titleFormat: 'MMM D' },
-            month: { buttonText: 'Month', titleFormat: 'MMMM YYYY' },
+            listDay: {buttonText: 'Day', titleFormat: 'MMM D'},
+            listWeek: {buttonText: 'Week', titleFormat: 'MMM D'},
+            month: {buttonText: 'Month', titleFormat: 'MMMM YYYY'}
         },
 
-        buttonText: { today: 'Today' },
+        buttonText: {today: 'Today'},
         defaultView: 'month',
         navLinks: true,
         editable: true,
         eventLimit: true,
-        events: '/ical-feed?id=district'
+        resources: {
+            url: '/res/files/resources.json',
+            error: function (error) {
+                console.log(error)
+            },
+            success: function(data) {
+                console.log(data);
+            }
+        },
+        events: {
+            url: '/ical-feed?id=district',
+            error: function(error) {
+                console.log(error)
+            },
+            success: function(data) {
+                console.log(data);
+            }
+        }
     });
 });
