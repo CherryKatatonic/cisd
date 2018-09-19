@@ -23,6 +23,8 @@ public class ICalFeed extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+
+        // GET TARGET CALENDAR AND FILE URL
         CalendarDao dao = (CalendarDao) getServletContext().getAttribute("calDao");
         String id = req.getParameter("id");
         Calendar cal = dao.getCalendar(id);
@@ -30,6 +32,7 @@ public class ICalFeed extends HttpServlet {
         File file = new File(cal.getIcsUrl());
         new File(System.getenv("CATALINA_BASE") + "/storage/calendars").mkdirs();
 
+        // CREATE iCAL FILE IF ONE DOES NOT EXIST
         if (file.createNewFile()) {
             cal.setIcsUrl(file.getPath());
             ICalendar ical = new ICalendar();
@@ -39,16 +42,19 @@ public class ICalFeed extends HttpServlet {
             ical.write(file);
         }
 
+        // SET UP RESPONSE
         resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
         PrintWriter out = resp.getWriter();
 
+        // PREPARE TO MAP iCAL EVENTS
         TimeZone tz = TimeZone.getTimeZone("America/Chicago");
-        DateFormat df = new SimpleDateFormat("yyyy-MM-dd"); // Quoted "Z" to indicate UTC, no timezone offset
+        DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         df.setTimeZone(tz);
         List<Map> events = new ArrayList<>();
         ICalendar ical = Biweekly.parse(file).first();
 
+        // MAP iCAL EVENTS INTO ARRAY
         for (VEvent event : ical.getEvents()) {
             Map<String, Object> map = new HashMap<>();
             map.put("id", event.getUid().getValue());
@@ -57,6 +63,7 @@ public class ICalFeed extends HttpServlet {
             events.add(map);
         }
 
+        // RETURN ARRAY OF iCAL EVENTS
         out.print(new Gson().toJson(events));
         out.flush();
         out.close();
