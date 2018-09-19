@@ -97,7 +97,7 @@
                                     <label for="signupEmail">Email</label>
                                     <input type="email" class="form-control" id="signupEmail"
                                            name="email" placeholder="example@cisd.org" value="${signupEmail}">
-                                    <label
+
                                     <c:remove var="signupEmail" scope="session"/>
                                 </div>
                                 <div class="form-group">
@@ -110,34 +110,36 @@
                                 </div>
                             </form>
                         </div>
+
+                        <div class="tab-pane fade" id="passwordForm" role="tabpanel" aria-labelledby="passwordTab">
+                            <form action="${request.contextPath}/reset-password" method="post" class="px-4 py-3">
+                                <h5 class="text-center">Reset Password</h5>
+                                <label for="passwordForm">${passwordMessage}</label>
+                                <label for="passwordForm">${passwordError}</label>
+                                <c:remove var="passwordMessage" scope="session"/>
+                                <c:remove var="passwordError" scope="session"/>
+                                <div class="form-group">
+                                    <label for="passwordEmail">Email</label>
+                                    <input type="email" class="form-control" id="passwordEmail"
+                                           name="email" placeholder="example@cisd.org" value="${passwordEmail}">
+                                    <c:remove var="passwordEmail" scope="session"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="passwordPassword">Admin Password</label>
+                                    <input type="password" class="form-control" id="passwordPassword"
+                                           name="password" placeholder="Admin Password">
+                                </div>
+                                <div class="col-12 text-center mt-3">
+                                    <button id="passwordSubmit" type="submit" class="btn btn-outline-warning px-4">Submit</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                     <!-- Password form had to be moved outside of the tabcontent div because it
                      suddenly started putting itself inside of the signup form for some unknown reason.
                      If it ever starts acting normal again, put it back in the tabconent div. -->
                     <!-- PASSWORD FORM -->
-                    <div class="tab-pane fade" id="passwordForm" role="tabpanel" aria-labelledby="passwordTab">
-                        <form action="${request.contextPath}/reset-password" method="post" class="px-4 py-3">
-                            <h5 class="text-center">Reset Password</h5>
-                            <label for="passwordForm">${passwordMessage}</label>
-                            <label for="passwordForm">${passwordError}</label>
-                            <c:remove var="passwordMessage" scope="session"/>
-                            <c:remove var="passwordError" scope="session"/>
-                            <div class="form-group">
-                                <label for="passwordEmail">Email</label>
-                                <input type="email" class="form-control" id="passwordEmail"
-                                       name="email" placeholder="example@cisd.org" value="${passwordEmail}">
-                                <c:remove var="passwordEmail" scope="session"/>
-                            </div>
-                            <div class="form-group">
-                                <label for="passwordPassword">Admin Password</label>
-                                <input type="password" class="form-control" id="passwordPassword"
-                                       name="password" placeholder="Admin Password">
-                            </div>
-                            <div class="col-12 text-center mt-3">
-                                <button id="passwordSubmit" type="submit" class="btn btn-outline-warning px-4">Submit</button>
-                            </div>
-                        </form>
-                    </div>
+
                     <div class="dropdown-divider"></div>
                     <div class="nav flex-column nav-pills" id="loginTablist" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="loginTab" data-toggle="pill" href="#loginForm"
