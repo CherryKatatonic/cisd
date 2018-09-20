@@ -12,6 +12,16 @@ body {
     /*margin-bottom: 244px;*/
 }
 
+fieldset {
+    border: 1px solid #ced4da;
+    min-width: 0;
+}
+
+legend {
+    max-width: 90%;
+    white-space: normal!important;
+}
+
 .btn-primary {
     background-color: #0b03aa;
     border: 1px solid #0b03aa;
