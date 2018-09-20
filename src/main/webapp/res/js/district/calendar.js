@@ -45,4 +45,11 @@ $(document).ready(function() {
             }
         }
     });
+
+    $('#eventStartDate, #eventEndDate').datepicker();
+
+    $('.hasDatepicker').click(function() {
+        $('.ui-datepicker').css('z-index', $.topZIndex() + 1);
+    });
+
 });
