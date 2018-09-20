@@ -47,6 +47,7 @@ $(document).ready(function() {
     });
 
     $('#eventStartDate, #eventEndDate').datepicker();
+    $('#allDay, #recurring').checkboxradio();
 
     $('.hasDatepicker').click(function() {
         $('.ui-datepicker').css('z-index', $.topZIndex() + 1);
