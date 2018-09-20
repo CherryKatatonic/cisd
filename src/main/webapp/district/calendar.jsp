@@ -35,7 +35,7 @@
     </div>
 </nav>
 
-<div class="container pt-3 pb-3 px-0 mx-auto bg-white">
+<div class="container pt-3 pb-3 px-0 mx-auto bg-white text-center">
     <div class="btn-group">
         <button id="addEvent" type="button" class="btn btn-primary" data-toggle="modal" data-target="#eventForm">
             New Event
@@ -56,21 +56,136 @@
             </div>
             <form action="${request.contextPath}/calendar" method="post" enctype="multipart/form-data">
                 <div class="modal-body">
-                    <%--<div class="form-group">
-                        <label for="eventTitle">Title</label>
-                        <input type="text" class="form-control" id="eventTitle" placeholder="Title" name="title">
-                    </div>
-                    <div class="form-check">
-                        <label for="eventAllDay">All Day?</label>
-                        <input type="checkbox" class="form-check-input" id="eventAllDay" value="" name="allDay">
-                    </div>
-                    <br>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="albumCover" name="file">
-                        <label class="custom-file-label" for="albumCover">Cover Photo</label>
-                    </div>--%>
+                    <!-- CALENDARS -->
+                    <fieldset class="form-group pr-0" id="calendarsContainer">
+                        <legend class="input-group-text mb-3 justify-content-center">
+                            Which calendars should this event be added to?
+                        </legend>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" value="" name="athletics" id="athletics">
+                                    <label class="custom-control-label" for="athletics">Athletics</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" value="" name="carroll" id="carroll">
+                                    <label class="custom-control-label" for="carroll">Carroll Elementary</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" value="" name="chs" id="chs">
+                                    <label class="custom-control-label" for="chs">Corsicana High School</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" value="" name="cms" id="cms">
+                                    <label class="custom-control-label" for="cms">Corsicana Middle School</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" value="" name="navarro" id="navarro">
+                                    <label class="custom-control-label" for="navarro">Navarro Elementary</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" value="" name="bowie" id="bowie">
+                                    <label class="custom-control-label" for="bowie">Bowie Elementary</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" value="" name="collins" id="collins">
+                                    <label class="custom-control-label" for="collins">Collins Intermediate</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" value="" name="district" id="district" checked disabled>
+                                    <label class="custom-control-label" for="district">Corsicana ISD</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" value="" name="fannin" id="fannin">
+                                    <label class="custom-control-label" for="fannin">Fannin Elementary</label>
+                                </div>
+                                <div class="custom-control custom-checkbox">
+                                    <input class="custom-control-input" type="checkbox" value="" name="samHouston" id="samHouston">
+                                    <label class="custom-control-label" for="samHouston">Sam Houston Elementary</label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <!-- TITLE/SUMMARY -->
+                    <fieldset class="form-group">
+                        <legend class="input-group-text justify-content-center">Title/Summary</legend>
+                        <input type="text" class="form-control" id="eventTitle" placeholder="Title/Summary" name="title">
+                    </fieldset>
+                    <!-- ALL DAY CHECK -->
+                    <fieldset class="form-group mx-auto my-4" style="width: fit-content">
+                        <legend class="input-group-text justify-content-center">All-Day/Multi-Day</legend>
+                        <div class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox" value="" name="allDay" id="allDay">
+                            <label class="custom-control-label" for="allDay">
+                                Check if this is an all-day event
+                            </label>
+                        </div>
+                    </fieldset>
+                    <!-- START DATE -->
+                    <fieldset class="form-group">
+                        <legend class="input-group-text justify-content-center">Date & Time</legend>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <label for="eventStartDate" class="input-group-text">Start Date</label>
+                                        </div>
+                                        <input type="text" class="form-control" id="eventStartDate" placeholder="mm/dd/yyyy" name="startDate">
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="input-group-prepend">
+                                        <label for="eventStartTime" class="input-group-text">Start Time</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <input type="text" class="form-control" id="eventStartTime" placeholder="0:00" name="startTime">
+                                </div>
+                                <%--<div class="col-md-6">
+                                    <div class="input-group justify-content-center">
+                                        <label for="eventStartDate" class="input-group-text">Start Date</label>
+                                    </div>
+                                    <input type="text" class="form-control" id="eventStartDate" placeholder="mm/dd/yyyy" name="startDate">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group justify-content-center">
+                                        <label for="eventStartTime" class="input-group-text">Start Time</label>
+                                    </div>
+                                    <input type="text" class="form-control" id="eventStartTime" placeholder="0:00" name="startTime">
+                                </div>--%>
+                            </div>
+                            <hr/>
+                            <div class="row mt-2">
+                                <div class="col-md-6">
+                                    <div class="input-group justify-content-center">
+                                        <label for="eventEndDate" class="input-group-text">End Date</label>
+                                    </div>
+                                    <input type="text" class="form-control" id="eventEndDate" placeholder="mm/dd/yyyy" name="endDate">
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="input-group justify-content-center">
+                                        <label for="eventEndTime" class="input-group-text">&nbsp;End Time&nbsp;</label>
+                                    </div>
+                                    <input type="text" class="form-control" id="eventEndTime" placeholder="0:00" name="endTime">
+                                </div>
+                            </div>
+                    </fieldset>
+                    <!-- DESCRIPTION -->
                     <div class="form-group">
-                        <input type="hidden" id="calendarId" name="id" value="district">
+                        <div class="input-group">
+                            <label class="input-group-text" for="eventDescription">Description (optional)</label>
+                        </div>
+                        <input type="text" class="form-control" id="eventDescription" placeholder="Event description" name="description">
+                    </div>
+                    <!-- LOCATION -->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <label class="input-group-text" for="eventLocation">Location (optional)</label>
+                        </div>
+                        <input type="text" class="form-control" id="eventLocation" placeholder="Event location" name="location">
                     </div>
                 </div>
                 <div class="modal-footer">
