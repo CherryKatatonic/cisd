@@ -20,6 +20,7 @@ fieldset {
 legend {
     max-width: 90%;
     white-space: normal!important;
+    margin-bottom: .5rem!important;
 }
 
 .btn-primary {
