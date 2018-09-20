@@ -571,3 +571,9 @@ a {
 #directory-columns ul li ul {
     list-style: disc;
 }
+
+.checkbox-center {
+    margin: auto auto 1.5rem;
+    width: fit-content;
+    display: block;
+}
