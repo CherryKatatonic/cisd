@@ -5,6 +5,7 @@
 <head>
     <link href='${request.contextPath}/res/css/lib/fullcalendar-3.9.0.min.css' rel='stylesheet' />
     <link href='${request.contextPath}/res/css/lib/fullcalendar-3.9.0.print.css' rel='stylesheet' media='print' />
+    <link href='${request.contextPath}/res/css/lib/bootstrap-timepicker.css' rel='stylesheet' />
 </head>
 
 <!-- DYNAMIC NAV -->
@@ -52,8 +53,8 @@
 </div>
 
 <!-- NEW EVENT FORM -->
-<div class="modal fade" id="eventForm" tabindex="-1" role="dialog" aria-labelledby="formTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade pr-0" id="eventForm" tabindex="-1" role="dialog" aria-labelledby="formTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document" style="max-width: 524px;">
         <div class="modal-content modal-content-dark">
 
             <div class="modal-header modal-header-dark">
@@ -147,7 +148,7 @@
                         <div class="row">
 
                             <!-- START DATE -->
-                            <div class="col-sm-7">
+                            <div class="col-sm-6">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <label for="eventStartDate" class="input-group-text">Start Date</label>
@@ -157,7 +158,7 @@
                             </div>
 
                             <!-- START TIME -->
-                            <div class="col-sm-5">
+                            <div class="col-sm-6">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <label for="eventStartTime" class="input-group-text">Start Time</label>
@@ -174,7 +175,7 @@
                         <div class="row mt-2">
 
                             <!-- END DATE -->
-                            <div class="col-sm-7">
+                            <div class="col-sm-6">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <label for="eventEndDate" class="input-group-text">&nbsp;End Date&nbsp;</label>
@@ -184,7 +185,7 @@
                             </div>
 
                             <!-- END TIME -->
-                            <div class="col-sm-5">
+                            <div class="col-sm-6">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
                                         <label for="eventEndTime" class="input-group-text">&nbsp;End Time&nbsp;</label>
