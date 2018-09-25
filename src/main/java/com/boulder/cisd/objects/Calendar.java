@@ -1,47 +1,29 @@
 package com.boulder.cisd.objects;
 
-import biweekly.ICalVersion;
 import biweekly.ICalendar;
-import biweekly.io.TimezoneAssignment;
-import biweekly.io.TimezoneInfo;
-import biweekly.property.CalendarScale;
-import biweekly.property.ProductId;
-import biweekly.property.Uid;
-import biweekly.util.Duration;
-import com.boulder.cisd.util.StorageHelper;
+import com.boulder.cisd.util.CloudStorageHelper;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 
+import javax.servlet.ServletException;
 import java.io.IOException;
-import java.util.Date;
-import java.util.TimeZone;
 
 @Entity
 public class Calendar {
 
     @Id private String id;
     private String icsUrl;
+    private String blobName;
 
     private Calendar() {}
 
-    public Calendar(String id, ICalendar ical) throws IOException {
+    public Calendar(String id, ICalendar ical) throws IOException, ServletException {
         this.id = id;
-        ical.setVersion(ICalVersion.V2_0);
-        ical.setProductId(ProductId.biweekly());
-        ical.setCalendarScale(CalendarScale.gregorian());
-        ical.setUid(Uid.random());
-        ical.setLastModified(new Date());
-        ical.setRefreshInterval(Duration.builder().hours(6).build());
-        TimezoneInfo tzi = new TimezoneInfo();
-        tzi.setDefaultTimezone(TimezoneAssignment.download(TimeZone.getTimeZone("America/Chicago"), true));
-        ical.setTimezoneInfo(tzi);
-        this.icsUrl = StorageHelper.getCalendarUrl(id, ical);
-        ical.setSource(icsUrl);
+        this.icsUrl = new CloudStorageHelper().saveCalendar(id, ical);
+        this.blobName = icsUrl.substring(icsUrl.indexOf("/o/") + 3, icsUrl.indexOf("?generation"));
     }
 
-    public String getId() {
-        return id;
-    }
+    public String getId() { return id; }
 
     public void setId(String id) {
         this.id = id;
@@ -53,5 +35,13 @@ public class Calendar {
 
     public void setIcsUrl(String icsUrl) {
         this.icsUrl = icsUrl;
+    }
+
+    public String getBlobName() {
+        return blobName;
+    }
+
+    public void setBlobName(String blobName) {
+        this.blobName = blobName;
     }
 }
