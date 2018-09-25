@@ -20,21 +20,6 @@ import java.util.TimeZone;
 
 public class CalendarHelper {
 
-    /*@Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        CalendarDao calDao = (CalendarDao) getServletContext().getAttribute("calDao");
-        UserDao userDao = (UserDao) getServletContext().getAttribute("userDao");
-        String referrer = req.getHeader("referer"),
-            action = req.getParameter("action");
-
-        switch (action) {
-            case "create-event": createEvent(req, resp);
-                break;
-            case "create-calendar": createCalendar(req, resp);
-                break;
-        }
-    }*/
-
     public static ICalendar createCalendar(String name) {
         ICalendar ical = new ICalendar();
         ical.setName(name);
