@@ -11,7 +11,7 @@ public class CalendarDao {
         return ofy().load().key(Key.create(Calendar.class, id)).now();
     }
 
-    public Calendar createCalendar(Calendar cal) {
+    public Calendar saveCalendar(Calendar cal) {
         Key<Calendar> key = ofy().save().entity(cal).now();
         return ofy().load().key(key).now();
     }
