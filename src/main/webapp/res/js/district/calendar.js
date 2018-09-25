@@ -36,7 +36,7 @@ $(document).ready(function() {
             }
         },
         events: {
-            url: '/ical-feed?id=district',
+            url: '/ical/district/events',
             error: function(error) {
                 console.log(error)
             },
