@@ -18,7 +18,7 @@ import java.time.Instant;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class CalendarWorker {
+public class CalendarHelper {
 
     /*@Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
