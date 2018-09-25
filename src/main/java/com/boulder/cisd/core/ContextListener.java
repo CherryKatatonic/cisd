@@ -49,8 +49,5 @@ public class ContextListener implements ServletContextListener {
             return null;
         });
 
-        System.out.println(e.getServletContext().getContextPath());
-        System.out.println(System.getenv("STORAGE_PATH"));
-
     }
 }
