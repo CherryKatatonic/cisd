@@ -1,9 +1,12 @@
 package com.boulder.cisd.util;
 
+import biweekly.Biweekly;
+import biweekly.ICalendar;
 import com.google.cloud.storage.Acl;
 import com.google.cloud.storage.BlobInfo;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
+import org.apache.commons.io.IOUtils;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
@@ -13,6 +16,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -20,11 +24,11 @@ import java.util.Arrays;
 
 public class CloudStorageHelper {
 
+    private final String bucket = System.getenv("BUCKET_NAME");
     private static Storage storage = null;
     static { storage = StorageOptions.getDefaultInstance().getService(); }
 
-    @SuppressWarnings("deprecation")
-    public String uploadFile(Part filePart, final String bucketName) throws IOException {
+    private String uploadFile(Part filePart) throws IOException {
         DateTimeFormatter dtf = DateTimeFormat.forPattern("-YYYY-MM-dd-HHmmssSSS");
         DateTime dt = DateTime.now(DateTimeZone.UTC);
         String dtString = dt.toString(dtf);
@@ -32,14 +36,14 @@ public class CloudStorageHelper {
 
         BlobInfo blobInfo = storage.create(
                 BlobInfo
-                        .newBuilder(bucketName, fileName)
+                        .newBuilder(bucket, fileName)
                         .setAcl(new ArrayList<>(Arrays.asList(Acl.of(Acl.User.ofAllUsers(), Acl.Role.READER))))
                         .build(),
-                filePart.getInputStream());
+                IOUtils.toByteArray(filePart.getInputStream()));
         return blobInfo.getMediaLink();
     }
 
-    public String getImageUrl(HttpServletRequest req, HttpServletResponse resp, final String bucket)
+    public String getImageUrl(HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
         Part filePart = req.getPart("file");
         final String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
@@ -52,12 +56,28 @@ public class CloudStorageHelper {
             String[] allowedExt = {"jpg", "jpeg", "png", "gif"};
             for (String s : allowedExt) {
                 if (extension.equals(s)) {
-                    return this.uploadFile(filePart, bucket);
+                    return this.uploadFile(filePart);
                 }
             }
             throw new ServletException("file must be an image");
         }
         return imageUrl;
+    }
+
+    public String saveCalendar(String id, ICalendar ical) throws IOException {
+        File file = new File(System.getenv("CATALINA_TMPDIR") + id + ".ics");
+        Biweekly.write(ical).go(file);
+        BlobInfo blobInfo = storage.create(
+                BlobInfo
+                        .newBuilder(bucket, file.getName().substring(file.getName().indexOf("temp") + 4))
+                        .setAcl(new ArrayList<>(Arrays.asList(Acl.of(Acl.User.ofAllUsers(), Acl.Role.READER))))
+                        .build(),
+                IOUtils.toByteArray(file.toURI()));
+        if (ical.getSource() == null) {
+            ical.setSource(blobInfo.getMediaLink());
+            saveCalendar(id, ical);
+        }
+        return blobInfo.getMediaLink();
     }
 
 }
