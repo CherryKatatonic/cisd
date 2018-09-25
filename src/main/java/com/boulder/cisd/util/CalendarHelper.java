@@ -11,7 +11,6 @@ import biweekly.property.Uid;
 import biweekly.util.Duration;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.Instant;
@@ -35,11 +34,11 @@ public class CalendarHelper {
         return ical;
     }
 
-    public static VEvent createEvent(HttpServletRequest req, HttpServletResponse resp) throws ParseException {
+    public static VEvent createEvent(HttpServletRequest req) throws ParseException {
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         SimpleDateFormat dtf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
 
-        String[] cals = req.getParameterValues("calendar");
+        String[] cats = req.getParameterValues("category");
 
         String title = req.getParameter("title"),
                 sDateStr = req.getParameter("sDate"),
@@ -47,11 +46,14 @@ public class CalendarHelper {
                 eDateStr = req.getParameter("eDate"),
                 eTimeStr = req.getParameter("eTime"),
                 desc = req.getParameter("desc"),
-                loc = req.getParameter("loc");
+                loc = req.getParameter("loc"),
+                contactName = req.getParameter("contactName"),
+                contactPhone = req.getParameter("contactName"),
+                contactEmail = req.getParameter("contactName"),
+                contactWebsite = req.getParameter("contactName");
 
         boolean allDay = Boolean.parseBoolean(req.getParameter("allDay")),
                 recurring = Boolean.parseBoolean(req.getParameter("recurring"));
-
 
         Date sDate, eDate;
 
@@ -73,15 +75,18 @@ public class CalendarHelper {
 
         VEvent event = new VEvent();
         event.setUid(Uid.random());
+        event.setUrl(req.getContextPath() + "/events/" + event.getUid().getValue());
         event.setDateTimeStamp(Date.from(Instant.now()));
+        event.setLastModified(Date.from(Instant.now()));
         event.setSummary(title);
         event.setDateStart(sDate);
+
         if (eDate != null) event.setDateEnd(eDate);
-        // TODO - if (recurring)...
         if (desc != null) event.setDescription(desc);
         if (loc != null) event.setLocation(loc);
-        event.addCategories(cals);
-        // TODO - set URL...
-        return null;
+
+        // TODO - if (recurring)...
+
+        return event;
     }
 }
