@@ -76,45 +76,45 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" value="" name="athletics" id="athletics">
+                                    <input class="custom-control-input" type="checkbox" value="athletics" name="calendar" id="athletics">
                                     <label class="custom-control-label" for="athletics">Athletics</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" value="" name="carroll" id="carroll">
+                                    <input class="custom-control-input" type="checkbox" value="carroll" name="calendar" id="carroll">
                                     <label class="custom-control-label" for="carroll">Carroll Elementary</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" value="" name="chs" id="chs">
+                                    <input class="custom-control-input" type="checkbox" value="chs" name="calendar" id="chs">
                                     <label class="custom-control-label" for="chs">Corsicana High School</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" value="" name="cms" id="cms">
+                                    <input class="custom-control-input" type="checkbox" value="cms" name="calendar" id="cms">
                                     <label class="custom-control-label" for="cms">Corsicana Middle School</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" value="" name="navarro" id="navarro">
+                                    <input class="custom-control-input" type="checkbox" value="navarro" name="calendar" id="navarro">
                                     <label class="custom-control-label" for="navarro">Navarro Elementary</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" value="" name="bowie" id="bowie">
+                                    <input class="custom-control-input" type="checkbox" value="bowie" name="calendar" id="bowie">
                                     <label class="custom-control-label" for="bowie">Bowie Elementary</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" value="" name="collins" id="collins">
+                                    <input class="custom-control-input" type="checkbox" value="collins" name="calendar" id="collins">
                                     <label class="custom-control-label" for="collins">Collins Intermediate</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" value="" name="district" id="district" checked disabled>
+                                    <input class="custom-control-input" type="checkbox" value="district" name="calendar" id="district" checked disabled>
                                     <label class="custom-control-label" for="district">Corsicana ISD</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" value="" name="fannin" id="fannin">
+                                    <input class="custom-control-input" type="checkbox" value="fannin" name="calendar" id="fannin">
                                     <label class="custom-control-label" for="fannin">Fannin Elementary</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" value="" name="samHouston" id="samHouston">
+                                    <input class="custom-control-input" type="checkbox" value="sam" name="calendar" id="samHouston">
                                     <label class="custom-control-label" for="samHouston">Sam Houston Elementary</label>
                                 </div>
                             </div>
