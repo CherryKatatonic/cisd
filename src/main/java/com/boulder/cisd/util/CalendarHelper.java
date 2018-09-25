@@ -32,31 +32,6 @@ public class CalendarHelper {
         TimezoneInfo tzi = new TimezoneInfo();
         tzi.setDefaultTimezone(TimezoneAssignment.download(TimeZone.getTimeZone("America/Chicago"), true));
         ical.setTimezoneInfo(tzi);
-
-        /////////////////////// TEST //////////////////////////
-        /*String startDateStr = "2018-09-18";
-        String endDateStr = "2018-09-19";
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date startDate = null;
-        Date endDate = null;
-
-        try {
-            startDate = sdf.parse(startDateStr);
-            endDate = sdf.parse(endDateStr);
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
-
-        VEvent e = new VEvent();
-        e.setUid(Uid.random());
-        e.setDateTimeStamp(Date.from(Instant.now()));
-        e.setSummary("Test Event 1");
-        e.setDescription("The first event created for testing purposes");
-        e.setDateStart(new DateStart(startDate, false));
-        e.setLocation("Tiger Stadium");
-
-        ical.addEvent(e);*/
-        ///////////////////////////////////////////////////////
         return ical;
     }
 
