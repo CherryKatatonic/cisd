@@ -26,17 +26,9 @@ $(document).ready(function() {
         navLinks: true,
         editable: true,
         eventLimit: true,
-        resources: {
-            url: '/res/files/resources.json',
-            error: function (error) {
-                console.log(error)
-            },
-            success: function(data) {
-                console.log(data);
-            }
-        },
+
         events: {
-            url: '/ical/district/events',
+            url: '/ical/district/range',
             error: function(error) {
                 console.log(error)
             },
