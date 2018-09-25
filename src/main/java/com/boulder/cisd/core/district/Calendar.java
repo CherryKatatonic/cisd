@@ -2,7 +2,7 @@ package com.boulder.cisd.core.district;
 
 import biweekly.ICalendar;
 import com.boulder.cisd.daos.CalendarDao;
-import com.boulder.cisd.util.CalendarWorker;
+import com.boulder.cisd.util.CalendarHelper;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -21,7 +21,7 @@ public class Calendar extends HttpServlet {
         CalendarDao dao = (CalendarDao) getServletContext().getAttribute("calDao");
 
         if (dao.getCalendar("district") == null) {
-            ICalendar ical = CalendarWorker.createCalendar("district");
+            ICalendar ical = CalendarHelper.createCalendar("district");
             com.boulder.cisd.objects.Calendar cal = null;
 
             try {
@@ -47,7 +47,7 @@ public class Calendar extends HttpServlet {
         VEvent e = null;
 
         try {
-            e = CalendarWorker.createEvent(req, resp);
+            e = CalendarHelper.createEvent(req, resp);
         } catch (ParseException e1) {
             e1.printStackTrace();
         }
