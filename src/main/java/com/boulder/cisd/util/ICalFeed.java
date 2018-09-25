@@ -35,8 +35,6 @@ public class ICalFeed extends HttpServlet {
         CalendarDao dao = (CalendarDao) getServletContext().getAttribute("calDao");
         Calendar cal = dao.getCalendar(id);
         if (cal == null) { System.out.println("Calendar not found"); }
-        /*File file = new File(cal.getIcsUrl());
-        new File(System.getenv("STORAGE_PATH") + "/calendars").mkdirs();*/
         ICalendar ical;
 
         // GET iCAL OBJECT
@@ -61,13 +59,6 @@ public class ICalFeed extends HttpServlet {
             out.flush();
             return;
         }
-
-        /*if (file.createNewFile()) {
-            CalendarWorker.createCalendar(id);
-            ical = StorageWorker.saveCalendar(id, CalendarWorker.createCalendar(id));
-        } else {
-            ical = Biweekly.parse(file).first();
-        }*/
 
         // SET UP RESPONSE
         resp.setContentType("application/json");
