@@ -1,6 +1,5 @@
 package com.boulder.cisd.core;
 
-import biweekly.ICalendar;
 import com.boulder.cisd.auth.PasswordStorage;
 import com.boulder.cisd.daos.CalendarDao;
 import com.boulder.cisd.daos.UserDao;
@@ -14,7 +13,6 @@ import com.googlecode.objectify.ObjectifyService;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-import java.io.IOException;
 
 @WebListener
 public class ContextListener implements ServletContextListener {
@@ -48,24 +46,11 @@ public class ContextListener implements ServletContextListener {
                 }
             }
 
-            if (calDao.getCalendar("district") == null) {
-                ICalendar ical = new ICalendar();
-                ical.setName("CISD Calendar");
-                ical.setDescription("Corsicana ISD Events Calendar");
-                ical.setUrl("localhost:8080/calendar");
-                Calendar cal = null;
-
-                try {
-                    cal = new Calendar("district", ical);
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
-
-                calDao.createCalendar(cal);
-            }
-
             return null;
         });
+
+        System.out.println(e.getServletContext().getContextPath());
+        System.out.println(System.getenv("STORAGE_PATH"));
 
     }
 }
