@@ -86,3 +86,4 @@ fabric.properties
 hs_err_pid*
 
 /target/
+/src/main/webapp/service-key.json
