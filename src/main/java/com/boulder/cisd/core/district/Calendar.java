@@ -42,17 +42,7 @@ public class Calendar extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CalendarDao dao = (CalendarDao) getServletContext().getAttribute("calDao");
         com.boulder.cisd.objects.Calendar cal = dao.getCalendar(req.getParameter("id"));
-        /*File file = new File(cal.getIcsUrl());
-        ICalendar ical = Biweekly.parse(file).first();
-        VEvent e = null;
-
-        try {
-            e = CalendarHelper.createEvent(req, resp);
-        } catch (ParseException e1) {
-            e1.printStackTrace();
-        }
-
-        ical.addEvent(e);*/
+        // TODO - create calendar or event
         resp.sendRedirect("/calendar");
     }
 }
