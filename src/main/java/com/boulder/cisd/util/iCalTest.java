@@ -11,6 +11,7 @@ import biweekly.util.Frequency;
 import biweekly.util.Recurrence;
 import com.boulder.cisd.objects.Calendar;
 
+import javax.servlet.ServletException;
 import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
@@ -69,7 +70,7 @@ public class iCalTest {
         Biweekly.write(ical).go(file);
     }
 
-    public static Calendar createCalendar(String id) throws IOException {
+    public static Calendar createCalendar(String id) throws IOException, ServletException {
         ICalendar ical = new ICalendar();
         ical.setName(id);
         ical.setDescription(id + " event calendar");
