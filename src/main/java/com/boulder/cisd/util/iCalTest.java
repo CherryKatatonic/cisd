@@ -21,32 +21,6 @@ import java.util.Date;
 
 public class iCalTest {
 
-    public static void read() {
-        String str =
-                "BEGIN:VCALENDAR\r\n" +
-                        "VERSION:2.0\r\n" +
-                        "PRODID:-//Microsoft Corporation//Outlook 14.0 MIMEDIR//EN\r\n" +
-                        "BEGIN:VEVENT\r\n" +
-                        "UID:0123\r\n" +
-                        "DTSTAMP:20130601T080000Z\r\n" +
-                        "SUMMARY;LANGUAGE=en-us:Team Meeting\r\n" +
-                        "DTSTART:20130610T120000Z\r\n" +
-                        "DURATION:PT1H\r\n" +
-                        "RRULE:FREQ=WEEKLY;INTERVAL=2\r\n" +
-                        "END:VEVENT\r\n" +
-                        "END:VCALENDAR\r\n";
-
-//parse the first iCalendar object from the data stream
-        ICalendar ical = Biweekly.parse(str).first();
-
-//or parse all objects from the data stream
-//List<ICalendar> icals = Biweekly.parse(str).all();
-
-        VEvent event = ical.getEvents().get(0);
-        String summary = event.getSummary().getValue();
-        System.out.println(summary);
-    }
-
     public static void write() throws IOException {
         ICalendar ical = new ICalendar();
         VEvent event = new VEvent();
