@@ -2,10 +2,7 @@ package com.boulder.cisd.util;
 
 import biweekly.Biweekly;
 import biweekly.ICalendar;
-import com.google.cloud.storage.Acl;
-import com.google.cloud.storage.BlobInfo;
-import com.google.cloud.storage.Storage;
-import com.google.cloud.storage.StorageOptions;
+import com.google.cloud.storage.*;
 import org.apache.commons.io.IOUtils;
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
@@ -78,6 +75,14 @@ public class CloudStorageHelper {
             saveCalendar(id, ical);
         }
         return blobInfo.getMediaLink();
+    }
+
+    public ICalendar downloadCalendar(String id, String blobName) throws IOException {
+        Storage storage = StorageOptions.getDefaultInstance().getService();
+        Blob blob = storage.get(BlobId.of(System.getenv("BUCKET_NAME"), blobName));
+        File file = new File(System.getenv("CATALINA_TMPDIR") + "/" + id + ".ics");
+        blob.downloadTo(file.toPath());
+        return Biweekly.parse(file).first();
     }
 
 }
