@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="${request.contextPath}/res/css/fonts.css">
     <link rel="stylesheet" href="${request.contextPath}/res/css/lib/jquery-ui.min.css">
     <link rel="stylesheet" href="${request.contextPath}/res/css/lib/bootstrap-4.0.0.min.css">
-    <link rel="stylesheet" href="${request.contextPath}/res/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="${request.contextPath}/res/css/styles.css">
     <link rel="icon" type="image/png" href="${request.contextPath}/res/images/cisd-logo.png">
     <title>Corsicana ISD</title>
