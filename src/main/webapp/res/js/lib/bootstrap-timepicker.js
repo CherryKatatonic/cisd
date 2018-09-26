@@ -1153,8 +1153,8 @@
         appendWidgetTo: 'body',
         showWidgetOnAddonClick: true,
         icons: {
-            up: 'fas fa-angle-up',
-            down: 'fas fa-angle-down'
+            up: 'ico-20 ico-angle-up',
+            down: 'ico-20 ico-angle-down'
         },
         maxHours: 24,
         explicitMode: false
