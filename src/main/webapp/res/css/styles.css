@@ -23,6 +23,23 @@ legend {
     margin-bottom: .5rem!important;
 }
 
+.ico-20 {
+    display: inline-block;
+    background: no-repeat center;
+    background-size: contain;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+}
+
+.ico-angle-up {
+    background-image: url("../images/angle-up.png");
+}
+
+.ico-angle-down {
+    background-image: url("../images/angle-down.png");
+}
+
 .btn-primary {
     background-color: #0b03aa;
     border: 1px solid #0b03aa;
