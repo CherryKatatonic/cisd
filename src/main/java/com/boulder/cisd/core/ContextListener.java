@@ -6,6 +6,7 @@ import com.boulder.cisd.daos.UserDao;
 import com.boulder.cisd.objects.Calendar;
 import com.boulder.cisd.objects.Hash;
 import com.boulder.cisd.objects.User;
+import com.boulder.cisd.util.CloudStorageHelper;
 import com.google.cloud.datastore.DatastoreOptions;
 import com.googlecode.objectify.ObjectifyFactory;
 import com.googlecode.objectify.ObjectifyService;
@@ -36,6 +37,7 @@ public class ContextListener implements ServletContextListener {
 
         e.getServletContext().setAttribute("userDao", userDao);
         e.getServletContext().setAttribute("calDao", calDao);
+        e.getServletContext().setAttribute("storage", new CloudStorageHelper());
 
         ObjectifyService.run(() -> {
             if (userDao.getAdminPass() == null) {
