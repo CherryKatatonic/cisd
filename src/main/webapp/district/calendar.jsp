@@ -134,7 +134,7 @@
                         <!-- ALL-DAY/RECURRING -->
                         <div class="row">
                             <div class="col-6">
-                                <input class="" type="checkbox" value="" name="allDay" id="allDay">
+                                <input class="" type="checkbox" name="allDay" id="allDay">
                                 <label class="checkbox-center" for="allDay">All-Day Event</label>
                             </div>
 
