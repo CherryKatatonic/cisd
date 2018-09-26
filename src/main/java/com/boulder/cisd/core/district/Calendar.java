@@ -1,8 +1,10 @@
 package com.boulder.cisd.core.district;
 
 import biweekly.ICalendar;
+import biweekly.component.VEvent;
 import com.boulder.cisd.daos.CalendarDao;
 import com.boulder.cisd.util.CalendarHelper;
+import com.boulder.cisd.util.CloudStorageHelper;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -11,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.ParseException;
 
 @MultipartConfig
 @WebServlet("/calendar")
@@ -40,9 +43,25 @@ public class Calendar extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        CloudStorageHelper storage = (CloudStorageHelper) getServletContext().getAttribute("storage");
         CalendarDao dao = (CalendarDao) getServletContext().getAttribute("calDao");
-        com.boulder.cisd.objects.Calendar cal = dao.getCalendar(req.getParameter("id"));
-        // TODO - create calendar or event
+        String[] cals = req.getParameterValues("calendar");
+        VEvent e = null;
+
+        try {
+            e = CalendarHelper.createEvent(req);
+        } catch (ParseException e1) {
+            e1.printStackTrace();
+        }
+
+        for (String id : cals) {
+            com.boulder.cisd.objects.Calendar cal = dao.getCalendar(id);
+            ICalendar ical = storage.downloadCalendar(id, cal.getBlobName());
+            ical.addEvent(e);
+            storage.saveCalendar(id, ical);
+            dao.saveCalendar(cal);
+        }
+
         resp.sendRedirect("/calendar");
     }
 }
