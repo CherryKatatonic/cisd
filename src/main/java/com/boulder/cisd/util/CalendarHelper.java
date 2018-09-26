@@ -63,7 +63,7 @@ public class CalendarHelper {
             sDate = dtf.parse(sDateStr.concat(sTimeStr));
         }
 
-        if (eDateStr != null && !eDateStr.equals(sDateStr)) {
+        if (!eDateStr.equals(sDateStr)) {
             if (allDay) {
                 eDate = df.parse(eDateStr);
             } else {
@@ -86,6 +86,7 @@ public class CalendarHelper {
         if (loc != null) event.setLocation(loc);
 
         // TODO - if (recurring)...
+        // TODO - if (contact info)...
 
         return event;
     }
