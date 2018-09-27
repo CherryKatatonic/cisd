@@ -35,18 +35,18 @@ public class CalendarHelper {
     }
 
     public static VEvent createEvent(HttpServletRequest req) throws ParseException {
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-        SimpleDateFormat dtf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+        SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+        SimpleDateFormat dtf = new SimpleDateFormat("MM/dd/yyyyh:mm a");
 
         String[] cats = req.getParameterValues("category");
 
         String title = req.getParameter("title"),
-                sDateStr = req.getParameter("sDate"),
-                sTimeStr = req.getParameter("sDate"),
-                eDateStr = req.getParameter("eDate"),
-                eTimeStr = req.getParameter("eTime"),
-                desc = req.getParameter("desc"),
-                loc = req.getParameter("loc"),
+                sDateStr = req.getParameter("startDate"),
+                sTimeStr = req.getParameter("startTime"),
+                eDateStr = req.getParameter("endDate"),
+                eTimeStr = req.getParameter("endTime"),
+                desc = req.getParameter("description"),
+                loc = req.getParameter("location"),
                 contactName = req.getParameter("contactName"),
                 contactPhone = req.getParameter("contactName"),
                 contactEmail = req.getParameter("contactName"),
