@@ -126,9 +126,12 @@ public class ICalFeed extends HttpServlet {
                         } else {
                             Map<String, String> map = new HashMap<>();
                             map.put("id", event.getUid().getValue());
-                            map.put("start", df.format(event.getDateStart().getValue()));
                             map.put("title", event.getSummary().getValue());
-                            // TODO - map.put(other params)...
+                            map.put("start", df.format(event.getDateStart().getValue()));
+                            if (event.getDateEnd() != null) map.put("end", df.format(event.getDateEnd().getValue()));
+                            map.put("url", event.getUrl().getValue());
+                            if (event.getDescription() != null) map.put("description", event.getDescription().getValue());
+                            if (event.getLocation() != null ) map.put("location", event.getLocation().getValue());
                             events.add(map);
                         }
                     }
