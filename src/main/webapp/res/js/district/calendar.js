@@ -2,8 +2,10 @@ $(document).ready(function() {
     var calendar = $('#calendar'),
         eStartDate = $('#eventStartDate'),
         eEndDate = $('#eventEndDate'),
+        eDates = $('#eventStartDate, #eventEndDate'),
         eStartTime = $('#eventStartTime'),
         eEndTime = $('#eventEndTime'),
+        eTimes = $('#eventStartTime, #eventEndTime'),
         allDay = $('#allDay'),
         recurring = $('#recurring');
     calendar.fullCalendar({
@@ -44,20 +46,16 @@ $(document).ready(function() {
         }
     });
 
-    eStartDate.datepicker();
-    eEndDate.datepicker();
-    eStartTime.timepicker();
-    eEndTime.timepicker();
-    allDay.checkboxradio();
-    recurring.checkboxradio();
+    eDates.datepicker().datepicker('setDate', new Date());
+    eTimes.timepicker();
+    $('#allDay, #recurring').checkboxradio();
 
     $('.hasDatepicker').click(function() {
         $('.ui-datepicker').css('z-index', $.topZIndex() + 1);
     });
 
     allDay.change(function() {
-        console.log(allDay);
-        if (allDay[0].checked) {
+        if ($(this).prop('checked')) {
             eStartTime.timepicker('clear');
             eStartTime.prop('disabled', true);
             eEndTime.timepicker('clear');
@@ -69,6 +67,17 @@ $(document).ready(function() {
             eEndTime.prop('disabled', false);
             eEndTime.timepicker('setDefaultTime');
             eEndTime.timepicker('updateFromWidgetInputs');
+        }
+    });
+
+    eStartDate.change(function() {
+        if (new Date(eEndDate.val()) < new Date(eStartDate.val()) || eEndDate.val() === '') {
+            eEndDate.val(eStartDate.val());
+        }
+    });
+    eEndDate.change(function() {
+        if (new Date(eEndDate.val()) < new Date(eStartDate.val()) || eStartDate.val() === '') {
+            eStartDate.val(eEndDate.val());
         }
     });
 });
