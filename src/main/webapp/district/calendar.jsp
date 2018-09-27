@@ -38,17 +38,17 @@
 </nav>
 
 <!-- MAIN CONTENT -->
-<div class="container pt-3 pb-3 px-0 mx-auto bg-white text-center">
+<div class="w-100 py-0 px-lg-5 mx-lg-auto text-center">
 
     <!-- ADMIN TOOLBAR -->
-    <div class="btn-group">
+    <div class="btn-group bg-white w-100 justify-content-center pt-3">
         <button id="addEvent" type="button" class="btn btn-primary" data-toggle="modal" data-target="#eventForm">
             New Event
         </button>
     </div>
 
     <!-- CALENDAR -->
-    <div id='calendar' class="p-5 w-100 bg-white"></div>
+    <div id='calendar' class="px-md-5 py-5 w-100 bg-white"></div>
 
 </div>
 
