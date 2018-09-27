@@ -107,6 +107,7 @@
                                 </div>
                                 <div class="custom-control custom-checkbox">
                                     <input class="custom-control-input" type="checkbox" value="district" name="calendar" id="district" checked disabled>
+                                    <input type="hidden" value="district" name="calendar">
                                     <label class="custom-control-label" for="district">Corsicana ISD</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
@@ -134,12 +135,12 @@
                         <!-- ALL-DAY/RECURRING -->
                         <div class="row">
                             <div class="col-6">
-                                <input class="" type="checkbox" name="allDay" id="allDay">
+                                <input class="" type="checkbox" value="true" name="allDay" id="allDay">
                                 <label class="checkbox-center" for="allDay">All-Day Event</label>
                             </div>
 
                             <div class="col-6">
-                                <input class="" type="checkbox" value="" name="allDay" id="recurring">
+                                <input class="" type="checkbox" value="true" name="recurring" id="recurring">
                                 <label class="checkbox-center" for="recurring">Recurring Event</label>
                             </div>
                         </div>
