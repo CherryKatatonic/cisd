@@ -118,6 +118,8 @@ public class ICalFeed extends HttpServlet {
 
                         if (startVisible || endVisible) {
                             inRange = true;
+                        } else {
+                            System.out.println("Event " + event.getSummary().getValue() + " not in range.");
                         }
                     } catch (ParseException e) {
                         e.printStackTrace();
@@ -160,7 +162,7 @@ public class ICalFeed extends HttpServlet {
                 out.flush();
             } else {
                 PrintWriter out = resp.getWriter();
-                out.print(new Gson().toJson(events));
+                out.print(new Gson().toJson(json));
                 out.flush();
                 out.close();
             }
