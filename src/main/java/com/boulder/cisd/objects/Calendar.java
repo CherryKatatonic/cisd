@@ -17,9 +17,9 @@ public class Calendar {
 
     private Calendar() {}
 
-    public Calendar(String id, ICalendar ical) throws IOException, ServletException {
+    public Calendar(String id, ICalendar ical, String contextPath) throws IOException, ServletException {
         this.id = id;
-        this.icsUrl = new CloudStorageHelper().saveCalendar(id, ical);
+        this.icsUrl = new CloudStorageHelper().saveCalendar(id, ical, contextPath);
         this.blobName = icsUrl.substring(icsUrl.indexOf("/o/") + 3, icsUrl.indexOf("?generation"));
     }
 
