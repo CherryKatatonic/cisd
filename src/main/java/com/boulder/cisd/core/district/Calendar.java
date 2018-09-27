@@ -58,7 +58,7 @@ public class Calendar extends HttpServlet {
             com.boulder.cisd.objects.Calendar cal = dao.getCalendar(id);
             ICalendar ical = storage.downloadCalendar(id, cal.getBlobName());
             ical.addEvent(e);
-            storage.saveCalendar(id, ical);
+            storage.saveCalendar(id, ical, getServletContext().getContextPath());
             dao.saveCalendar(cal);
         }
 
