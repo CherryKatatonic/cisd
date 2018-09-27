@@ -56,21 +56,14 @@ public class CalendarHelper {
                 recurring = Boolean.parseBoolean(req.getParameter("recurring"));
 
         Date sDate, eDate;
+        System.out.println(allDay);
 
         if (allDay) {
             sDate = df.parse(sDateStr);
+            eDate = eDateStr.equals(sDateStr) ? sDate : df.parse(eDateStr);
         } else {
             sDate = dtf.parse(sDateStr.concat(sTimeStr));
-        }
-
-        if (!eDateStr.equals(sDateStr)) {
-            if (allDay) {
-                eDate = df.parse(eDateStr);
-            } else {
-                eDate = dtf.parse(eDateStr.concat(eTimeStr));
-            }
-        } else {
-            eDate = null;
+            eDate = dtf.parse(eDateStr.concat(eTimeStr));
         }
 
         VEvent event = new VEvent();
