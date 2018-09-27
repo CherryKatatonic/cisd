@@ -81,8 +81,10 @@ public class ICalFeed extends HttpServlet {
             }
                 // Configure date format:
             TimeZone tz = TimeZone.getTimeZone("America/Chicago");
-            DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-            df.setTimeZone(tz);
+            DateFormat simpleDF = new SimpleDateFormat("yyyy-MM-dd");
+            DateFormat isoDF = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm");
+            simpleDF.setTimeZone(tz);
+            isoDF.setTimeZone(tz);
 
                 // Create events list (EXPORT/JSON):
             List<VEvent> events = null;
@@ -102,13 +104,13 @@ public class ICalFeed extends HttpServlet {
                         // Verify date:
                     boolean inRange = false;
                     try {
-                        Date rangeStart = df.parse(req.getParameter("start"));
-                        Date rangeEnd = df.parse(req.getParameter("end"));
-                        Date eventStart = df.parse(df.format(event.getDateStart().getValue()));
+                        Date rangeStart = simpleDF.parse(req.getParameter("start"));
+                        Date rangeEnd = simpleDF.parse(req.getParameter("end"));
+                        Date eventStart = simpleDF.parse(simpleDF.format(event.getDateStart().getValue()));
                         Date eventEnd;
 
                         if (event.getDateEnd() != null) {
-                            eventEnd = df.parse(df.format(event.getDateEnd().getValue()));
+                            eventEnd = simpleDF.parse(simpleDF.format(event.getDateEnd().getValue()));
                         } else {
                             eventEnd = eventStart;
                         }
@@ -133,8 +135,8 @@ public class ICalFeed extends HttpServlet {
                             Map<String, String> map = new HashMap<>();
                             map.put("id", event.getUid().getValue());
                             map.put("title", event.getSummary().getValue());
-                            map.put("start", df.format(event.getDateStart().getValue()));
-                            if (event.getDateEnd() != null) map.put("end", df.format(event.getDateEnd().getValue()));
+                            map.put("start", isoDF.format(event.getDateStart().getValue()));
+                            if (event.getDateEnd() != null) map.put("end", isoDF.format(event.getDateEnd().getValue()));
                             map.put("url", event.getUrl().getValue());
                             if (event.getDescription() != null) map.put("description", event.getDescription().getValue());
                             if (event.getLocation() != null ) map.put("location", event.getLocation().getValue());
