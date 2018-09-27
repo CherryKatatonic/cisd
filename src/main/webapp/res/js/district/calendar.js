@@ -43,6 +43,15 @@ $(document).ready(function() {
             success: function(data) {
                 console.log(data);
             }
+        },
+        eventRender: function(event, element) {
+            console.log(event);
+            element.qtip({
+                content: {
+                    title: event.title,
+                    text: (event.allDay ? 'All Day' : event.start + event.end) + '\n\r' + event.description
+                }
+            });
         }
     });
 
@@ -79,6 +88,10 @@ $(document).ready(function() {
         if (new Date(eEndDate.val()) < new Date(eStartDate.val()) || eStartDate.val() === '') {
             eStartDate.val(eEndDate.val());
         }
+    });
+
+    $(window).resize(function() {
+        $('.fc-scroller').css('height', '100%!important', 'overflow', 'show');
     });
 });
 
