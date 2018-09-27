@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="${request.contextPath}/res/css/fonts.css">
     <link rel="stylesheet" href="${request.contextPath}/res/css/lib/jquery-ui.min.css">
     <link rel="stylesheet" href="${request.contextPath}/res/css/lib/bootstrap-4.0.0.min.css">
+    <link rel="stylesheet" href="${request.contextPath}/res/css/lib/jquery.qtip.min.css">
     <link rel="stylesheet" href="${request.contextPath}/res/css/styles.css">
     <link rel="icon" type="image/png" href="${request.contextPath}/res/images/cisd-logo.png">
     <title>Corsicana ISD</title>
@@ -249,6 +250,7 @@
     <script src="${request.contextPath}/res/js/lib/bootstrap-4.0.0.min.js"></script>
 
     <script src='${request.contextPath}/res/js/lib/jquery-ui.min.js'></script>
+    <script src='${request.contextPath}/res/js/lib/jquery.qtip.min.js'></script>
 
     <c:if test="${page == 'calendar'}">
         <script src='${request.contextPath}/res/js/lib/moment.min.js'></script>
