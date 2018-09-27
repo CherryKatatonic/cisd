@@ -28,7 +28,7 @@ public class Calendar extends HttpServlet {
             com.boulder.cisd.objects.Calendar cal = null;
 
             try {
-                cal = new com.boulder.cisd.objects.Calendar("district", ical);
+                cal = new com.boulder.cisd.objects.Calendar("district", ical, getServletContext().getContextPath());
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
