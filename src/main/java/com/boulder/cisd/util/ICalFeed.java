@@ -38,7 +38,7 @@ public class ICalFeed extends HttpServlet {
         if (cal == null) { System.out.println("Calendar not found"); }
         ICalendar ical;
 
-        // GET iCAL OBJECT:
+        // DOWNLOAD iCAL FILE:
         Storage storage = StorageOptions.getDefaultInstance().getService();
         String blobName = cal.getBlobName();
         Blob blob = storage.get(BlobId.of(System.getenv("BUCKET_NAME"), blobName));
@@ -65,9 +65,13 @@ public class ICalFeed extends HttpServlet {
 
             // Return events within a specific date range:
         } else if (scope.equals("range")) {
+                // Determine return type:
             boolean export = req.getParameter("_").equals("export");
 
-                // Configure response:
+                // Get iCal object:
+            ical = Biweekly.parse(file).first();
+
+                // Configure response (EXPORT/JSON):
             if (export) {
                 resp.setContentType("text/calendar");
                 resp.setHeader("Content-disposition", "attachment; filename=" + id + ".ics");
@@ -80,16 +84,16 @@ public class ICalFeed extends HttpServlet {
             DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
             df.setTimeZone(tz);
 
-                // Create events list:
-            List events;
-            if (export) {
-                events = new ArrayList<Map<String, String>>();
-            } else {
-                events = new ArrayList<VEvent>();
-            }
+                // Create events list (EXPORT/JSON):
+            List<VEvent> events = null;
+            List<Map<String, String>> json = null;
+            ICalendar tempICal = null;
 
-                // Get iCal
-            ical = Biweekly.parse(file).first();
+            if (export) {
+                tempICal = CalendarHelper.createCalendar(ical.getNames().get(0).getValue());
+            } else {
+                json = new ArrayList<>();
+            }
 
                 // Iterate through events:
             if (!ical.getEvents().isEmpty()) {
@@ -119,10 +123,10 @@ public class ICalFeed extends HttpServlet {
                         e.printStackTrace();
                     }
 
-                        // If event is in range:
+                        // If event is in range (EXPORT/JSON):
                     if (inRange) {
                         if (export) {
-                            events.add(event);
+                            tempICal.addEvent(event);
                         } else {
                             Map<String, String> map = new HashMap<>();
                             map.put("id", event.getUid().getValue());
@@ -132,14 +136,17 @@ public class ICalFeed extends HttpServlet {
                             map.put("url", event.getUrl().getValue());
                             if (event.getDescription() != null) map.put("description", event.getDescription().getValue());
                             if (event.getLocation() != null ) map.put("location", event.getLocation().getValue());
-                            events.add(map);
+                            json.add(map);
                         }
                     }
                 }
             }
 
-                // Return events as a file or json string
+                // Return the events (EXPORT/JSON):
             if (export) {
+                File tempFile = File.createTempFile(id, ".ics");
+                tempICal.write(tempFile);
+
                 OutputStream out = resp.getOutputStream();
                 FileInputStream in = new FileInputStream(file);
                 byte[] buffer = new byte[4096];
