@@ -75,7 +75,7 @@ public class CalendarHelper {
 
         VEvent event = new VEvent();
         event.setUid(Uid.random());
-        event.setUrl(req.getContextPath() + "/events/" + event.getUid().getValue());
+        event.setUrl(req.getContextPath() + "/calendar/" + event.getUid().getValue());
         event.setDateTimeStamp(Date.from(Instant.now()));
         event.setLastModified(Date.from(Instant.now()));
         event.setSummary(title);
