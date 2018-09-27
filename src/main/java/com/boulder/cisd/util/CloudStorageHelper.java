@@ -61,7 +61,7 @@ public class CloudStorageHelper {
         return imageUrl;
     }
 
-    public String saveCalendar(String id, ICalendar ical) throws IOException {
+    public String saveCalendar(String id, ICalendar ical, String contextPath) throws IOException {
         File file = new File(System.getenv("CATALINA_TMPDIR") + id + ".ics");
         Biweekly.write(ical).go(file);
         BlobInfo blobInfo = storage.create(
@@ -71,8 +71,8 @@ public class CloudStorageHelper {
                         .build(),
                 IOUtils.toByteArray(file.toURI()));
         if (ical.getSource() == null) {
-            ical.setSource(blobInfo.getMediaLink());
-            saveCalendar(id, ical);
+            ical.setSource(contextPath + "/ical/" + id + "/calendar");
+            saveCalendar(id, ical, contextPath);
         }
         return blobInfo.getMediaLink();
     }
