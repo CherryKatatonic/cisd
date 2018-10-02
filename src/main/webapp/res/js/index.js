@@ -1,16 +1,15 @@
-var carousel = $('#carouselHeader');
-var globalLinkContainer = $('#global-link-container');
-var globalLinkGroup = $('#global-link-group');
-var sidenav = $('#side-nav');
-var nav1 = $('#nav1');
-var nav2 = $('#nav2');
-var navbar2 = $('#navbar2');
-var nav1Links = $('#nav1-links');
-var nav2Links = $('#nav2-links');
-var navItems = $('.nav-item');
-var searchBar = $('#search-bar');
-var brandBarInner = $('#brand-bar-inner');
-var mainLogo = $('#main-logo');
+var carousel = $('#carouselHeader'),
+    globalLinkContainer = $('#global-link-container'),
+    globalLinkGroup = $('#global-link-group'),
+    sidenav = $('#side-nav'),
+    nav1 = $('#nav1'),
+    nav2 = $('#nav2'),
+    navbar2 = $('#navbar2'),
+    nav1Links = $('#nav1-links'),
+    nav2Links = $('#nav2-links'),
+    navItems = $('.nav-item'),
+    searchBar = $('#search-bar'),
+    mainLogo = $('#main-logo');
 
 if (carousel.length) {
     nav2.addClass('nav2-transparent');
