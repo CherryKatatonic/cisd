@@ -41,10 +41,70 @@
 <div class="w-100 py-0 px-lg-5 mx-lg-auto text-center">
 
     <!-- ADMIN TOOLBAR -->
-    <div class="btn-group bg-white w-100 justify-content-center pt-3">
+    <div class="container-fluid bg-white w-100 justify-content-center pt-3">
         <button id="addEvent" type="button" class="btn btn-primary" data-toggle="modal" data-target="#eventForm">
             New Event
         </button>
+        <div class="dropdown btn">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="calendarDropdownBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Calendars
+            </button>
+            <div class="dropdown-menu" aria-labelledby="calendarDropdownBtn">
+               <form action="${request.contextPath}/ical/district/" method="post" enctype="multipart/form-data">
+                   <div class="custom-control custom-checkbox">
+                       <input class="custom-control-input" type="checkbox" value="athletics" name="calendar" id="athletics1">
+                       <label class="custom-control-label" for="athletics1">Athletics</label>
+                   </div>
+                   <div class="custom-control custom-checkbox">
+                       <input class="custom-control-input" type="checkbox" value="carroll" name="calendar" id="carroll1">
+                       <label class="custom-control-label" for="carroll1">Carroll Elementary</label>
+                   </div>
+                   <div class="custom-control custom-checkbox">
+                       <input class="custom-control-input" type="checkbox" value="chs" name="calendar" id="chs1">
+                       <label class="custom-control-label" for="chs1">Corsicana High School</label>
+                   </div>
+                   <div class="custom-control custom-checkbox">
+                       <input class="custom-control-input" type="checkbox" value="cms" name="calendar" id="cms1">
+                       <label class="custom-control-label" for="cms1">Corsicana Middle School</label>
+                   </div>
+                   <div class="custom-control custom-checkbox">
+                       <input class="custom-control-input" type="checkbox" value="navarro" name="calendar" id="navarro1">
+                       <label class="custom-control-label" for="navarro1">Navarro Elementary</label>
+                   </div>
+                   <div class="custom-control custom-checkbox">
+                       <input class="custom-control-input" type="checkbox" value="bowie" name="calendar" id="bowie1">
+                       <label class="custom-control-label" for="bowie1">Bowie Elementary</label>
+                   </div>
+                   <div class="custom-control custom-checkbox">
+                       <input class="custom-control-input" type="checkbox" value="collins" name="calendar" id="collins1">
+                       <label class="custom-control-label" for="collins1">Collins Intermediate</label>
+                   </div>
+                   <div class="custom-control custom-checkbox">
+                       <input class="custom-control-input" type="checkbox" value="district" name="calendar" id="district1" checked disabled>
+                       <input type="hidden" value="district" name="calendar">
+                       <label class="custom-control-label" for="district1">Corsicana ISD</label>
+                   </div>
+                   <div class="custom-control custom-checkbox">
+                       <input class="custom-control-input" type="checkbox" value="fannin" name="calendar" id="fannin1">
+                       <label class="custom-control-label" for="fannin1">Fannin Elementary</label>
+                   </div>
+                   <div class="custom-control custom-checkbox">
+                       <input class="custom-control-input" type="checkbox" value="sam" name="calendar" id="samHouston1">
+                       <label class="custom-control-label" for="samHouston1">Sam Houston Elementary</label>
+                   </div>
+               </form>
+            </div>
+        </div>
+        <div class="dropdown btn">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="categoryDropdownBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Categories
+            </button>
+            <div class="dropdown-menu" aria-labelledby="categoryDropdownBtn">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+        </div>
     </div>
 
     <!-- CALENDAR -->
