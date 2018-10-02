@@ -10,6 +10,7 @@ var nav2Links = $('#nav2-links');
 var navItems = $('.nav-item');
 var searchBar = $('#search-bar');
 var brandBarInner = $('#brand-bar-inner');
+var mainLogo = $('#main-logo');
 
 if (carousel.length) {
     nav2.addClass('nav2-transparent');
@@ -53,7 +54,10 @@ $('.dropdown').on('hide.bs.dropdown', function(e) {
 });
 
 function hideNavs() {
-    brandBarInner.prependTo(nav1);
+    mainLogo.prependTo($('#brand-bar'));
+    mainLogo.addClass('position-static mb-5');
+    $('#main-logo img').css('width', '85px');
+    //brandBarInner.prependTo(nav1);
     globalLinkGroup.prependTo($('#global-link-dropdown'));
     globalLinkGroup.addClass('btn-group-vertical');
     globalLinkContainer.hide();
@@ -66,7 +70,10 @@ function hideNavs() {
 }
 
 function showNavs() {
-    brandBarInner.prependTo($('#brand-bar'));
+    mainLogo.prependTo(nav1);
+    mainLogo.removeClass('position-static mb-5');
+    $('#main-logo img').css('width', '133px');
+    //brandBarInner.prependTo($('#brand-bar'));
     globalLinkContainer.show();
     globalLinkGroup.prependTo(globalLinkContainer);
     globalLinkGroup.removeClass('btn-group-vertical');
