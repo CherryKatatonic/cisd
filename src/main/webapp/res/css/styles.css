@@ -107,12 +107,9 @@ legend {
     font-family: 'Titillium Web', sans-serif;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 520px) {
     .brand-name {
         font-size: 25px;
-    }
-    #brand-name-top {
-        margin-left: 1rem;
     }
     .brand-hashtag {
         font-size: 15px;
@@ -515,6 +512,12 @@ a {
     }
     .dropdown-item {
         white-space: normal;
+    }
+    #brand-bar-inner {
+        margin: auto;
+    }
+    #brand-name-top {
+        margin-left: 0;
     }
 }
 
