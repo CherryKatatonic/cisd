@@ -133,6 +133,7 @@ public class ICalFeed extends HttpServlet {
                         } else {
                             Map<String, String> map = new HashMap<>();
                             map.put("id", event.getUid().getValue());
+                            map.put("resourceId", ical.getNames().get(0).getValue());
                             map.put("title", event.getSummary().getValue());
                             map.put("start", isoDF.format(event.getDateStart().getValue()));
                             if (event.getDateEnd() != null) map.put("end", isoDF.format(event.getDateEnd().getValue()));
