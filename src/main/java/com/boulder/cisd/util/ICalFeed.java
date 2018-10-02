@@ -87,7 +87,6 @@ public class ICalFeed extends HttpServlet {
             isoDF.setTimeZone(tz);
 
                 // Create events list (EXPORT/JSON):
-            List<VEvent> events = null;
             List<Map<String, String>> json = null;
             ICalendar tempICal = null;
 
