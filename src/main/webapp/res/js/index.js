@@ -1,3 +1,4 @@
+// VARIABLE DECLARATIONS
 var carousel = $('#carouselHeader'),
     globalLinkContainer = $('#global-link-container'),
     globalLinkGroup = $('#global-link-group'),
@@ -9,8 +10,10 @@ var carousel = $('#carouselHeader'),
     nav2Links = $('#nav2-links'),
     navItems = $('.nav-item'),
     searchBar = $('#search-bar'),
-    mainLogo = $('#main-logo');
+    mainLogo = $('#main-logo'),
+    emailRex = new RegExp("[a-zA-Z0-9._%+-]+@cisd.org$");
 
+// DETERMINE DYNAMIC NAVBAR APPEARANCE
 if (carousel.length) {
     nav2.addClass('nav2-transparent');
     globalLinkContainer.appendTo(carousel);
@@ -20,6 +23,7 @@ if (carousel.length) {
     globalLinkContainer.addClass('global-links-rel');
 }
 
+// SET INITIAL RESPONSIVE VIEW
 if (window.innerWidth < 768) {
     hideNavs();
 }
@@ -32,26 +36,7 @@ $(window).resize(function() {
     }
 });
 
-$('#scroll-top-btn').click(function(){
-    $('html, body').animate({ scrollTop: 0 }, 'slow');
-    return false;
-});
-
-$('#navbar-toggle').click(function() {
-    sidenav.toggleClass('d-none');
-});
-
-$('#loginTablist > a').click(function() {
-    $(this).closest('.dropdown').addClass('active');
-})
-
-$('.dropdown').on('hide.bs.dropdown', function(e) {
-    if ($(this).hasClass('active')){
-        e.preventDefault();
-    }
-    $(this).removeClass('active');
-});
-
+// RESPONSIVE BEHAVIOR FUNCTIONS
 function hideNavs() {
     mainLogo.prependTo($('#brand-bar'));
     mainLogo.addClass('position-static mb-5');
@@ -84,6 +69,27 @@ function showNavs() {
     navbar2.show();
 }
 
+// EVENT LISTENERS
+$('#scroll-top-btn').click(function(){
+    $('html, body').animate({ scrollTop: 0 }, 'slow');
+    return false;
+});
+
+$('#navbar-toggle').click(function() {
+    sidenav.toggleClass('d-none');
+});
+
+$('#loginTablist > a').click(function() {
+    $(this).closest('.dropdown').addClass('active');
+});
+
+$('.dropdown').on('hide.bs.dropdown', function(e) {
+    if ($(this).hasClass('active')){
+        e.preventDefault();
+    }
+    $(this).removeClass('active');
+});
+
 $('#loginEmail, #loginPassword').keyup(function() {
     if($('#loginEmail').val().length > 0 && $('#loginPassword').val().length >= 8) {
         $('#loginSubmit').prop('disabled', false);
@@ -91,8 +97,6 @@ $('#loginEmail, #loginPassword').keyup(function() {
         $('#loginSubmit').prop('disabled', true);
     }
 });
-
-var emailRex = new RegExp("[a-zA-Z0-9._%+-]+@cisd.org$");
 
 $('#signupEmail, #signupPassword').keyup(function() {
     if(!emailRex.test($('#signupEmail').val())) {
