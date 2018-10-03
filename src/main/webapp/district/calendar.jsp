@@ -243,6 +243,80 @@
                         </div>
                     </fieldset>
 
+                    <fieldset class="form-group text-center" id="eventCategoryFieldset">
+                        <legend class="input-group-text justify-content-center">Select a category for this event</legend>
+                        <div class="dropdown btn d-inline-block" style="padding-top: 0.1rem">
+                            <button class="btn btn-light input-group-text dropdown-toggle" type="button" id="eventCategoryDropdownBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Categories
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="eventCategoryDropdownBtn">
+                                <form>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" value="unassigned" name="category" id="eventUnassigned" checked>
+                                        <label class="custom-control-label" for="eventUnassigned">Unassigned</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" value="academicQuiz" name="category" id="eventAcademicQuiz">
+                                        <label class="custom-control-label" for="eventAcademicQuiz">Academic - Quiz</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" value="academicTest" name="category" id="eventAcademicTest">
+                                        <label class="custom-control-label" for="eventAcademicTest">Academic - Test (Classroom)</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" value="athleticEvent" name="category" id="eventAthleticEvent">
+                                        <label class="custom-control-label" for="eventAthleticEvent">Athletic Event</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" value="athleticPractice" name="category" id="eventAthleticPractice">
+                                        <label class="custom-control-label" for="eventAthleticPractice">Athletic Practice</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" value="districtTest" name="category" id="eventDistrictTest">
+                                        <label class="custom-control-label" for="eventDistrictTest">District Testing</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" value="holiday" name="category" id="eventHoliday">
+                                        <label class="custom-control-label" for="eventHoliday">Holiday</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" value="homework" name="category" id="eventHomework">
+                                        <label class="custom-control-label" for="eventHomework">Homework</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" value="musicArt" name="category" id="eventMusicArt">
+                                        <label class="custom-control-label" for="eventMusicArt">Music or Art Event</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" value="parentTeacher" name="category" id="eventParentTeacher">
+                                        <label class="custom-control-label" for="eventParentTeacher">Parent Teacher Conference</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" value="ptoPTA" name="category" id="eventPtoPta">
+                                        <label class="custom-control-label" for="eventPtoPta">PTO/PTA Meeting</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" value="boardMeeting" name="category" id="eventBoardMeeting">
+                                        <label class="custom-control-label" for="eventBoardMeeting">School Board Meeting</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" value="staffDevOp" name="category" id="eventStaffDevOp">
+                                        <label class="custom-control-label" for="eventStaffDevOp">Staff Development Opportunity</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" value="staffDevWorkday" name="category" id="eventStaffDevWorkday">
+                                        <label class="custom-control-label" for="eventStaffDevWorkday">Staff Development or Work Day</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input class="custom-control-input" type="radio" value="uilAcademics" name="category" id="eventUilAcademics">
+                                        <label class="custom-control-label" for="eventUilAcademics">UIL Academics/Fine Arts</label>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <span class="input-group-text d-inline-block" id="eventCategory">Unassigned</span>
+                    </fieldset>
+
                     <!-- TITLE/SUMMARY -->
                     <fieldset class="form-group">
                         <legend class="input-group-text justify-content-center">Title/Summary</legend>
