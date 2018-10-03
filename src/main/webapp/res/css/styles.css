@@ -107,15 +107,6 @@ legend {
     font-family: 'Titillium Web', sans-serif;
 }
 
-@media (max-width: 520px) {
-    .brand-name {
-        font-size: 25px;
-    }
-    .brand-hashtag {
-        font-size: 15px;
-    }
-}
-
 .brand-hashtag {
     color: #f3c029;
     font-size: 18px;
@@ -245,10 +236,6 @@ legend {
     z-index: 702;
     background-color: #000000cc!important;
     box-shadow: -10px 10px 512px 256px #000000cc;
-}
-
-@media (min-width: 768px) {
-    #side-nav { display: none; }
 }
 
 #side-nav .nav-link {
@@ -506,21 +493,6 @@ a {
     background-color: #3B3B3C;
 }
 
-@media (max-width: 767px) {
-    .footer {
-        text-align: center;
-    }
-    .dropdown-item {
-        white-space: normal;
-    }
-    #brand-bar-inner {
-        margin: auto;
-    }
-    #brand-name-top {
-        margin-left: 0;
-    }
-}
-
 .social-link {
     max-height: 50px;
     max-width: 50px;
@@ -605,4 +577,48 @@ a {
 .fc-left, .fc-right, .fc-center {
     padding-bottom: 1rem;
     padding-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    #side-nav { display: none; }
+}
+
+@media (max-width: 767px) {
+    .footer {
+        text-align: center;
+    }
+    .dropdown-item {
+        white-space: normal;
+    }
+    #brand-bar-inner {
+        margin: auto;
+    }
+    #brand-name-top {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 660px) {
+    .brand-name {
+        font-size: 25px;
+    }
+    .brand-hashtag {
+        font-size: 15px;
+    }
+}
+
+
+@media (max-width: 365px) {
+    .brand-name {
+        font-size: 5vw;
+    }
+    .brand-hashtag {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 365px) {
+    .brand-bar-inner {
+        display: none;
+    }
 }
