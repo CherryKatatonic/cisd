@@ -11,6 +11,7 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import com.google.gson.Gson;
 
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,8 +38,13 @@ public class ICalFeed extends HttpServlet {
             // GET TARGET CALENDAR AND FILE URL:
             CalendarDao dao = (CalendarDao) getServletContext().getAttribute("calDao");
             Calendar cal = dao.getCalendar(id);
-            if (cal == null) { System.out.println("Calendar not found"); }
-            ICalendar ical;
+            if (cal == null) {
+                try {
+                    cal = new Calendar(id, CalendarHelper.createCalendar(id), getServletContext().getContextPath());
+                } catch (ServletException e) {
+                    e.printStackTrace();
+                }
+            }
 
             // DOWNLOAD iCAL FILE:
             Storage storage = StorageOptions.getDefaultInstance().getService();
@@ -71,7 +77,7 @@ public class ICalFeed extends HttpServlet {
                 boolean export = respType.equals("export");
 
                 // Get iCal object:
-                ical = Biweekly.parse(file).first();
+                ICalendar ical = Biweekly.parse(file).first();
 
                 // Configure response (EXPORT/JSON):
                 if (export) {
