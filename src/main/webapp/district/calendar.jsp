@@ -246,7 +246,7 @@
                     <fieldset class="form-group text-center" id="eventCategoryFieldset">
                         <legend class="input-group-text justify-content-center">Select a category for this event</legend>
                         <div class="dropdown btn d-inline-block" style="padding-top: 0.1rem">
-                            <button class="btn btn-light input-group-text dropdown-toggle" type="button" id="eventCategoryDropdownBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <button class="btn btn-outline-secondary input-group-text dropdown-toggle" type="button" id="eventCategoryDropdownBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Categories
                             </button>
                             <div class="dropdown-menu" aria-labelledby="eventCategoryDropdownBtn">
@@ -314,7 +314,7 @@
                                 </form>
                             </div>
                         </div>
-                        <span class="input-group-text d-inline-block" id="eventCategory">Unassigned</span>
+                        <span class="input-group-text bg-light d-inline-block" id="eventCategory">Unassigned</span>
                     </fieldset>
 
                     <!-- TITLE/SUMMARY -->
@@ -420,8 +420,9 @@
 
                 <!-- SAVE/CANCEL -->
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary-outline" data-dismiss="modal">Cancel</button>
-                    <input type="submit" class="btn btn-primary" value="Save">
+                    <button type="button" class="btn btn-outline-secondary col" data-dismiss="modal">Cancel</button>
+                    <div class="col"></div>
+                    <input type="submit" class="btn btn-primary col" value="Save">
                 </div>
 
             </form>
