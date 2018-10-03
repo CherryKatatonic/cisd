@@ -11,7 +11,6 @@ import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageOptions;
 import com.google.gson.Gson;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -39,17 +38,20 @@ public class ICalFeed extends HttpServlet {
             CalendarDao dao = (CalendarDao) getServletContext().getAttribute("calDao");
             Calendar cal = dao.getCalendar(id);
             if (cal == null) {
-                try {
-                    cal = new Calendar(id, CalendarHelper.createCalendar(id), getServletContext().getContextPath());
-                } catch (ServletException e) {
-                    e.printStackTrace();
-                }
+                cal = new Calendar(id, CalendarHelper.createCalendar(id), getServletContext().getContextPath());
             }
 
             // DOWNLOAD iCAL FILE:
             Storage storage = StorageOptions.getDefaultInstance().getService();
             String blobName = cal.getBlobName();
             Blob blob = storage.get(BlobId.of(System.getenv("BUCKET_NAME"), blobName));
+            if (blob == null) {
+                CloudStorageHelper storageHelper = (CloudStorageHelper) getServletContext().getAttribute("storage");
+                ICalendar ical = CalendarHelper.createCalendar(id);
+                cal.setIcsUrl(storageHelper.saveCalendar(id, ical, getServletContext().getContextPath()));
+                cal.setBlobName(cal.getIcsUrl());
+                blob = storage.get(BlobId.of(System.getenv("BUCKET_NAME"), cal.getBlobName()));
+            }
             File file = new File(System.getenv("CATALINA_TMPDIR") + "/" + id + ".ics");
             blob.downloadTo(file.toPath());
 
