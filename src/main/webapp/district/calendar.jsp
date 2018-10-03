@@ -45,7 +45,7 @@
         <button id="addEvent" type="button" class="btn btn-primary" data-toggle="modal" data-target="#eventForm">
             New Event
         </button>
-        <div class="dropdown btn">
+        <div class="dropdown btn" id="calendarsDropdown">
             <button class="btn btn-primary dropdown-toggle" type="button" id="calendarDropdownBtn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Calendars
             </button>
@@ -89,8 +89,8 @@
                         <label class="custom-control-label" for="fannin1">Fannin Elementary</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="sam" name="calendar" id="samHouston1">
-                        <label class="custom-control-label" for="samHouston1">Sam Houston Elementary</label>
+                        <input class="custom-control-input" type="checkbox" value="houston" name="calendar" id="houston1">
+                        <label class="custom-control-label" for="houston1">Sam Houston Elementary</label>
                     </div>
                     <button id="updateResources" type="button" class="btn btn-outline-primary w-100">Update Calendars</button>
                 </form>
@@ -103,63 +103,63 @@
             <div class="dropdown-menu" aria-labelledby="categoryDropdownBtn">
                 <form>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="athletics" name="category" id="unassigned" checked>
+                        <input class="custom-control-input" type="checkbox" value="unassigned" name="category" id="unassigned" checked>
                         <label class="custom-control-label" for="unassigned">Unassigned</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="carroll" name="category" id="academicQuiz" checked>
+                        <input class="custom-control-input" type="checkbox" value="academicQuiz" name="category" id="academicQuiz" checked>
                         <label class="custom-control-label" for="academicQuiz">Academic - Quiz</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="chs" name="category" id="academicTest" checked>
+                        <input class="custom-control-input" type="checkbox" value="academicTest" name="category" id="academicTest" checked>
                         <label class="custom-control-label" for="academicTest">Academic - Test (Classroom)</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="cms" name="category" id="athleticEvent" checked>
+                        <input class="custom-control-input" type="checkbox" value="athleticEvent" name="category" id="athleticEvent" checked>
                         <label class="custom-control-label" for="athleticEvent">Athletic Event</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="navarro" name="category" id="athleticPractice" checked>
+                        <input class="custom-control-input" type="checkbox" value="athleticPractice" name="category" id="athleticPractice" checked>
                         <label class="custom-control-label" for="athleticPractice">Athletic Practice</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="bowie" name="category" id="districtTest" checked>
+                        <input class="custom-control-input" type="checkbox" value="districtTest" name="category" id="districtTest" checked>
                         <label class="custom-control-label" for="districtTest">District Testing</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="collins" name="category" id="holiday" checked>
+                        <input class="custom-control-input" type="checkbox" value="holiday" name="category" id="holiday" checked>
                         <label class="custom-control-label" for="holiday">Holiday</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="district" name="category" id="homework" checked>
+                        <input class="custom-control-input" type="checkbox" value="homework" name="category" id="homework" checked>
                         <label class="custom-control-label" for="homework">Homework</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="fannin" name="category" id="musicArt" checked>
+                        <input class="custom-control-input" type="checkbox" value="musicArt" name="category" id="musicArt" checked>
                         <label class="custom-control-label" for="musicArt">Music or Art Event</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="sam" name="category" id="parentTeacher" checked>
+                        <input class="custom-control-input" type="checkbox" value="parentTeacher" name="category" id="parentTeacher" checked>
                         <label class="custom-control-label" for="parentTeacher">Parent Teacher Conference</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="bowie" name="category" id="ptoPTA" checked>
+                        <input class="custom-control-input" type="checkbox" value="ptoPTA" name="category" id="ptoPTA" checked>
                         <label class="custom-control-label" for="ptoPTA">PTO/PTA Meeting</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="collins" name="category" id="boardMeeting" checked>
+                        <input class="custom-control-input" type="checkbox" value="boardMeeting" name="category" id="boardMeeting" checked>
                         <label class="custom-control-label" for="boardMeeting">School Board Meeting</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="district" name="category" id="staffDevOp" checked>
+                        <input class="custom-control-input" type="checkbox" value="staffDevOp" name="category" id="staffDevOp" checked>
                         <label class="custom-control-label" for="staffDevOp">Staff Development Opportunity</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="fannin" name="category" id="staffDevWorkday" checked>
+                        <input class="custom-control-input" type="checkbox" value="staffDevWorkday" name="category" id="staffDevWorkday" checked>
                         <label class="custom-control-label" for="staffDevWorkday">Staff Development or Work Day</label>
                     </div>
                     <div class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox" value="sam" name="category" id="uilAcademics" checked>
+                        <input class="custom-control-input" type="checkbox" value="uilAcademics" name="category" id="uilAcademics" checked>
                         <label class="custom-control-label" for="uilAcademics">UIL Academics/Fine Arts</label>
                     </div>
                     <button id="updateCategories" type="button" class="btn btn-outline-primary w-100">Update Categories</button>
@@ -236,8 +236,8 @@
                                     <label class="custom-control-label" for="fannin">Fannin Elementary</label>
                                 </div>
                                 <div class="custom-control custom-checkbox">
-                                    <input class="custom-control-input" type="checkbox" value="sam" name="calendar" id="samHouston">
-                                    <label class="custom-control-label" for="samHouston">Sam Houston Elementary</label>
+                                    <input class="custom-control-input" type="checkbox" value="houston" name="calendar" id="houston">
+                                    <label class="custom-control-label" for="houston">Sam Houston Elementary</label>
                                 </div>
                             </div>
                         </div>
