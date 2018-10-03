@@ -5,7 +5,6 @@ import com.boulder.cisd.util.CloudStorageHelper;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 
-import javax.servlet.ServletException;
 import java.io.IOException;
 
 @Entity
@@ -17,10 +16,10 @@ public class Calendar {
 
     private Calendar() {}
 
-    public Calendar(String id, ICalendar ical, String contextPath) throws IOException, ServletException {
+    public Calendar(String id, ICalendar ical, String contextPath) throws IOException {
         this.id = id;
         this.icsUrl = new CloudStorageHelper().saveCalendar(id, ical, contextPath);
-        this.blobName = icsUrl.substring(icsUrl.indexOf("/o/") + 3, icsUrl.indexOf("?generation"));
+        setBlobName(this.icsUrl);
     }
 
     public String getId() { return id; }
@@ -42,6 +41,6 @@ public class Calendar {
     }
 
     public void setBlobName(String blobName) {
-        this.blobName = blobName;
+        this.blobName = icsUrl.substring(icsUrl.indexOf("/o/") + 3, icsUrl.indexOf("?generation"));
     }
 }
