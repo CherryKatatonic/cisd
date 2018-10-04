@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // INIT VARIABLES
     var calendar = $('#calendar'),
         eventDateStart = $('#eventDateStart'),
         eventDateEnd = $('#eventDateEnd'),
@@ -10,11 +11,13 @@ $(document).ready(function() {
         recurring = $('#recurring'),
         exportDateStart = $('#exportDateStart'),
         exportDateEnd = $('#exportDateEnd'),
-        exportDates = $('#exportDateStart #exportDateEnd'),
+        exportDates = $('#exportDateStart, #exportDateEnd'),
         updateResources = $('#updateResources'),
         updateCategories = $('#updateCategories');
 
+    // INIT CALENDAR
     calendar.fullCalendar({
+            // Custom buttons
         customButtons: {
             refresh: {
                 text: 'Refresh',
@@ -23,40 +26,30 @@ $(document).ready(function() {
                 }
             }
         },
+            // Header
         header: {
             left: 'refresh today',
             center: 'prev title next',
             right: 'listDay,listWeek,month'
         },
-
+            // Views
         views: {
             listDay: {buttonText: 'Day', titleFormat: 'MMM D'},
             listWeek: {buttonText: 'Week', titleFormat: 'MMM D'},
             month: {buttonText: 'Month', titleFormat: 'MMMM YYYY'}
         },
-
+            // Misc settings
         buttonText: {today: 'Today'},
         defaultView: 'month',
         navLinks: true,
         editable: true,
         eventLimit: true,
-        resources: [
-            {
-                id: 'unassigned',
-                title: 'Unassigned'
-            },
-            {
-                id: 'athleticEvent',
-                title: 'Athletic Event'
-            },
-            {
-                id: 'athleticPractice',
-                title: 'Athletic Practice'
-            }
-        ],
+            // Resources
+        resources: [],
+            // Events
         events: {
             url: '/ical/json/range',
-            data: { calendar: 'district' },
+            data: { calendar: ['district'] },
             error: function(error) {
                 console.log(error)
             },
@@ -64,6 +57,7 @@ $(document).ready(function() {
                 console.log(data);
             }
         },
+            // Event Render
         eventRender: function(event, element) {
             console.log(event);
             element.qtip({
@@ -75,22 +69,30 @@ $(document).ready(function() {
         }
     });
 
-    console.log($.datepicker.formatDate('yy-mm-dd', calendar.fullCalendar('getView').start._d));
-    console.log($.datepicker.formatDate('yy-mm-dd', calendar.fullCalendar('getView').end._d));
-
-    $('#eventCategoryFieldset :radio').change(function() {
-       $('#eventCategory').text($('[for='+$(this).attr("id")+']').text());
-    });
-
+    // INIT INPUTS
     eventDates.datepicker().datepicker('setDate', new Date());
     exportDates.datepicker().datepicker('setDate', new Date());
     eventTimes.timepicker();
     $('#allDay, #recurring').checkboxradio();
 
+    // EVENT HANDLERS
+
+        // Always display full calendar height
+    $(window).resize(function() {
+        $('.fc-scroller').css('height', '100%!important', 'overflow', 'show');
+    });
+
+        // Display selected category for new event
+    $('#eventCategoryFieldset :radio').change(function() {
+       $('#eventCategory').text($('[for='+$(this).attr("id")+']').text());
+    });
+
+        // Prevent datepickers from being hidden behind modal
     $('.hasDatepicker').click(function() {
         $('.ui-datepicker').css('z-index', $.topZIndex() + 1);
     });
 
+        // Change date/time inputs when allDay is checked/unchecked
     allDay.change(function() {
         if ($(this).prop('checked')) {
             eventTimeStart.timepicker('clear');
@@ -107,6 +109,7 @@ $(document).ready(function() {
         }
     });
 
+        // Ensure that start dates and end dates remain valid
     eventDateStart.change(function() {
         if (new Date(eventDateEnd.val()) < new Date(eventDateStart.val()) || eventDateEnd.val() === '') {
             eventDateEnd.val(eventDateStart.val());
@@ -128,9 +131,50 @@ $(document).ready(function() {
             exportDateStart.val(exportDateEnd.val());
         }
     });
+        // --------------------------------------------------
 
-    $(window).resize(function() {
-        $('.fc-scroller').css('height', '100%!important', 'overflow', 'show');
+        // Set export dates to current view when export menu is opened
+    $('button[data-target="#exportModal"]').click(function() {
+        exportDateStart.datepicker('setDate', calendar.fullCalendar('getView').start._d);
+        exportDateEnd.datepicker('setDate', calendar.fullCalendar('getView').end._d);
+    });
+
+        // Export selected date range of selected calendars
+    $('#exportRange').click(function() {
+        var calendars = [],
+            start = $.datepicker.formatDate('yy-mm-dd', new Date(exportDateStart.val())),
+            end = $.datepicker.formatDate('yy-mm-dd', new Date(exportDateEnd.val()));
+
+        $('#calendarsDropdown form input:checkbox:checked').each(function() {
+            calendars.push($(this).val());
+        });
+
+       $.ajax({
+           type: 'GET',
+           url: '/ical/export/range',
+           data: {
+               calendar: calendars,
+               start: start,
+               end: end,
+               _: Date.now()
+           },
+           xhrFields: {
+               responseType: 'blob'
+           },
+           error: function(jqXHR, status, message) {
+                console.log(message);
+           },
+           success: function(data, status, jqXHR) {
+               var cdis = jqXHR.getResponseHeader('content-disposition');
+               var filename = cdis.substring(cdis.indexOf('=') + 1);
+               var a = document.createElement('a');
+               var url = window.URL.createObjectURL(data);
+               a.href = url;
+               a.download = filename;
+               a.click();
+               window.URL.revokeObjectURL(url);
+           }
+       });
     });
 });
 
