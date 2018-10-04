@@ -168,7 +168,7 @@
                     </form>
                 </div>
             </div>
-            <button id="exportCalendar" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exportModal">
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exportModal">
                 Export Calendar
             </button>
         </fieldset>
@@ -442,50 +442,45 @@
         <div class="modal-content modal-content-dark">
 
             <div class="modal-header modal-header-dark">
-                <h5 class="modal-title" id="exportTitle">Download Calendar</h5>
+                <h5 class="modal-title" id="exportTitle">Export Calendar</h5>
                 <button type="button" class="close close-dark" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
 
-            <fieldset class="form-group mt-3">
+            <fieldset class="form-group text-center mt-3">
                 <legend class="input-group-text justify-content-center">Export a Date Range</legend>
-                <form class="text-center" action="${request.contextPath}/ical/export/range" method="get">
-
-                    <!-- DATE RANGE -->
-                    <div class="row form-group">
-                        <!-- START DATE -->
-                        <div class="col-sm-6">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <label for="exportDateStart" class="input-group-text">Start Date</label>
-                                </div>
-                                <input type="text" class="form-control" id="exportDateStart" placeholder="mm/dd/yyyy" name="dateStart">
+                <!-- DATE RANGE -->
+                <div class="row form-group">
+                    <!-- START DATE -->
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label for="exportDateStart" class="input-group-text">Start Date</label>
                             </div>
-                        </div>
-
-                        <!-- END DATE -->
-                        <div class="col-sm-6">
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <label for="exportDateEnd" class="input-group-text">Start Time</label>
-                                </div>
-                                <input type="text" class="form-control" id="exportDateEnd" placeholder="mm/dd/yyyy" name="dateEnd">
-                            </div>
+                            <input type="text" class="form-control" id="exportDateStart" placeholder="mm/dd/yyyy" name="dateStart">
                         </div>
                     </div>
-                    <input type="submit" class="btn btn-outline-primary w-50" value="Export">
-                </form>
+
+                    <!-- END DATE -->
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <label for="exportDateEnd" class="input-group-text">Start Time</label>
+                            </div>
+                            <input type="text" class="form-control" id="exportDateEnd" placeholder="mm/dd/yyyy" name="dateEnd">
+                        </div>
+                    </div>
+                </div>
+                <button id="exportRange" type="button" class="btn btn-outline-primary w-50">Export Range</button>
             </fieldset>
 
             <hr class="hr-thin hr-blue w-85"/>
 
             <!-- FULL CALENDAR -->
-            <fieldset class="form-group">
+            <fieldset class="form-group text-center">
                 <legend class="input-group-text justify-content-center">Export Full Calendar</legend>
-                <form class="text-center" action="${request.contextPath}/ical/export/calendar" method="get">
-                    <input type="submit" class="btn btn-outline-primary w-50" value="Export">
-                </form>
+                <button id="exportCalendar" type="button" class="btn btn-outline-primary w-50">Export Calendar</button>
             </fieldset>
         </div>
     </div>
