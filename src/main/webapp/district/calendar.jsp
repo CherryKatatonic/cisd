@@ -40,8 +40,10 @@
 <!-- MAIN CONTENT -->
 <div class="w-100 py-0 px-lg-5 mx-lg-auto text-center">
 
-    <!-- ADMIN TOOLBAR -->
+    <!-- CALENDAR TOOLBAR -->
     <div class="container-fluid bg-white w-100 justify-content-center pt-3">
+        <fieldset class="bg-white text-center mt-3">
+            <legend class="input-group-text justify-content-center bg-blue">Calendar Options</legend>
         <button id="addEvent" type="button" class="btn btn-primary" data-toggle="modal" data-target="#eventForm">
             New Event
         </button>
@@ -166,11 +168,10 @@
                 </form>
             </div>
         </div>
-    </div>
+    </fieldset>
 
     <!-- CALENDAR -->
     <div id='calendar' class="px-md-5 py-5 w-100 bg-white"></div>
-
 </div>
 
 <!-- NEW EVENT FORM -->
