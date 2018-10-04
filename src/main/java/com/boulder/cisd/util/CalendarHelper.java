@@ -38,15 +38,15 @@ public class CalendarHelper {
         SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
         SimpleDateFormat dtf = new SimpleDateFormat("MM/dd/yyyyh:mm a");
 
-        String[] cats = req.getParameterValues("category");
+        String category = req.getParameter("category");
 
         String title = req.getParameter("title"),
-                sDateStr = req.getParameter("startDate"),
-                sTimeStr = req.getParameter("startTime"),
-                eDateStr = req.getParameter("endDate"),
-                eTimeStr = req.getParameter("endTime"),
-                desc = req.getParameter("description"),
-                loc = req.getParameter("location"),
+                startDateStr = req.getParameter("dateStart"),
+                startTimeStr = req.getParameter("timeStart"),
+                endDateStr = req.getParameter("dateEnd"),
+                endTimeStr = req.getParameter("timeEnd"),
+                description = req.getParameter("description"),
+                location = req.getParameter("location"),
                 contactName = req.getParameter("contactName"),
                 contactPhone = req.getParameter("contactName"),
                 contactEmail = req.getParameter("contactName"),
@@ -55,15 +55,15 @@ public class CalendarHelper {
         boolean allDay = Boolean.parseBoolean(req.getParameter("allDay")),
                 recurring = Boolean.parseBoolean(req.getParameter("recurring"));
 
-        Date sDate, eDate;
+        Date startDate, endDate;
         System.out.println(allDay);
 
         if (allDay) {
-            sDate = df.parse(sDateStr);
-            eDate = eDateStr.equals(sDateStr) ? sDate : df.parse(eDateStr);
+            startDate = df.parse(startDateStr);
+            endDate = endDateStr.equals(startDateStr) ? startDate : df.parse(endDateStr);
         } else {
-            sDate = dtf.parse(sDateStr.concat(sTimeStr));
-            eDate = dtf.parse(eDateStr.concat(eTimeStr));
+            startDate = dtf.parse(startDateStr.concat(startTimeStr));
+            endDate = dtf.parse(endDateStr.concat(endTimeStr));
         }
 
         VEvent event = new VEvent();
@@ -72,11 +72,12 @@ public class CalendarHelper {
         event.setDateTimeStamp(Date.from(Instant.now()));
         event.setLastModified(Date.from(Instant.now()));
         event.setSummary(title);
-        event.setDateStart(sDate);
+        event.setDateStart(startDate);
+        event.setClassification(category);
 
-        if (eDate != null) event.setDateEnd(eDate);
-        if (desc != null) event.setDescription(desc);
-        if (loc != null) event.setLocation(loc);
+        if (endDate != null) event.setDateEnd(endDate);
+        if (description != null) event.setDescription(description);
+        if (location != null) event.setLocation(location);
 
         // TODO - if (recurring)...
         // TODO - if (contact info)...
