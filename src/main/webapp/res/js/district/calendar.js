@@ -118,6 +118,17 @@ $(document).ready(function() {
         }
     });
 
+    exportDateStart.change(function() {
+        if (new Date(exportDateEnd.val()) < new Date(exportDateStart.val()) || exportDateEnd.val() === '') {
+            exportDateEnd.val(exportDateStart.val());
+        }
+    });
+    exportDateEnd.change(function() {
+        if (new Date(exportDateEnd.val()) < new Date(exportDateStart.val()) || exportDateStart.val() === '') {
+            exportDateStart.val(exportDateEnd.val());
+        }
+    });
+
     $(window).resize(function() {
         $('.fc-scroller').css('height', '100%!important', 'overflow', 'show');
     });
