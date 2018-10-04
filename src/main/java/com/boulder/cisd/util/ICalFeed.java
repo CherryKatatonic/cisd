@@ -31,7 +31,7 @@ public class ICalFeed extends HttpServlet {
         String[] pathParts = pathInfo.split("/");
         String respType = pathParts[1];
         String scope = pathParts[2];
-        String[] calendars = req.getParameterValues("calendar");
+        String[] calendars = req.getParameterValues("calendar[]");
 
         for (String id : calendars) {
             // GET TARGET CALENDAR AND FILE URL:
