@@ -1,13 +1,19 @@
 $(document).ready(function() {
     var calendar = $('#calendar'),
-        eStartDate = $('#eventStartDate'),
-        eEndDate = $('#eventEndDate'),
-        eDates = $('#eventStartDate, #eventEndDate'),
-        eStartTime = $('#eventStartTime'),
-        eEndTime = $('#eventEndTime'),
-        eTimes = $('#eventStartTime, #eventEndTime'),
+        eventDateStart = $('#eventDateStart'),
+        eventDateEnd = $('#eventDateEnd'),
+        eventDates = $('#eventDateStart, #eventDateEnd'),
+        eventTimeStart = $('#eventStartTime'),
+        eventTimeEnd = $('#eventEndTime'),
+        eventTimes = $('#eventStartTime, #eventEndTime'),
         allDay = $('#allDay'),
-        recurring = $('#recurring');
+        recurring = $('#recurring'),
+        exportDateStart = $('#exportDateStart'),
+        exportDateEnd = $('#exportDateEnd'),
+        exportDates = $('#exportDateStart #exportDateEnd'),
+        updateResources = $('#updateResources'),
+        updateCategories = $('#updateCategories');
+
     calendar.fullCalendar({
         customButtons: {
             refresh: {
@@ -18,7 +24,7 @@ $(document).ready(function() {
             }
         },
         header: {
-            left: 'today refresh',
+            left: 'refresh today',
             center: 'prev title next',
             right: 'listDay,listWeek,month'
         },
@@ -34,9 +40,23 @@ $(document).ready(function() {
         navLinks: true,
         editable: true,
         eventLimit: true,
-
+        resources: [
+            {
+                id: 'unassigned',
+                title: 'Unassigned'
+            },
+            {
+                id: 'athleticEvent',
+                title: 'Athletic Event'
+            },
+            {
+                id: 'athleticPractice',
+                title: 'Athletic Practice'
+            }
+        ],
         events: {
-            url: '/ical/district/range',
+            url: '/ical/json/range',
+            data: { calendar: 'district' },
             error: function(error) {
                 console.log(error)
             },
@@ -55,8 +75,16 @@ $(document).ready(function() {
         }
     });
 
-    eDates.datepicker().datepicker('setDate', new Date());
-    eTimes.timepicker();
+    console.log($.datepicker.formatDate('yy-mm-dd', calendar.fullCalendar('getView').start._d));
+    console.log($.datepicker.formatDate('yy-mm-dd', calendar.fullCalendar('getView').end._d));
+
+    $('#eventCategoryFieldset :radio').change(function() {
+       $('#eventCategory').text($('[for='+$(this).attr("id")+']').text());
+    });
+
+    eventDates.datepicker().datepicker('setDate', new Date());
+    exportDates.datepicker().datepicker('setDate', new Date());
+    eventTimes.timepicker();
     $('#allDay, #recurring').checkboxradio();
 
     $('.hasDatepicker').click(function() {
@@ -65,28 +93,28 @@ $(document).ready(function() {
 
     allDay.change(function() {
         if ($(this).prop('checked')) {
-            eStartTime.timepicker('clear');
-            eStartTime.prop('disabled', true);
-            eEndTime.timepicker('clear');
-            eEndTime.prop('disabled', true);
+            eventTimeStart.timepicker('clear');
+            eventTimeStart.prop('disabled', true);
+            eventTimeEnd.timepicker('clear');
+            eventTimeEnd.prop('disabled', true);
         } else {
-            eStartTime.prop('disabled', false);
-            eStartTime.timepicker('setDefaultTime');
-            eStartTime.timepicker('updateFromWidgetInputs');
-            eEndTime.prop('disabled', false);
-            eEndTime.timepicker('setDefaultTime');
-            eEndTime.timepicker('updateFromWidgetInputs');
+            eventTimeStart.prop('disabled', false);
+            eventTimeStart.timepicker('setDefaultTime');
+            eventTimeStart.timepicker('updateFromWidgetInputs');
+            eventTimeEnd.prop('disabled', false);
+            eventTimeEnd.timepicker('setDefaultTime');
+            eventTimeEnd.timepicker('updateFromWidgetInputs');
         }
     });
 
-    eStartDate.change(function() {
-        if (new Date(eEndDate.val()) < new Date(eStartDate.val()) || eEndDate.val() === '') {
-            eEndDate.val(eStartDate.val());
+    eventDateStart.change(function() {
+        if (new Date(eventDateEnd.val()) < new Date(eventDateStart.val()) || eventDateEnd.val() === '') {
+            eventDateEnd.val(eventDateStart.val());
         }
     });
-    eEndDate.change(function() {
-        if (new Date(eEndDate.val()) < new Date(eStartDate.val()) || eStartDate.val() === '') {
-            eStartDate.val(eEndDate.val());
+    eventDateEnd.change(function() {
+        if (new Date(eventDateEnd.val()) < new Date(eventDateStart.val()) || eventDateStart.val() === '') {
+            eventDateStart.val(eventDateEnd.val());
         }
     });
 
