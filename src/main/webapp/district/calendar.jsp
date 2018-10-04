@@ -94,7 +94,7 @@
                             <input class="custom-control-input" type="checkbox" value="houston" name="calendar" id="houston1">
                             <label class="custom-control-label" for="houston1">Sam Houston Elementary</label>
                         </div>
-                        <button id="updateResources" type="button" class="btn btn-outline-primary w-100">Update Calendars</button>
+                        <button id="updateCalendars" type="button" class="btn btn-outline-primary w-100">Update Calendars</button>
                     </form>
                 </div>
             </div>
