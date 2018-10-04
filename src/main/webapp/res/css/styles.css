@@ -23,6 +23,29 @@ legend {
     margin-bottom: .5rem!important;
 }
 
+hr.hr-thin {
+    border-top: 1px solid gray;
+}
+hr.hr-med {
+    border-top: 2px solid gray;
+}
+hr.hr-thick {
+    border-top: 3px solid gray;
+}
+hr.hr-blue {
+    border-top-color: #0b03aa;
+}
+hr.hr-gray {
+    border-top-color: #9c9c9c30;
+}
+hr.hr-light {
+    border-top-color: #ffffff6b;
+}
+
+.w-85 {
+    width: 85%;
+}
+
 .bg-blue {
     background-color: #0b03aa;
     border: 1px solid #0b03aa;
