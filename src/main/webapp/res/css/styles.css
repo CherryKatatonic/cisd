@@ -50,6 +50,15 @@ legend {
     background-color: #0b03aa;
     border: 1px solid #0b03aa;
 }
+.btn-outline-primary {
+    border: 1px solid #0b03aa;
+    color: #0b03aa;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:hover {
+    background-color: #0b03aa;
+    border: 1px solid #0b03aa;
+}
 .btn-warning {
     background-color: #f3c029;
     border: 1px solid goldenrod;
