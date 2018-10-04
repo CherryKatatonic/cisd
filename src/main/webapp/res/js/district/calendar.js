@@ -176,5 +176,39 @@ $(document).ready(function() {
            }
        });
     });
+
+    // Export all events of selected calendars
+    $('#exportCalendar').click(function() {
+        var calendars = [];
+
+        $('#calendarsDropdown form input:checkbox:checked').each(function() {
+            calendars.push($(this).val());
+        });
+
+        $.ajax({
+            type: 'GET',
+            url: '/ical/export/calendar',
+            data: {
+                calendar: calendars,
+                _: Date.now()
+            },
+            xhrFields: {
+                responseType: 'blob'
+            },
+            error: function(jqXHR, status, message) {
+                console.log(message);
+            },
+            success: function(data, status, jqXHR) {
+                var cdis = jqXHR.getResponseHeader('content-disposition');
+                var filename = cdis.substring(cdis.indexOf('=') + 1);
+                var a = document.createElement('a');
+                var url = window.URL.createObjectURL(data);
+                a.href = url;
+                a.download = filename;
+                a.click();
+                window.URL.revokeObjectURL(url);
+            }
+        });
+    });
 });
 
