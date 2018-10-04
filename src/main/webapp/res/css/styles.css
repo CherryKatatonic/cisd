@@ -23,6 +23,12 @@ legend {
     margin-bottom: .5rem!important;
 }
 
+.bg-blue {
+    background-color: #0b03aa;
+    border: 1px solid #0b03aa;
+    color: white;
+}
+
 .ico-20 {
     display: inline-block;
     background: no-repeat center;
