@@ -353,9 +353,9 @@
                             <div class="col-sm-6">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <label for="eventStartDate" class="input-group-text">Start Date</label>
+                                        <label for="eventDateStart" class="input-group-text">Start Date</label>
                                     </div>
-                                    <input type="text" class="form-control" id="eventStartDate" placeholder="mm/dd/yyyy" name="startDate">
+                                    <input type="text" class="form-control" id="eventDateStart" placeholder="mm/dd/yyyy" name="dateStart">
                                 </div>
                             </div>
 
@@ -363,9 +363,9 @@
                             <div class="col-sm-6">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <label for="eventStartTime" class="input-group-text">Start Time</label>
+                                        <label for="eventTimeStart" class="input-group-text">Start Time</label>
                                     </div>
-                                    <input type="text" class="form-control" id="eventStartTime" placeholder="0:00" name="startTime">
+                                    <input type="text" class="form-control" id="eventTimeStart" placeholder="0:00" name="timeStart">
                                 </div>
                             </div>
 
@@ -380,9 +380,9 @@
                             <div class="col-sm-6">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <label for="eventEndDate" class="input-group-text">&nbsp;End Date&nbsp;</label>
+                                        <label for="eventDateEnd" class="input-group-text">&nbsp;End Date&nbsp;</label>
                                     </div>
-                                    <input type="text" class="form-control" id="eventEndDate" placeholder="mm/dd/yyyy" name="endDate">
+                                    <input type="text" class="form-control" id="eventDateEnd" placeholder="mm/dd/yyyy" name="dateEnd">
                                 </div>
                             </div>
 
@@ -390,9 +390,9 @@
                             <div class="col-sm-6">
                                 <div class="input-group">
                                     <div class="input-group-prepend">
-                                        <label for="eventEndTime" class="input-group-text">&nbsp;End Time&nbsp;</label>
+                                        <label for="eventTimeEnd" class="input-group-text">&nbsp;End Time&nbsp;</label>
                                     </div>
-                                    <input type="text" class="form-control" id="eventEndTime" placeholder="0:00" name="endTime">
+                                    <input type="text" class="form-control" id="eventTimeEnd" placeholder="0:00" name="timeEnd">
                                 </div>
                             </div>
 
@@ -458,9 +458,9 @@
                         <div class="col-sm-6">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <label for="exportStartDate" class="input-group-text">Start Date</label>
+                                    <label for="exportDateStart" class="input-group-text">Start Date</label>
                                 </div>
-                                <input type="text" class="form-control" id="exportStartDate" placeholder="mm/dd/yyyy" name="startDate">
+                                <input type="text" class="form-control" id="exportDateStart" placeholder="mm/dd/yyyy" name="dateStart">
                             </div>
                         </div>
 
@@ -468,9 +468,9 @@
                         <div class="col-sm-6">
                             <div class="input-group">
                                 <div class="input-group-prepend">
-                                    <label for="exportEndDate" class="input-group-text">Start Time</label>
+                                    <label for="exportDateEnd" class="input-group-text">Start Time</label>
                                 </div>
-                                <input type="text" class="form-control" id="exportEndDate" placeholder="mm/dd/yyyy" name="endDate">
+                                <input type="text" class="form-control" id="exportDateEnd" placeholder="mm/dd/yyyy" name="dateEnd">
                             </div>
                         </div>
                     </div>
