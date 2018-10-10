@@ -1,6 +1,5 @@
 package com.boulder.cisd.core;
 
-import com.boulder.cisd.auth.PasswordStorage;
 import com.boulder.cisd.daos.CalendarDao;
 import com.boulder.cisd.daos.PageDao;
 import com.boulder.cisd.daos.UserDao;
@@ -43,18 +42,6 @@ public class ContextListener implements ServletContextListener {
         e.getServletContext().setAttribute("calDao", calDao);
         e.getServletContext().setAttribute("pageDao", pageDao);
         e.getServletContext().setAttribute("storage", new CloudStorageHelper());
-
-        ObjectifyService.run(() -> {
-            if (userDao.getAdminPass() == null) {
-                try {
-                    Hash adminPass = new Hash("adminPass", PasswordStorage.createHash("Tigers@dm1n337"));
-                } catch (PasswordStorage.CannotPerformOperationException e1) {
-                    e1.printStackTrace();
-                }
-            }
-
-            return null;
-        });
 
     }
 }
