@@ -22,12 +22,12 @@ public class Page {
         private String id;
         private List components;
 
-        public Page.Builder id(String id) {
+        public Builder id(String id) {
             this.id = id;
             return this;
         }
 
-        public Page.Builder components(List components) {
+        public Builder components(List components) {
             this.components = components;
             return this;
         }
