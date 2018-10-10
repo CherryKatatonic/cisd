@@ -1,15 +1,12 @@
 package com.boulder.cisd.objects;
 
-import com.googlecode.objectify.annotation.Entity;
-import com.googlecode.objectify.annotation.Id;
-
 import java.util.List;
 
-@Entity
 public class PageComponent {
 
-    @Id private String id;
+    private String id;
     private List components;
+    private String html;
 
     private PageComponent() {}
 
