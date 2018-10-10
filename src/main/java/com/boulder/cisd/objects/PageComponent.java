@@ -5,7 +5,7 @@ import java.util.List;
 public class PageComponent {
 
     private String id;
-    private List components;
+    private List<PageComponent> components;
     private String html;
 
     private PageComponent() {}
@@ -17,14 +17,14 @@ public class PageComponent {
 
     public static class Builder {
         private String id;
-        private List components;
+        private List<PageComponent> components;
 
         public PageComponent.Builder id(String id) {
             this.id = id;
             return this;
         }
 
-        public PageComponent.Builder components(List components) {
+        public PageComponent.Builder components(List<PageComponent> components) {
             this.components = components;
             return this;
         }
@@ -46,7 +46,15 @@ public class PageComponent {
         return components;
     }
 
-    public void setComponents(List components) {
+    public void setComponents(List<PageComponent> components) {
         this.components = components;
+    }
+
+    public String getHtml() {
+        return html;
+    }
+
+    public void setHtml(String html) {
+        this.html = html;
     }
 }
