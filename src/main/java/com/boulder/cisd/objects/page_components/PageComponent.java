@@ -1,4 +1,4 @@
-package com.boulder.cisd.objects;
+package com.boulder.cisd.objects.page_components;
 
 import java.util.List;
 
@@ -8,30 +8,45 @@ public class PageComponent {
     private List<PageComponent> components;
     private String html;
 
-    private PageComponent() {}
-
-    private PageComponent(Builder builder) {
-        this.id = builder.id;
-        this.components = builder.components;
+    PageComponent(String id, List<PageComponent> components, String html) {
+        this.id = id;
+        this.components = components;
+        this.html = html;
     }
 
-    public static class Builder {
+    PageComponent(Builder<?> builder) {
+        this.id = builder.id;
+        this.components = builder.components;
+        this.html = builder.html;
+    }
+
+    public abstract static class Builder<T extends Builder<T>> {
         private String id;
         private List<PageComponent> components;
+        private String html;
 
-        public PageComponent.Builder id(String id) {
+        // Solution for unchecked cast warning
+        abstract T getThis();
+
+        public T id(String id) {
             this.id = id;
-            return this;
+            return getThis();
         }
 
-        public PageComponent.Builder components(List<PageComponent> components) {
+        public T components(List<PageComponent> components) {
             this.components = components;
-            return this;
+            return getThis();
+        }
+
+        public T html(String html) {
+            this.html = html;
+            return getThis();
         }
 
         public PageComponent build() {
-            return new PageComponent(this);
+            return new PageComponent(getThis());
         }
+
     }
 
     public String getId() {
