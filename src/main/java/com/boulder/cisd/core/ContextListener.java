@@ -1,11 +1,9 @@
 package com.boulder.cisd.core;
 
 import com.boulder.cisd.daos.CalendarDao;
-import com.boulder.cisd.daos.PageDao;
 import com.boulder.cisd.daos.UserDao;
 import com.boulder.cisd.objects.Calendar;
 import com.boulder.cisd.objects.Hash;
-import com.boulder.cisd.objects.Page;
 import com.boulder.cisd.objects.User;
 import com.boulder.cisd.util.CloudStorageHelper;
 import com.google.cloud.datastore.DatastoreOptions;
@@ -29,19 +27,16 @@ public class ContextListener implements ServletContextListener {
                         .getService()
         ));
 
-        ObjectifyService.register(User.class);
         ObjectifyService.register(Hash.class);
+        ObjectifyService.register(User.class);
         ObjectifyService.register(Calendar.class);
-        ObjectifyService.register(Page.class);
 
         UserDao userDao = new UserDao();
         CalendarDao calDao = new CalendarDao();
-        PageDao pageDao = new PageDao();
 
+        e.getServletContext().setAttribute("storage", new CloudStorageHelper());
         e.getServletContext().setAttribute("userDao", userDao);
         e.getServletContext().setAttribute("calDao", calDao);
-        e.getServletContext().setAttribute("pageDao", pageDao);
-        e.getServletContext().setAttribute("storage", new CloudStorageHelper());
 
     }
 }
