@@ -28,19 +28,19 @@
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="${request.contextPath}/athletics/facilities">FACILITIES</a>
+                <a class="nav-link" href="#">FACILITIES</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">FORMS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="${request.contextPath}/athletics/schedules">SCHEDULES</a>
+                <a class="nav-link" href="#">SCHEDULES</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="${request.contextPath}/athletics/sports">SPORTS</a>
+                <a class="nav-link" href="#">SPORTS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="${request.contextPath}/athletics/calendar">CALENDAR</a>
+                <a class="nav-link" href="#">CALENDAR</a>
             </li>
         </ul>
     </div>
