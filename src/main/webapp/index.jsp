@@ -243,6 +243,28 @@
     </button>
 </footer>
 
+<!-- DEV MODAL -->
+<button id="devModalBtn" type="button" class="btn btn-primary d-none" data-toggle="modal" data-target="#devModal">Dev Modal</button>
+
+<div class="modal fade" id="devModal" tabindex="-1" role="dialog" aria-labelledby="devModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="devModalLabel">Site Under Construction</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                This site is still in early stages of construction.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Okay</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <!-- SCRIPTS -->
     <!-- Required script tags for Bootstrap -->
     <script src="${request.contextPath}/res/js/lib/jquery-3.3.1.min.js"></script>
@@ -262,6 +284,7 @@
     <script src="${request.contextPath}/res/js/${campus}/${page}.js"></script>
     <script src="${request.contextPath}/res/js/index.js"></script>
     <script>${script}</script>
+    <script>${devScript}</script>
     <c:remove var="script" scope="session"/>
 </body>
 
