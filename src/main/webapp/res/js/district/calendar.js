@@ -12,7 +12,7 @@ $(document).ready(function() {
         exportDateStart = $('#exportDateStart'),
         exportDateEnd = $('#exportDateEnd'),
         exportDates = $('#exportDateStart, #exportDateEnd'),
-        updateResources = $('#updateResources'),
+        updateCalendars = $('#updateCalendars'),
         updateCategories = $('#updateCategories');
 
     // INIT CALENDAR
@@ -46,6 +46,7 @@ $(document).ready(function() {
         eventLimit: true,
             // Resources
         resources: [],
+
             // Events
         events: {
             url: '/ical/json/range',
@@ -131,7 +132,44 @@ $(document).ready(function() {
             exportDateStart.val(exportDateEnd.val());
         }
     });
-        // --------------------------------------------------
+
+        // Update calendar for new set of selected calendars
+    updateCalendars.click(function() {
+        /*var calendars = [],
+            start = $.datepicker.formatDate('yy-mm-dd', new Date(exportDateStart.val())),
+            end = $.datepicker.formatDate('yy-mm-dd', new Date(exportDateEnd.val()));
+
+        $('#calendarsDropdown form input:checkbox:checked').each(function() {
+            calendars.push($(this).val());
+        });
+
+        $.ajax({
+            type: 'GET',
+            url: '/ical/export/range',
+            data: {
+                calendar: calendars,
+                start: start,
+                end: end,
+                _: Date.now()
+            },
+            xhrFields: {
+                responseType: 'blob'
+            },
+            error: function(jqXHR, status, message) {
+                console.log(message);
+            },
+            success: function(data, status, jqXHR) {
+                var cdis = jqXHR.getResponseHeader('content-disposition');
+                var filename = cdis.substring(cdis.indexOf('=') + 1);
+                var a = document.createElement('a');
+                var url = window.URL.createObjectURL(data);
+                a.href = url;
+                a.download = filename;
+                a.click();
+                window.URL.revokeObjectURL(url);
+            }
+        });*/
+    });
 
         // Set export dates to current view when export menu is opened
     $('button[data-target="#exportModal"]').click(function() {
