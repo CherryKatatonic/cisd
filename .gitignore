@@ -87,3 +87,5 @@ hs_err_pid*
 
 /target/
 /src/main/webapp/service-key.json
+/service-key.json
+/src/main/webapp/res/images/Thumbs.db
