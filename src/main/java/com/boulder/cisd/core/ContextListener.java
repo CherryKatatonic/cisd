@@ -21,7 +21,7 @@ public class ContextListener implements ServletContextListener {
     public void contextInitialized(ServletContextEvent e) {
         ObjectifyService.init(new ObjectifyFactory(
                 DatastoreOptions.newBuilder()
-                        .setHost("http://localhost:8081")
+                        // .setHost("http://localhost:8081") // Only for local development
                         .setProjectId("cisd-org")
                         .build()
                         .getService()
