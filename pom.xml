@@ -10,7 +10,7 @@
   <packaging>war</packaging>
 
   <name>Corsicana ISD</name>
-  <url>https://www.cisd.org</url>
+  <url>https://cisd.katgrennan.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
