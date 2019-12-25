@@ -2,6 +2,7 @@ package com.boulder.cisd.util;
 
 import biweekly.Biweekly;
 import biweekly.ICalendar;
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.storage.*;
 import org.apache.commons.io.IOUtils;
 import org.joda.time.DateTime;
@@ -9,6 +10,8 @@ import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -21,9 +24,13 @@ import java.util.Arrays;
 
 public class CloudStorageHelper {
 
-    private final String bucket = System.getenv("BUCKET_NAME");
+    private final String bucket = InitialContext.doLookup("java:/comp/env/BUCKET_NAME");
     private static Storage storage = null;
-    static { storage = StorageOptions.getDefaultInstance().getService(); }
+
+    public CloudStorageHelper(GoogleCredentials credentials) throws NamingException {
+        System.out.println(bucket);
+        storage = StorageOptions.newBuilder().setCredentials(credentials).build().getService();
+    }
 
     private String uploadFile(Part filePart) throws IOException {
         DateTimeFormatter dtf = DateTimeFormat.forPattern("-YYYY-MM-dd-HHmmssSSS");
