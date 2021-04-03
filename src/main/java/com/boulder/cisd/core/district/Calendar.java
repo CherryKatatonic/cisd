@@ -21,7 +21,7 @@ public class Calendar extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        CalendarDao dao = (CalendarDao) getServletContext().getAttribute("calDao");
+        CalendarDao dao = (CalendarDao) getServletContext().getAttribute("calendarDao");
 
         if (dao.getCalendar("district") == null) {
             ICalendar ical = CalendarHelper.createCalendar("district");
@@ -44,7 +44,7 @@ public class Calendar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         CloudStorageHelper storage = (CloudStorageHelper) getServletContext().getAttribute("storage");
-        CalendarDao dao = (CalendarDao) getServletContext().getAttribute("calDao");
+        CalendarDao dao = (CalendarDao) getServletContext().getAttribute("calendarDao");
         String[] cals = req.getParameterValues("calendar");
         VEvent e = null;
 

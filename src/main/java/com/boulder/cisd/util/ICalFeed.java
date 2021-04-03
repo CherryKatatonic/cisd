@@ -35,7 +35,7 @@ public class ICalFeed extends HttpServlet {
 
         for (String id : calendars) {
             // GET TARGET CALENDAR AND FILE URL:
-            CalendarDao dao = (CalendarDao) getServletContext().getAttribute("calDao");
+            CalendarDao dao = (CalendarDao) getServletContext().getAttribute("calendarDao");
             Calendar cal = dao.getCalendar(id);
             if (cal == null) {
                 cal = new Calendar(id, CalendarHelper.createCalendar(id), getServletContext().getContextPath());
