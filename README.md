@@ -11,12 +11,12 @@ My second major personal project, built during my spare time in 2018, attempting
     - **https://cloud.google.com/datastore/docs/tools/datastore-emulator**
 
 ### Environment Variables:
+- `GOOGLE_APPLICATION_CREDENTIALS`:
+    - `/path/to/your/gcp_service_account_key.json`
+- `BUCKET_NAME`:
+    - `your-bucket.appspot.com`
 - `DATASTORE_EMULATOR_HOST` (if using emulator): 
     - `localhost:8081`
-- `GOOGLE_APPLICATION_CREDENTIALS` (if using GCP APIs):
-    - `/path/to/your/gcp_service_account_key.json`
-- `BUCKET_NAME` (if using Storage API):
-    - `your-bucket.appspot.com`
 
 ### Run:
 - IDE (IntelliJ):
