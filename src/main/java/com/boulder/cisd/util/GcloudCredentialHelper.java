@@ -3,8 +3,6 @@ package com.boulder.cisd.util;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.common.collect.Lists;
 
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -15,15 +13,15 @@ public class GcloudCredentialHelper {
         try {
             credentials = GoogleCredentials.getApplicationDefault();
         } catch (IOException e) {
-            System.err.println("GOOGLE_APPLICATION_CREDENTIALS environment variable not found. Checking in InitialContext...");
+            System.err.println("GOOGLE_APPLICATION_CREDENTIALS not found");
         }
 
         if (credentials == null) {
             try {
-                String path = InitialContext.doLookup("java:/comp/env/GOOGLE_APPLICATION_CREDENTIALS").toString();
+                String path = System.getProperty("GOOGLE_APPLICATION_CREDENTIALS");
                 credentials = GoogleCredentials.fromStream(new FileInputStream(path))
                     .createScoped(Lists.newArrayList("https://www.googleapis.com/auth/cloud-platform"));
-            } catch (IOException | NamingException e) {
+            } catch (IOException e) {
                 System.err.println("GOOGLE_APPLICATION_CREDENTIALS not found in InitialContext.");
                 e.printStackTrace();
             }

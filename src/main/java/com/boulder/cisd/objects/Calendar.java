@@ -6,8 +6,6 @@ import com.boulder.cisd.util.GcloudCredentialHelper;
 import com.googlecode.objectify.annotation.Entity;
 import com.googlecode.objectify.annotation.Id;
 
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import java.io.IOException;
 
 @Entity
@@ -19,11 +17,7 @@ public class Calendar {
     static CloudStorageHelper storageHelper;
 
     static {
-        try {
-            storageHelper = new CloudStorageHelper(GcloudCredentialHelper.getDefaultCredentials());
-        } catch (NamingException e) {
-            e.printStackTrace();
-        }
+        storageHelper = new CloudStorageHelper(GcloudCredentialHelper.getDefaultCredentials());
     }
 
     private Calendar() {}

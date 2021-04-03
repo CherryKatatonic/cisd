@@ -10,8 +10,6 @@ import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,12 +22,13 @@ import java.util.Arrays;
 
 public class CloudStorageHelper {
 
-    private final String bucket = InitialContext.doLookup("java:/comp/env/BUCKET_NAME");
+    private final String bucket = System.getProperty("BUCKET_NAME");
     private static Storage storage = null;
 
-    public CloudStorageHelper(GoogleCredentials credentials) throws NamingException {
-        System.out.println(bucket);
-        storage = StorageOptions.newBuilder().setCredentials(credentials).build().getService();
+    public CloudStorageHelper(GoogleCredentials credentials) {
+        storage = StorageOptions.newBuilder()
+                .setCredentials(credentials)
+                .build().getService();
     }
 
     private String uploadFile(Part filePart) throws IOException {
